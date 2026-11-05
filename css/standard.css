@@ -1,0 +1,22 @@
+body {
+    background-color: var(--color-background);
+        font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   FONT FACE
+========================= */
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Anton,Inter/Inter/static/Inter_18pt-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Anton,Inter/Inter/static/Inter_18pt-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}

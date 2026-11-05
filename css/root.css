@@ -1,0 +1,30 @@
+:root {
+    /* Colors */
+    --color-background: #F6F7F8;
+
+    /* Layout */
+    --header-width: 1241px;
+    --header-height: 122px;
+
+    /* Spacing */
+    --header-signup-gap: 35px;
+
+    /* Typography */
+    --font-family: "Inter", sans-serif;
+    --font-size-header: 20px;
+    --font-weight-regular: 400;
+    --line-height-header: 120%;
+
+    /* Button */
+    --button-background: #2A3647;
+    --button-radius: 8px;
+    --button-padding-y: 15px;
+    --button-padding-x: 16px;
+
+    /* Button Typography */
+    --button-font-size: 16px;
+    --button-font-weight: 700;
+    --button-line-height: 120%;
+
+    --font-family: "Inter", sans-serif;
+}
