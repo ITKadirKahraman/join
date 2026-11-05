@@ -1,0 +1,15 @@
+.menuBoard {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+    flex-direction: column;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-text);
+    min-height: var(--menuBoard-min-height);
+    max-width: var(--menuBoard-width);
+    left: 0;
+    top: 0;
+    padding: 70px 0;
+    z-index: 1000;
+}
