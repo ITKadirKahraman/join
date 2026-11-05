@@ -84,6 +84,12 @@ body {
     line-height: 120%;
 }
 
+.privacy-section a,
+.privacy-intro a {
+    color: #29abe2;
+    text-decoration: none;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
