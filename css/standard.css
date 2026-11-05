@@ -20,3 +20,10 @@ body {
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Anton,Inter/Inter/static/Inter_18pt-SemiBold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}

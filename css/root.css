@@ -1,30 +1,64 @@
 :root {
-    /* Colors */
-    --color-background: #F6F7F8;
+  /* Colors */
+  --color-background: #f6f7f8;
 
-    /* Layout */
-    --header-width: 1241px;
-    --header-height: 122px;
+  /* Layout */
+  --header-width: 1241px;
+  --header-height: 122px;
 
-    /* Spacing */
-    --header-signup-gap: 35px;
+  /* Spacing */
+  --header-signup-gap: 35px;
 
-    /* Typography */
-    --font-family: "Inter", sans-serif;
-    --font-size-header: 20px;
-    --font-weight-regular: 400;
-    --line-height-header: 120%;
+  /* Typography */
+  --font-family: "Inter", sans-serif;
+  --font-size-header: 20px;
+  --font-weight-regular: 400;
+  --line-height-header: 120%;
 
-    /* Button */
-    --button-background: #2A3647;
-    --button-radius: 8px;
-    --button-padding-y: 15px;
-    --button-padding-x: 16px;
+  /* Button */
+  --button-background: #2a3647;
+  --button-radius: 8px;
+  --button-padding-y: 15px;
+  --button-padding-x: 16px;
 
-    /* Button Typography */
-    --button-font-size: 16px;
-    --button-font-weight: 700;
-    --button-line-height: 120%;
+  /* Button Typography */
+  --button-font-size: 16px;
+  --button-font-weight: 700;
+  --button-line-height: 120%;
 
-    --font-family: "Inter", sans-serif;
+  --font-family: "Inter", sans-serif;
+
+  /* Login Card */
+  --login-card-background: #ffffff;
+  --login-card-radius: 30px;
+  --login-card-padding-y: 48px;
+  --login-card-padding-x: 115px;
+  --login-card-gap: 32px;
+  --login-card-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.14);
+
+  /* Login Title */
+  --login-title-font-size: 61px;
+  --login-title-font-weight: 700;
+  --login-title-line-height: 120%;
+  --login-title-color: #000000;
+
+  /* Login Title Underline */
+  --login-underline-color: #29abe2;
+  --login-underline-height: 3px;
+
+  /* Login Input Fields */
+  --input-height: 48px;
+  --input-radius: 10px;
+  --input-border-width: 1px;
+  --input-padding-y: 12px;
+  --input-padding-x: 21px;
+  --input-gap: 10px;
+  --input-background: #ffffff;
+  --input-border-color: #686868;
+
+  /* Input Typography */
+  --input-font-size: 20px;
+  --input-font-weight: 400;
+  --input-line-height: 120%;
+  --input-text-color: #686868;
 }

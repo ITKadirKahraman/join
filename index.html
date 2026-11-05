@@ -1,129 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>JOIN - Log in</title>
 
     <!-- CSS -->
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/login.css" />
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link
-    rel="icon"
-    type="image/svg+xml"
-    href="./assets/icons/joinFavicon.svg"
-/>
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/icons/joinFavicon.svg"
+    />
 
     <!-- JavaScript -->
     <script src="./js/login.js" defer></script>
-</head>
-    
-<body>
+  </head>
 
-
-
+  <body>
     <!-- Header -->
     <header class="header">
+      <a href="#" class="logo" aria-label="JOIN - Home">
+        <img src="./assets/icons/join-logo.svg" alt="JOIN Logo" />
+      </a>
 
-        <a href="#" class="logo" aria-label="JOIN - Home">
-            <span class="logo-j" aria-hidden="true">J</span>
-            <span class="logo-text" aria-hidden="true">OIN</span>
-        </a>
-
-        <div class="header-signup">
-            <span>Not a JOIN user?</span>
-            <a href="./html/signup.html" class="btn-primary">
-                Sign up
-            </a>
-        </div>
-
+      <div class="header-signup">
+        <span>Not a JOIN user?</span>
+        <a href="./html/signup.html" class="btn-primary"> Sign up </a>
+      </div>
     </header>
-
 
     <!-- Main content -->
     <main class="main-content">
+      <section class="login-card" aria-labelledby="login-title">
+        <h1 id="login-title">Log in</h1>
 
-        <section class="login-card" aria-labelledby="login-title">
+        <div class="title-underline" aria-hidden="true"></div>
 
-            <h1 id="login-title">Log in</h1>
+        <form class="login-form" id="login-form">
+          <!-- Email -->
+          <div class="input-container">
+            <label for="email" class="visually-hidden"> Email address </label>
 
-            <div class="title-underline" aria-hidden="true"></div>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+            />
 
-            <form class="login-form" id="login-form">
+            <img class="input-icon" src="./assets/icons/mail.png" alt="" />
+          </div>
 
-                <!-- Email -->
-                <div class="input-container">
+          <!-- Password -->
+          <div class="input-container">
+            <label for="password" class="visually-hidden"> Password </label>
 
-                    <label for="email" class="visually-hidden">
-                        Email address
-                    </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            />
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        autocomplete="email"
-                        required
-                    >
+            <img class="input-icon" src="./assets/icons/mail1.png" alt="" />
+          </div>
 
-                    <span class="input-icon" aria-hidden="true">✉</span>
+          <!-- Buttons -->
+          <div class="login-buttons">
+            <button type="submit" class="btn-primary">Log in</button>
 
-                </div>
-
-
-                <!-- Password -->
-                <div class="input-container">
-
-                    <label for="password" class="visually-hidden">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Password"
-                        autocomplete="current-password"
-                        required
-                    >
-
-                    <span class="input-icon" aria-hidden="true">🔒</span>
-
-                </div>
-
-
-                <!-- Buttons -->
-                <div class="login-buttons">
-
-                    <button type="submit" class="btn-primary">
-                        Log in
-                    </button>
-
-                    <button type="button" class="btn-secondary">
-                        Guest Log in
-                    </button>
-
-                </div>
-
-            </form>
-
-        </section>
-
+            <button type="button" class="btn-secondary">Guest Log in</button>
+          </div>
+        </form>
+      </section>
     </main>
-
 
     <!-- Footer -->
     <footer class="footer">
-
-        <a href="./html/privacy.html">Privacy Policy</a>
-        <a href="./html/legal.html">Legal notice</a>
-
+      <a href="./html/privacy.html">Privacy Policy</a>
+      <a href="./html/legal.html">Legal notice</a>
     </footer>
-
-</body>
-
+  </body>
 </html>
