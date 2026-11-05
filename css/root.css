@@ -15,18 +15,34 @@
   --font-weight-regular: 400;
   --line-height-header: 120%;
 
-  /* Button */
-  --button-background: #2a3647;
-  --button-radius: 8px;
-  --button-padding-y: 15px;
-  --button-padding-x: 16px;
+  /* Login Button */
+  --login-button-background: #2a3647;
+  --login-button-radius: 8px;
+  --login-button-padding-y: 15px;
+  --login-button-padding-x: 24px;
+  --login-button-height: 48px;
+  --login-button-color: #ffffff;
 
   /* Button Typography */
   --button-font-size: 16px;
   --button-font-weight: 700;
   --button-line-height: 120%;
-
   --font-family: "Inter", sans-serif;
+
+  /* Guest Login Button */
+  --guest-button-width: 177px;
+  --guest-button-height: 48px;
+  --guest-button-radius: 8px;
+  --guest-button-border-width: 1px;
+  --guest-button-padding-y: 15px;
+  --guest-button-padding-x: 24px;
+
+  /* Guest Login Button Typography */
+  --guest-button-font-family: "Inter", sans-serif;
+  --guest-button-font-size: 21px;
+  --guest-button-font-weight: 700;
+  --guest-button-line-height: 120%;
+  --guest-button-color: #2a3647;
 
   /* Login Card */
   --login-card-background: #ffffff;

@@ -20,13 +20,13 @@
 }
 
 logo {
-    display: block;
+  display: block;
 }
 
 .logo img {
-    width: 100px;
-    height: auto;
-    display: block;
+  width: 100px;
+  height: auto;
+  display: block;
 }
 
 .header-signup {
@@ -124,8 +124,8 @@ logo {
 }
 
 .input-container input::placeholder {
-    color: var(--input-text-color);
-    opacity: 1;
+  color: var(--input-text-color);
+  opacity: 1;
 }
 
 .input-container input:focus {
@@ -134,16 +134,16 @@ logo {
 }
 
 .input-icon {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* =========================
@@ -187,8 +187,15 @@ input:focus-visible {
 ========================= */
 
 .btn-primary {
-  background-color: var(--button-background);
+
+  box-sizing: border-box;
+  width: 110px;
+  height: 48px;
+  white-space: nowrap;
+  background-color: #2a3647;
+
   border-radius: var(--button-radius);
+   border-radius: var(--login-button-radius);
   padding: var(--button-padding-y) var(--button-padding-x);
 
   font-family: var(--font-family);
@@ -196,13 +203,31 @@ input:focus-visible {
   font-weight: var(--button-font-weight);
   line-height: var(--button-line-height);
 
-  color: white;
+  color: #ffffff;
   border: none;
   cursor: pointer;
 
   text-decoration: none;
 }
 
+.btn-secondary {
+  width: var(--guest-button-width);
+  height: var(--guest-button-height);
+
+  padding: var(--guest-button-padding-y) var(--guest-button-padding-x);
+
+  background-color: #ffffff;
+  border-radius: var(--login-button-radius);
+  padding: var(--login-button-padding-y) var(--login-button-padding-x);
+
+  font-family: var(--login-button-font-family);
+  font-size: var(--login-button-font-size);
+  font-weight: var(--login-button-font-weight);
+  line-height: var(--login-button-line-height);
+
+  color: var(--guest-button-color);
+  cursor: pointer;
+}
 /* =========================
    FOOTER
 ========================= */
