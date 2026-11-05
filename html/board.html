@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Board</title>
+    <!-- LINK -->
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/menuBoard.css">
+    <link rel="stylesheet" href="../css/topHeader.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="../html/addTask.html">
+    <link rel="stylesheet" href="../html/board.html">
+    <link rel="stylesheet" href="../html/contacts.html">
+    <link rel="stylesheet" href="../html/legal.html">
+    <link rel="stylesheet" href="../html/privacy.html">
+    <link rel="stylesheet" href="../html/summary.html">
+    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
 </head>
 <body>
-    
+    <!-- MENU BOARD -->
+        <header id="topHeader" class="topHeader">
+            <div id="topHeader-content" class="header">
+                <p class="title" id="title">Kanban Project Management Tool</p>
+                <div class="circle">
+                    <button id="helpButton" class="helpButton">
+                        <a href="help.html">
+                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
+                        </a>
+                    </button>
+                    <button id="profileButton" class="profileButton">
+                        <div id="nameKuerzel" class="nameKuerzel">G</div>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <section class="menuBoard" id="menuBoard">
+            <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
+            <nav class="menuContainer" id="menuContainer">
+                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></a>
+                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
+                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
+                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
+            </nav>
+            <div class="menuContainer" id="policyContainer">
+                <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
+                <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
