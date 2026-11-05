@@ -3,6 +3,14 @@ body {
         font-family: "Inter", sans-serif;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    min-height: 100vh;
+}
+
+
 /* =========================
    FONT FACE
 ========================= */
