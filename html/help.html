@@ -5,47 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help</title>
     <!-- LINK -->
-    <link rel="stylesheet" href="css/root.css">
-    <link rel="stylesheet" href="css/standard.css">
-    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../css/help.css">
+    <link rel="stylesheet" href="../css/menuBoard.css">
+    <link rel="stylesheet" href="../css/topHeader.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.html">
-    <link rel="stylesheet" href="html/addTask.html">
-    <link rel="stylesheet" href="html/board.html">
-    <link rel="stylesheet" href="html/contacts.html">
-    <link rel="stylesheet" href="html/legal.html">
-    <link rel="stylesheet" href="html/privacy.html">
-    <link rel="stylesheet" href="html/summary.html">
+    <link rel="stylesheet" href="../html/addTask.html">
+    <link rel="stylesheet" href="../html/board.html">
+    <link rel="stylesheet" href="../html/contacts.html">
+    <link rel="stylesheet" href="../html/legal.html">
+    <link rel="stylesheet" href="../html/privacy.html">
+    <link rel="stylesheet" href="../html/summary.html">
+    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
 </head>
 <body>
-    <main>
+    <main class="main">
         <!-- MENU BOARD -->
+        <header id="topHeader" class="topHeader">
+            <div id="topHeader-content" class="header">
+                <p class="title" id="title">Kanban Project Management Tool</p>
+                <div class="circle">
+                    <button id="helpButton" class="helpButton">
+                        <a href="help.html">
+                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
+                        </a>
+                    </button>
+                    <button id="profileButton" class="profileButton">
+                        <div id="nameKuerzel" class="nameKuerzel">G</div>
+                    </button>
+                </div>
+            </div>
+        </header>
         <section class="menuBoard" id="menuBoard">
-            <img src="./assets/icons/joinDesktop.svg" alt="Join Logo">
+            <img src="../assets/icons/joinDesktop.svg" alt="Join Logo">
             <div class="menuContainer" id="menuContainer">
-                <button class="menuItems" id="menuItems"><img src="./assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></button>
-                <button class="menuItems" id="menuItems"><img src="./assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></button>
-                <button class="menuItems" id="menuItems"><img src="./assets/icons/board.svg" alt="Board Icon"><p>Board</p></button>
-                <button class="menuItems" id="menuItems"><img src="./assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></button>
+                <button class="menuItems" id="menuItems"><img src="../assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></button>
+                <button class="menuItems" id="menuItems"><img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></button>
+                <button class="menuItems" id="menuItems"><img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></button>
+                <button class="menuItems" id="menuItems"><img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></button>
             </div>
             <div class="policyContainer" id="policyContainer">
-                <button class="policyItems" id="policyItems"><img src="./assets/icons/privacy.svg" alt="Privacy Icon"><p>Privacy Policy</p></button>
-                <button class="policyItems" id="policyItems"><img src="./assets/icons/legal.svg" alt="Legal Icon"><p>Legal notice</p></button>
+                <button class="policyItems" id="policyItems"><img src="../assets/icons/privacy.svg" alt="Privacy Icon"><p>Privacy Policy</p></button>
+                <button class="policyItems" id="policyItems"><img src="../assets/icons/legal.svg" alt="Legal Icon"><p>Legal notice</p></button>
             </div>
         </section>
         <!-- HELP & LEGAL TEXT -->
         <section class="help_legal_police_text" id="help_legal_police_text">
-            <div class="header">
-                <span class="title">Kanban Project Management Tool</span>
-                <div class="circle">
-                    <button>
-                        <img src="./assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
-                    </button>
-                    <button>
-                        <p id="nameKuerzel"></p>
-                    </button>
-                </div>
-            </div>
             <article class="helpText">
                 <header>
                     <h2>Help</h2>
@@ -54,7 +61,6 @@
                         Welcome to the help page for Join, your guide to using our kanban project management tool. Here, we'll provide an
                         overview of what Join is, how it can benefit you, and how to use it.
                     </p>
-                </section>
             </article>
             <article>
                 <h4>What is Join?</h4>
