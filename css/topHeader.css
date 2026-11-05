@@ -1,0 +1,72 @@
+/* Header Section */
+
+.topHeader {
+    position: fixed;
+    top: 0;
+    left: 232px;
+    right: 0;
+    height: 100px;
+    background: #f4f4f4;
+    box-shadow: 0px 1px 5px rgb(138, 138, 138);
+    display: flex;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1560px;
+    width: 100%;
+    padding: 0 60px;
+}
+
+/* Circle Section */
+
+.circle {
+    display: flex;
+    gap: 16px;
+}
+
+.helpButton {
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    border: unset;
+    background-color: unset;
+    padding: 0;
+}
+
+.questionCircle {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+.profileButton {
+    display: flex;
+    border: unset;
+    background-color: unset;
+    padding: 0;
+}
+
+.nameKuerzel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    aspect-ratio: 1/1;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    border: 2px solid var(--color-menuBoard-background);
+    background-color: var(--color-profile-button-background);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nameKuerzel:hover {
+    background-color: var(--color-profile-hover-background);
+    border: 2px solid var(--color-profile-button-background);
+}
