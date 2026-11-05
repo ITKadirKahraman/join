@@ -1,15 +1,53 @@
 .menuBoard {
     position: fixed;
     display: flex;
-    justify-content: flex-start;
-    align-items: space-between;
+    gap: 150px;
+    align-items: center;
     flex-direction: column;
     background-color: var(--color-menuBoard-background);
     color: var(--color-text);
     min-height: var(--menuBoard-min-height);
-    max-width: var(--menuBoard-width);
+    width: var(--menuBoard-width);
     left: 0;
     top: 0;
     padding: 70px 0;
     z-index: 1000;
+}
+
+.logo {
+    height: 120px;
+    width: 100px;
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.menuItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    color: var(--color-text);
+    font-weight: solid;
+    text-decoration: none;
+}
+
+.menuItems:hover {
+    background-color: var(--color-menuBoard-hover-background);
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
 }

@@ -5,6 +5,7 @@
 
   /* Menu Board */
   --color-menuBoard-background: #2F3E4E;
+  --color-menuBoard-hover-background: #081931;
   --menuBoard-min-height: 1024px;
   --menuBoard-width: 232px;
   --color-profile-button-background: #29ABE2;
