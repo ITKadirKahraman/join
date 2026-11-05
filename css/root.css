@@ -1,7 +1,14 @@
 :root {
   /* Colors */
   --color-background: #f6f7f8;
-  --color-menuBoard-background: #2a3647;
+  --color-text: #ffffff;
+
+  /* Menu Board */
+  --color-menuBoard-background: #2F3E4E;
+  --menuBoard-min-height: 1024px;
+  --menuBoard-width: 232px;
+  --color-profile-button-background: #29ABE2;
+  --color-profile-hover-background: #000000;
 
   /* Layout */
   --header-width: 1241px;
