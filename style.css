@@ -19,3 +19,23 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.start-page{
+    margin:0;
+    background-color: #2A3647;
+    min-height: 100vh
+
+}
+
+.start-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.start-content img {
+  width: 100px;
+  height: 122px;
+  object-fit: contain;
+}
