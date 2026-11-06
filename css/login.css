@@ -19,8 +19,11 @@
   align-items: center;
 }
 
-logo {
-  display: block;
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
 .logo img {
