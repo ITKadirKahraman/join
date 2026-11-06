@@ -10,7 +10,7 @@
    HEADER
 ========================= */
 
-.header {
+.header-login {
   width: 100%;
   padding: 40px;
 
@@ -255,7 +255,7 @@ input:focus-visible {
 ========================= */
 
 @media (max-width: 600px) {
-  .header {
+  .header-login {
     padding: 25px 20px;
   }
 
