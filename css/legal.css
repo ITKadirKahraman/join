@@ -1,0 +1,16 @@
+.legal_notice_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100px;
+    left: 240px;
+    right: auto;
+    width: auto;
+    max-width: 1440px;
+    gap: 50px;
+    padding: 100px 100px;
+    height: auto;
+    background-color: var(--color-background);
+}
