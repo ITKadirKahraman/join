@@ -54,6 +54,7 @@
   --guest-button-color: #2a3647;
 
   /* Login Card */
+  --login-card-width: 652px;
   --login-card-background: #ffffff;
   --login-card-radius: 30px;
   --login-card-padding-y: 48px;
