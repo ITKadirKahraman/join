@@ -1,4 +1,3 @@
-
 /* =========================
    RESPONSIVE LOGIN SITE
 ========================= */
@@ -7,22 +6,67 @@
   .header-login .header-signup {
     display: none;
   }
+  .input-container {
+    width: 100%;
+  }
 
-  .header-login{
+  .input-container input {
+    width: 100%;
+  }
+
+  .button {
+    width: 98px;
+    min-height: 36px;
+  }
+
+  .login-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+  }
+
+  .login-buttons .btn-secondary {
+    width: 98px;
+    min-height: 36px;
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 0 4px;
+  }
+
+  .btn-primary-login {
+    width: 98px;
+  }
+
+  .login-card {
+    box-sizing: border-box;
+    margin-right: 0px;
+  }
+
+  .login-form {
+    width: 100%;
+    align-self: stretch;
+    border-radius: 30px;
+  }
+
+  .header-login {
     margin-bottom: 120px;
   }
 
- .main-content {
+  .main-content {
+    flex: 1;
+    min-width: 0;
     width: 100%;
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-     padding: 60px 16px 30px;
+    padding: 60px 16px 30px;
     margin: 0;
     transform: none;
     box-sizing: border-box;
   }
+
   .header-login .logo img {
     width: 64px;
     height: auto;
@@ -36,31 +80,31 @@
     width: 100%;
     height: 49px;
     margin: 20px auto;
-    background-color: red;
+
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
   }
 
-  .login-card {
-  width: 100%;
-  max-width: 396px;
-  min-height: 475px;
-  box-sizing: border-box;
+  .btn-primary-sign-up-down {
+    width: 104px;
+    height: 49px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
 
-  margin-left: auto;
-  margin-right: auto;
-  padding: 32px 16px;
-  gap: 32px;
-
-  border-radius: 30px;
+  .login-card h1 {
+    white-space: nowrap;
+    font-size: 47px;
+  }
 }
-
-.login-card h1 {
-  white-space: nowrap;
-  font-size: 47px;
-}
-}
-
-
 
 @media (max-width: 360px) {
-  
 }
