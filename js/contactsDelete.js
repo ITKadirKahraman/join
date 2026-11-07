@@ -1,4 +1,3 @@
-/**
  * Shows the question
  * @param {number} contactId
  */
