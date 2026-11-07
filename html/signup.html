@@ -1,11 +1,110 @@
-<head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOIN - Sign up</title>
 
-    <title>JOIN-Sign Up</title>
-
-    <link rel="shortcut icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/signup.css" />
   </head>
+
+  <body class="signup-page">
+    <header class="signup-header">
+  <a href="../index.html" class="logo" aria-label="JOIN - Home">
+    <img src="../assets/icons/join-logo.svg" alt="JOIN Logo" />
+  </a>
+</header>
+
+    <main class="signup-main">
+      <section class="signup-card">
+        <a href="./login.html" class="back-link" aria-label="Back to login">
+          ←
+        </a>
+
+        <h1>Sign up</h1>
+       <img
+  class="title-underline"
+  src="../assets/icons/underline-signup.svg"
+  alt=""
+/>
+
+       
+<form id="signup-form" class="signup-form">
+  <div class="signup-input">
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Name"
+      autocomplete="name"
+      required
+    />
+    <img class="input-icon" src="../assets/icons/person.svg" alt="" />
+  </div>
+
+  <div class="signup-input">
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Email"
+      autocomplete="email"
+      required
+    />
+    <img class="input-icon" src="../assets/icons/mail-signup.svg" alt="" />
+  </div>
+
+  <div class="signup-input">
+    <input
+      type="password"
+      id="password"
+      name="password"
+      placeholder="Password"
+      autocomplete="new-password"
+      required
+    />
+    <img class="input-icon" src="../assets/icons/lock-signup.svg" alt="" />
+  </div>
+
+  <div class="signup-input">
+    <input
+      type="password"
+      id="confirm-password"
+      name="confirm-password"
+      placeholder="Confirm Password"
+      autocomplete="new-password"
+      required
+    />
+    <img class="input-icon" src="../assets/icons/lock-signup.svg" alt="" />
+  </div>
+
+  <label class="privacy-checkbox">
+    <input type="checkbox" id="privacy" required />
+    <span>
+      I accept the
+      <a href="./privacy.html">Privacy policy</a>
+    </span>
+  </label>
+
+  <button type="submit" id="signup-button" disabled>
+    Sign up
+  </button>
+</form>
+
+
+      </section>
+    </main>
+
+
+    <footer class="footer">
+  <a href="./privacy.html">Privacy Policy</a>
+  <a href="./legal.html">Legal notice</a>
+</footer>
+
+<script src="../js/signup.js"></script>
+
+    <script src="../js/signup.js"></script>
+  </body>
+</html>
