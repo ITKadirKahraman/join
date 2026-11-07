@@ -7,8 +7,8 @@
     <title>JOIN - Log in</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/login.css" />
+<link rel="stylesheet" href="../style.css" />
 
     <link
       rel="shortcut icon"
@@ -17,73 +17,77 @@
     />
   </head>
 
-  <body>
-    <!-- Header -->
-    <header class="header-login">
-      <a href="../index.html" class="logo" aria-label="JOIN - Home">
-        <img src="../assets/icons/join-logo.svg" alt="JOIN Logo" />
-      </a>
+ 
+<body>
+  <!-- Header -->
+  <header class="header-login">
+  <a href="../index.html" class="logo" aria-label="JOIN - Home">
+    <img src="../assets/icons/join-logo.svg" alt="JOIN Logo" />
+  </a>
 
-      <div class="header-signup">
-        <span>Not a JOIN user?</span>
-        <a href="./html/signup.html" class="btn-primary"> Sign up </a>
-      </div>
-    </header>
+  <!-- Sign up -->
+<div class="header-signup">
+  <span>Not a JOIN user?</span>
+  <a href="./signup.html" class="btn-primary">Sign up</a>
+</div>
+</header>
 
-    <!-- Main content -->
-    <main class="main-content">
-      <section class="login-card" aria-labelledby="login-title">
-        <h1 id="login-title">Log in</h1>
+  <!-- Main content -->
+  <main class="main-content">
+    <section class="login-card" aria-labelledby="login-title">
+      <h1 id="login-title">Log in</h1>
 
-        <div class="title-underline" aria-hidden="true"></div>
+      <div class="title-underline" aria-hidden="true"></div>
 
-        <form class="login-form" id="login-form">
-          <!-- Email -->
-          <div class="input-container">
-            <label for="email" class="visually-hidden"> Email address </label>
+      <form class="login-form" id="login-form">
+        <!-- Email -->
+        <div class="input-container">
+          <label for="email" class="visually-hidden">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            autocomplete="off"
+            required
+          />
+          <img class="input-icon" src="../assets/icons/mail.png" alt="" />
+        </div>
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              autocomplete="off"
-              required
-            />
+        <!-- Password -->
+        <div class="input-container">
+          <label for="password" class="visually-hidden">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            autocomplete="off"
+            required
+          />
+          <img class="input-icon" src="../assets/icons/mail1.png" alt="" />
+        </div>
 
-            <img class="input-icon" src="./assets/icons/mail.png" alt="" />
-          </div>
+        <!-- Buttons -->
+        <div class="login-buttons">
+          <button type="submit" class="btn-primary  btn-primary-login">Log in</button>
+          <button type="button" class="btn-secondary ">Guest Log in</button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-          <!-- Password -->
-          <div class="input-container">
-            <label for="password" class="visually-hidden"> Password </label>
+<!-- Mobile Sign up -->
+<div class="mobile-signup">
+  <span>Not a JOIN user?</span>
+  <a href="./signup.html" class="btn-primary btn-primary-sign-up-down">Sign up</a>
+</div>
 
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              autocomplete="off"
-              required
-            />
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="./privacy.html">Privacy Policy</a>
+    <a href="./legal.html">Legal notice</a>
+  </footer>
+</body>
 
-            <img class="input-icon" src="./assets/icons/mail1.png" alt="" />
-          </div>
-
-          <!-- Buttons -->
-          <div class="login-buttons">
-            <button type="submit" class="btn-primary">Log in</button>
-
-            <button type="button" class="btn-secondary">Guest Log in</button>
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <a href="./html/privacy.html">Privacy Policy</a>
-      <a href="./html/legal.html">Legal notice</a>
-    </footer>
-  </body>
 </html>
