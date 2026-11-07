@@ -1,49 +1,4 @@
-
-/* PRIVACY POLICY */
-
-.privacy-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 1016px;
-    max-width: calc(100% - 328px - 80px);
-    margin-left: 328px;
-    margin-top: 116px;
-    margin-right: 0;
-    padding: 0px;
-    box-sizing: border-box;
-    gap: 20px;
-}
-
-.privacy-section {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.privacy-section h2 {
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 8px;
-   
-}
-
-.privacy-section p {
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.privacy-section a,
-.privacy-intro a {
-    color: #29abe2;
-    text-decoration: none;
-}
-
+/* PRIVACY POLICY - GLOBAL HELPERS */
 html,
 body {
     max-width: 100%;
@@ -56,17 +11,7 @@ main.main {
     box-sizing: border-box;
 }
 
-.privacy-container h1,
-.privacy-container h2,
-.privacy-container p,
-.privacy-container ul {
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-}
-
-/* PRIVACY POLICY - FINAL LAYOUT FIX */
-
+/* PRIVACY CONTAINER */
 main.main .privacy-container {
     display: flex;
     flex-direction: column;
@@ -80,34 +25,49 @@ main.main .privacy-container {
     padding-bottom: 140px;
     box-sizing: border-box;
     gap: 5px;
-   
+    position: relative;
+    left: 100px;
 }
 
-/* Main Privacy Policy title */
-main.main .privacy-container > h1 {
+/* TYPOGRAPHY & SECTIONS */
+main.main .privacy-container h1 {
     font-family: "Inter", sans-serif;
     font-size: 61px;
     font-weight: 700;
     line-height: 120%;
     color: #000000;
+    margin-bottom: 16px;
 }
 
-/* PRIVACY POLICY TYPOGRAPHY */
+.privacy-section {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
 
-main.main .privacy-container h2 {
+.privacy-section h2 {
     font-family: "Inter", sans-serif;
+    font-size: 27px;
     font-weight: 700;
-    
+    line-height: 1.2;
+    margin-bottom: 8px;
 }
 
-main.main .privacy-container p,
-main.main .privacy-container li {
+.privacy-section p,
+.privacy-section li {
     font-family: "Inter", sans-serif;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 1.2;
 }
 
-/* Align bullet list text with paragraph text */
+.privacy-section a,
+.privacy-intro a {
+    color: #29abe2;
+    text-decoration: none;
+}
 
+/* LISTS & OVERFLOW */
 .privacy-section ul {
     padding-left: 20px;
     margin-left: 0;
@@ -118,10 +78,52 @@ main.main .privacy-container li {
     padding-left: 0;
 }
 
-main.main .privacy-container {
-    position: relative;
-    left: 80px;
+.privacy-container h1,
+.privacy-container h2,
+.privacy-container p,
+.privacy-container ul {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 /* RESPONSIVE DESIGN */
-
+/* Medium screens & small laptops */
+@media (max-width: 1440px) {
+    main.main .privacy-container {
+        padding-left: 140px; /* 232px sidebar width + 48px left spacing */
+        padding-right: 150px;
+    }
+}
+/* Tablets */
+@media (max-width: 900px) {
+    main.main .privacy-container {
+        padding-left: 140px; /* 232px sidebar width + 32px left spacing */
+        padding-right: 130px;
+    }
+    main.main .privacy-container h1 {
+        font-size: 47px;
+    }
+    .privacy-section h2 {
+        font-size: 21px;
+    }
+}
+/* Mobile devices */
+@media (max-width: 600px) {
+    main.main .privacy-container {
+        padding-left: 252px; /* Keeps spacing next to fixed sidebar */
+        padding-right: 16px;
+        padding-top: 110px;
+        padding-bottom: 100px;
+    }
+    main.main .privacy-container h1 {
+        font-size: 36px;
+    }
+    .privacy-section h2 {
+        font-size: 19px;
+    }
+    .privacy-section p,
+    .privacy-section li {
+        font-size: 15px;
+    }
+}
