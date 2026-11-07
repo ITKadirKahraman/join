@@ -10,7 +10,11 @@
    HEADER
 ========================= */
 
+
+
+
 .header-login {
+  position: relative;
   width: 100%;
   padding: 40px;
 
@@ -31,16 +35,14 @@
   height: auto;
   display: block;
 }
-
 .header-signup {
   display: flex;
   align-items: center;
   gap: var(--header-signup-gap);
+}
 
-  font-family: var(--font-family);
-  font-size: var(--font-size-header);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-header);
+.mobile-signup {
+  display: none;
 }
 
 /* =========================
@@ -263,31 +265,3 @@ input:focus-visible {
   color: var(--secondary-color);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 600px) {
-  .header-login {
-    padding: 25px 20px;
-  }
-
-  .logo-j {
-    font-size: 60px;
-  }
-
-  .header-signup {
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .login-card {
-    width: 100%;
-    max-width: 350px;
-    padding: 28px 25px;
-  }
-
-  .login-buttons {
-    gap: 10px;
-  }
-}
