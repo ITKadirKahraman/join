@@ -1,6 +1,6 @@
 const ContactsTemplate = {
-    
-     * Makes text safe for HTML (names come from an input field)
+    /**
+     * Makes text safe for HTML.
      * @param {string} text
      * @returns {string}
      */
@@ -9,19 +9,28 @@ const ContactsTemplate = {
         return text.replace(/[&<>"']/g, (character) => replacements[character]);
     },
 
-    
-     * First letter of the first and of the last word ("Anton Mayer" gives "AM")
+    /**
+     * First letters of first and last word ("AM").
      * @param {string} name
      * @returns {string}
      */
     getInitials(name) {
         const words = name.trim().split(/\s+/);
-        const firstLetter = words[0].charAt(0);
         const lastLetter = words.length > 1 ? words[words.length - 1].charAt(0) : "";
-        return (firstLetter + lastLetter).toUpperCase();
+        return (words[0].charAt(0) + lastLetter).toUpperCase();
     },
-    
-     * One list entry with avatar, name and email
+
+    /**
+     * Initials, safe for HTML.
+     * @param {string} name
+     * @returns {string}
+     */
+    safeInitials(name) {
+        return ContactsTemplate.escapeHtml(ContactsTemplate.getInitials(name));
+    },
+
+    /**
+     * One list entry.
      * @param {Contact} contact
      * @returns {string}
      */
@@ -30,7 +39,7 @@ const ContactsTemplate = {
         return `
             <li>
                 <button type="button" class="contact" data-action="select-contact" data-id="${contact.id}">
-                    <span class="contact__avatar contact__avatar--${contact.color}" aria-hidden="true">${t.escapeHtml(t.getInitials(contact.name))}</span>
+                    <span class="contact__avatar contact__avatar--${contact.color}" aria-hidden="true">${t.safeInitials(contact.name)}</span>
                     <span class="contact__text">
                         <span class="contact__name">${t.escapeHtml(contact.name)}</span>
                         <span class="contact__email">${t.escapeHtml(contact.email)}</span>
@@ -39,8 +48,8 @@ const ContactsTemplate = {
             </li>`;
     },
 
-    
-     * One letter heading with its contacts
+    /**
+     * Letter heading with its contacts.
      * @param {string} letter
      * @param {string} contactsHtml
      * @returns {string}
@@ -55,8 +64,8 @@ const ContactsTemplate = {
             </section>`;
     },
 
-    
-     * A short message instead of the list ("Loading contacts...")
+    /**
+     * Short message instead of the list.
      * @param {string} text
      * @returns {string}
      */
@@ -64,8 +73,8 @@ const ContactsTemplate = {
         return `<p class="contacts__status" role="status">${ContactsTemplate.escapeHtml(text)}</p>`;
     },
 
-    
-     * Message and "Try again" button when loading failed
+    /**
+     * Error message with retry button.
      * @returns {string}
      */
     loadError() {
@@ -73,8 +82,9 @@ const ContactsTemplate = {
             <p class="contacts__status" role="alert">Contacts could not be loaded.</p>
             <button type="button" class="contacts__status-button" data-action="retry-load">Try again</button>`;
     },
-    
-     * Edit and Delete next to the name
+
+    /**
+     * Edit and Delete buttons.
      * @param {number} contactId
      * @returns {string}
      */
@@ -90,8 +100,8 @@ const ContactsTemplate = {
             </div>`;
     },
 
-    
-     * Top part: big avatar, name, Edit and Delete
+    /**
+     * Avatar, name and actions.
      * @param {Contact} contact
      * @returns {string}
      */
@@ -99,7 +109,7 @@ const ContactsTemplate = {
         const t = ContactsTemplate;
         return `
             <div class="detail__top">
-                <span class="detail__avatar contact__avatar--${contact.color}" aria-hidden="true">${t.escapeHtml(t.getInitials(contact.name))}</span>
+                <span class="detail__avatar contact__avatar--${contact.color}" aria-hidden="true">${t.safeInitials(contact.name)}</span>
                 <div class="detail__headline">
                     <h2 class="detail__name">${t.escapeHtml(contact.name)}</h2>
                     ${t.detailActions(contact.id)}
@@ -107,8 +117,8 @@ const ContactsTemplate = {
             </div>`;
     },
 
-    
-     * Lower part: email and phone
+    /**
+     * Email and phone.
      * @param {Contact} contact
      * @returns {string}
      */
@@ -124,8 +134,8 @@ const ContactsTemplate = {
             </dl>`;
     },
 
-    
-     * Whole detail view
+    /**
+     * Whole detail view.
      * @param {Contact} contact
      * @returns {string}
      */
@@ -133,8 +143,9 @@ const ContactsTemplate = {
         const t = ContactsTemplate;
         return `<article class="detail">${t.detailTop(contact)}${t.detailInfo(contact)}</article>`;
     },
-    
-     * Buttons for a new contact
+
+    /**
+     * Buttons for a new contact.
      * @returns {string}
      */
     addButtons() {
@@ -147,8 +158,8 @@ const ContactsTemplate = {
             </button>`;
     },
 
-    
-     * Buttons for an existing contact
+    /**
+     * Buttons for an existing contact.
      * @param {number} contactId
      * @returns {string}
      */
@@ -162,8 +173,8 @@ const ContactsTemplate = {
             </button>`;
     },
 
-    
-     * Everything the overlay needs for a new contact
+    /**
+     * Overlay data for a new contact.
      * @returns {Object}
      */
     addConfig() {
@@ -177,25 +188,25 @@ const ContactsTemplate = {
         };
     },
 
-    
-     * Everything the overlay needs for an existing contact
+    /**
+     * Overlay data for an existing contact.
      * @param {Contact} contact
      * @returns {Object}
      */
     editConfig(contact) {
         const t = ContactsTemplate;
-        const initials = t.escapeHtml(t.getInitials(contact.name));
         return {
             title: "Edit contact",
             sloganHtml: "",
-            avatarHtml: `<span class="overlay__avatar overlay__avatar--initials contact__avatar--${contact.color}" aria-hidden="true">${initials}</span>`,
+            avatarHtml: `<span class="overlay__avatar overlay__avatar--initials contact__avatar--${contact.color}" aria-hidden="true">${t.safeInitials(contact.name)}</span>`,
             buttonsHtml: t.editButtons(contact.id),
             contactId: contact.id,
             values: { name: contact.name, email: contact.email, phone: contact.phone },
         };
     },
-    
-     * One input row with icon and error line
+
+    /**
+     * One input row.
      * @param {{id: string, type: string, placeholder: string, icon: string}} field
      * @param {string} value
      * @returns {string}
@@ -213,7 +224,8 @@ const ContactsTemplate = {
             </div>`;
     },
 
-     * The three input rows
+    /**
+     * The three input rows.
      * @param {{name: string, email: string, phone: string}} values
      * @returns {string}
      */
@@ -226,7 +238,8 @@ const ContactsTemplate = {
         ].join("");
     },
 
-     * Dark side (top on phones) with logo, title and slogan
+    /**
+     * Dark side with logo and title.
      * @param {Object} config
      * @returns {string}
      */
@@ -240,7 +253,8 @@ const ContactsTemplate = {
             </div>`;
     },
 
-     * Form with fields and buttons
+    /**
+     * Form with fields and buttons.
      * @param {Object} config
      * @returns {string}
      */
@@ -252,8 +266,8 @@ const ContactsTemplate = {
             </form>`;
     },
 
-    
-     * White side of the card: close button, avatar and form
+    /**
+     * White side with avatar and form.
      * @param {Object} config
      * @returns {string}
      */
@@ -268,8 +282,8 @@ const ContactsTemplate = {
             </div>`;
     },
 
-    
-     * Complete overlay: backdrop and card
+    /**
+     * Complete overlay.
      * @param {Object} config
      * @returns {string}
      */
@@ -283,21 +297,31 @@ const ContactsTemplate = {
                 </section>
             </div>`;
     },
-    
-     * The small question window "Delete <name>?"
+
+    /**
+     * Cancel and Delete buttons of the question window.
+     * @param {number} contactId
+     * @returns {string}
+     */
+    confirmButtons(contactId) {
+        return `
+            <button type="button" class="overlay__button overlay__button--secondary" data-action="close-confirm">Cancel</button>
+            <button type="button" class="overlay__button overlay__button--danger" data-action="confirm-delete" data-id="${contactId}">Delete</button>`;
+    },
+
+    /**
+     * Delete question window.
      * @param {Contact} contact
      * @returns {string}
      */
     confirm(contact) {
+        const t = ContactsTemplate;
         return `
             <div class="overlay" id="confirmOverlay" data-action="close-backdrop">
                 <section class="confirm" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle">
-                    <h2 class="confirm__title" id="confirmTitle">Delete ${ContactsTemplate.escapeHtml(contact.name)}?</h2>
+                    <h2 class="confirm__title" id="confirmTitle">Delete ${t.escapeHtml(contact.name)}?</h2>
                     <p class="confirm__text">This cannot be undone.</p>
-                    <div class="overlay__buttons">
-                        <button type="button" class="overlay__button overlay__button--secondary" data-action="close-confirm">Cancel</button>
-                        <button type="button" class="overlay__button overlay__button--danger" data-action="confirm-delete" data-id="${contact.id}">Delete</button>
-                    </div>
+                    <div class="overlay__buttons">${t.confirmButtons(contact.id)}</div>
                 </section>
             </div>`;
     },
