@@ -1,0 +1,329 @@
+.no-scroll {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--color-overlay-backdrop);
+}
+
+.overlay__card {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: var(--color-contacts-surface);
+    color: var(--color-contacts-text);
+}
+
+.overlay__head {
+    display: flex;
+    flex: 0 0 36%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 48px 40px;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-text);
+}
+
+.overlay__logo {
+    width: 56px;
+    margin-bottom: 12px;
+}
+
+.overlay__title {
+    font-size: var(--login-title-font-size);
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
+}
+
+.overlay__slogan {
+    font-size: 27px;
+}
+
+.overlay__underline {
+    width: 90px;
+    height: var(--login-underline-height);
+    background-color: var(--login-underline-color);
+}
+
+.overlay__body {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: 48px;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 72px 48px 48px;
+}
+
+.overlay__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    border: unset;
+    border-radius: 8px;
+    background-color: unset;
+    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .overlay__close:hover {
+        background-color: var(--color-contacts-hover);
+    }
+}
+
+.overlay__avatar {
+    display: flex;
+    flex: 0 0 120px;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.overlay__avatar--empty {
+    background-color: var(--color-contacts-placeholder-avatar);
+}
+
+.overlay__avatar--initials {
+    color: var(--color-text);
+    font-size: 47px;
+    font-weight: var(--button-font-weight);
+}
+
+.overlay__avatar img {
+    width: 56px;
+    height: 56px;
+}
+
+.overlay__form {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.overlay__input-wrap {
+    position: relative;
+}
+
+.overlay__input {
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 48px 0 var(--input-padding-x);
+    border: var(--input-border-width) solid var(--input-border-color);
+    border-radius: var(--input-radius);
+    background-color: var(--input-background);
+    color: var(--color-contacts-text);
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+.overlay__input:focus-visible {
+    outline: 2px solid var(--login-underline-color);
+    outline-offset: 0;
+}
+
+.overlay__input[aria-invalid="true"] {
+    border-color: var(--color-contacts-error);
+}
+
+.overlay__input-icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.overlay__error {
+    min-height: 24px;
+    padding: 2px 4px;
+    color: var(--color-contacts-error);
+    font-size: 16px;
+}
+
+.overlay__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.overlay__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: var(--touch-target);
+    padding: 0 24px;
+    border: 1px solid var(--login-button-background);
+    border-radius: var(--login-button-radius);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: var(--button-font-weight);
+    cursor: pointer;
+}
+
+.overlay__button img {
+    width: 20px;
+    height: 20px;
+}
+
+.overlay__button--secondary {
+    background-color: var(--color-contacts-surface);
+    color: var(--color-contacts-text);
+}
+
+.overlay__button--primary {
+    background-color: var(--login-button-background);
+    color: var(--color-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .overlay__button--secondary:hover {
+        border-color: var(--login-underline-color);
+        color: var(--login-underline-color);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .overlay__button--primary:hover {
+        background-color: var(--login-underline-color);
+        border-color: var(--login-underline-color);
+    }
+}
+
+.overlay__button--danger {
+    background-color: var(--color-contacts-error);
+    border-color: var(--color-contacts-error);
+    color: var(--color-text);
+}
+
+.confirm {
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 30px;
+    background-color: var(--color-contacts-surface);
+    color: var(--color-contacts-text);
+}
+
+.confirm__title {
+    margin-bottom: 8px;
+    font-size: 27px;
+    overflow-wrap: anywhere;
+}
+
+.confirm__text {
+    font-size: 16px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    z-index: 3000;
+    padding: 20px 28px;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 20px;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-text);
+    font-size: 20px;
+    animation: toastIn 0.3s ease-out backwards;
+}
+
+.overlay__button,
+.overlay__close {
+    transition: background-color 100ms ease-in-out, color 100ms ease-in-out, border-color 100ms ease-in-out;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translate(-50%, 24px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toast { animation: none; }
+}
+
+@media (max-width: 900px) {
+    .toast {
+        bottom: 104px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay__card {
+        flex-direction: column;
+    }
+
+    .overlay__head {
+        flex-basis: auto;
+        padding: 32px 24px;
+    }
+
+    .overlay__logo { display: none; }
+    .overlay__title { font-size: 47px; }
+    .overlay__slogan { font-size: 20px; }
+
+    .overlay__body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .overlay__avatar {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 0;
+    }
+
+    .overlay__card {
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+    }
+
+    .overlay__button {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .toast {
+        max-width: calc(100% - 32px);
+        font-size: 16px;
+    }
+}
