@@ -20,6 +20,17 @@
     <link rel="stylesheet" href="../html/privacy.html">
     <link rel="stylesheet" href="../html/summary.html">
     <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/contacts.css">
+    <link rel="stylesheet" href="../css/contactsOverlay.css">
+    <link rel="stylesheet" href="../css/contactsMobile.css">
+    <script src="../js/firebaseConfig.js" defer></script>
+    <script src="../js/contactsDb.js" defer></script>
+    <script src="../js/contactsApi.js" defer></script>
+    <script src="../js/templates.js" defer></script>
+    <script src="../js/contactsOverlay.js" defer></script>
+    <script src="../js/contactsForm.js" defer></script>
+    <script src="../js/contactsDelete.js" defer></script>
+    <script src="../js/contacts.js" defer></script>
 
     
 </head>
@@ -53,6 +64,25 @@
                 <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
             </div>
         </section>
+        <main class="contacts">
+            <section class="contacts__sidebar" aria-label="Contact list">
+                <button type="button" class="contacts__add-button" id="addContactButton" data-action="open-add-contact">
+                    <span class="contacts__add-label">Add new contact</span>
+                    <img class="contacts__add-icon" src="../assets/icons/personAdd.svg" alt="">
+                </button>
+                <div id="contactList" class="contacts__list"></div>
+            </section>
+            <section class="contacts__detail" aria-labelledby="contactsTitle">
+                <div class="contacts__heading">
+                    <button type="button" class="contacts__back" data-action="close-detail" aria-label="Back to contact list">
+                        <img src="../assets/icons/arrowLeft.svg" alt="">
+                    </button>
+                    <h1 id="contactsTitle" class="contacts__title">Contacts</h1>
+                    <span class="contacts__divider" aria-hidden="true"></span>
+                    <p class="contacts__slogan">Better with a team</p>
+                </div>
+                <div id="contactDetail"></div>
+            </section>
     </main>
 </body>
 </html>
