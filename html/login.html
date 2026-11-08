@@ -2,132 +2,124 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Join</title>
 
     <meta
-        name="description"
-        content="Join: Manage tasks, contacts and projects clearly in a Kanban board."
+      name="description"
+      content="Join: Manage tasks, contacts and projects clearly in a Kanban board."
     />
 
     <meta
-        name="keywords"
-        content="Join, Kanban, task management, board, contacts"
+      name="keywords"
+      content="Join, Kanban, task management, board, contacts"
     />
 
     <meta name="author" content="Ralph Koch" />
     <meta name="robots" content="index, follow" />
 
-    <link
-        rel="canonical"
-        href="YOUR-URL/index.html"
-    />
+    <link rel="canonical" href="YOUR-URL/index.html" />
 
     <link
-        rel="icon"
-        type="image/svg+xml"
-        href="./assets/icons/joinFavicon.svg"
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/icons/joinFavicon.svg"
     />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Join" />
 
     <meta
-        property="og:description"
-        content="Join: Manage tasks, contacts and projects clearly in a Kanban board."
+      property="og:description"
+      content="Join: Manage tasks, contacts and projects clearly in a Kanban board."
     />
 
-    <meta
-        property="og:url"
-        content="YOUR-URL/index.html"
-    />
+    <meta property="og:url" content="YOUR-URL/index.html" />
 
-    <meta
-        property="og:image"
-        content="YOUR-URL/assets/icons/YOUR-IMAGE.png"
-    />
+    <meta property="og:image" content="YOUR-URL/assets/icons/YOUR-IMAGE.png" />
 
     <meta property="og:site_name" content="Join" />
 
     <link rel="stylesheet" href="../css/login.css" />
     <link rel="stylesheet" href="../style.css" />
-</head>
+  </head>
 
- 
-<body>
-  <!-- Header -->
-  <header class="header-login">
-  <a href="../index.html" class="logo" aria-label="JOIN - Home">
-    <img src="../assets/icons/join-logo.svg" alt="JOIN Logo" />
-  </a>
+  <body>
+    <!-- Header -->
+    <header class="header-login">
+      <a href="../index.html" class="logo" aria-label="JOIN - Home">
+        <img src="../assets/icons/join-logo.svg" alt="JOIN Logo" />
+      </a>
 
-  <!-- Sign up -->
-<div class="header-signup">
-  <span>Not a JOIN user?</span>
-  <a href="./signup.html" class="btn-primary">Sign up</a>
-</div>
-</header>
+      <!-- Sign up -->
+      <div class="header-signup">
+        <span>Not a JOIN user?</span>
+        <a href="./signup.html" class="btn-primary">Sign up</a>
+      </div>
+    </header>
 
-  <!-- Main content -->
-  <main class="main-content">
-    <section class="login-card" aria-labelledby="login-title">
-      <h1 id="login-title">Log in</h1>
+    <!-- Main content -->
+    <main class="main-content">
+      <section class="login-card" aria-labelledby="login-title">
+        <h1 id="login-title">Log in</h1>
 
-      <div class="title-underline" aria-hidden="true"></div>
+        <div class="title-underline" aria-hidden="true"></div>
 
-      <form class="login-form" id="login-form">
-        <!-- Email -->
-        <div class="input-container">
-          <label for="email" class="visually-hidden">Email address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            autocomplete="off"
-            required
-          />
-          <img class="input-icon" src="../assets/icons/mail.png" alt="" />
-        </div>
+        <form class="login-form" id="login-form">
+          <!-- Email -->
+          <div class="input-container">
+            <label for="email" class="visually-hidden">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              autocomplete="off"
+              required
+            />
+            <img class="input-icon" src="../assets/icons/mail.png" alt="" />
+          </div>
 
-        <!-- Password -->
-        <div class="input-container">
-          <label for="password" class="visually-hidden">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="off"
-            required
-          />
-          <img class="input-icon" src="../assets/icons/mail1.png" alt="" />
-        </div>
+          <!-- Password -->
+          <div class="input-container">
+            <label for="password" class="visually-hidden">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="off"
+              required
+            />
+            <img class="input-icon" src="../assets/icons/mail1.png" alt="" />
+          </div>
 
-         <!-- Buttons -->
-          <div class="login-buttons">                                                   
-            <button type="submit" class="btn-primary  btn-primary-login">Log in</button>
-            <button type="button" class="btn-secondary" id="guestLoginButton">Guest Log in</button>
+          <!-- Buttons -->
+          <div class="login-buttons">
+            <button type="submit" class="btn-primary btn-primary-login">
+              Log in
+            </button>
+            <button type="button" class="btn-secondary" id="guestLoginButton">
+              Guest Log in
+            </button>
           </div>
         </form>
-      </section>                                                                        
+      </section>
     </main>
 
-<!-- Mobile Sign up -->
-<div class="mobile-signup">
-  <span>Not a JOIN user?</span>
-  <a href="./signup.html" class="btn-primary btn-primary-sign-up-down">Sign up</a>
-</div>
+    <!-- Mobile Sign up -->
+    <div class="mobile-signup">
+      <span>Not a JOIN user?</span>
+      <a href="./signup.html" class="btn-primary btn-primary-sign-up-down"
+        >Sign up</a
+      >
+    </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <a href="./privacy.html">Privacy Policy</a>
-    <a href="./legal.html">Legal notice</a>
-  </footer>
-</body>
-
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./legal.html">Legal notice</a>
+    </footer>
+  </body>
 </html>
