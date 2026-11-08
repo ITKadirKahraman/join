@@ -1,0 +1,146 @@
+@media (max-width: 900px) {
+    .menuBoard {
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        gap: 0;
+        width: 100%;
+        min-height: 0;
+        height: 80px;
+        padding: 0;
+    }
+
+    .menuBoard .logo,
+    #policyContainer {
+        display: none;
+    }
+
+    .menuBoard .menuContainer {
+        flex-direction: row;
+        gap: 0;
+        height: 100%;
+    }
+
+    .menuItems {
+        flex-direction: column;
+        flex: 1 1 0;
+        height: 100%;
+        font-size: 16px;
+    }
+
+    .topHeader {
+        left: 0;
+        height: 80px;
+    }
+
+    .header {
+        padding: 0 16px;
+    }
+
+    .topHeader__logo {
+        display: block;
+        height: 48px;
+    }
+
+    #title {
+        display: none;
+    }
+
+    .contacts {
+        flex-direction: column;
+        gap: 0;
+        padding: 96px 16px 104px;
+    }
+
+    .contacts__sidebar {
+        flex: 1 1 auto;
+        max-width: none;
+        max-height: none;
+    }
+
+    .contacts__list {
+        overflow-y: visible;
+    }
+
+        .contacts__add-button {
+        position: fixed;
+        right: 16px;
+        bottom: 96px;
+        z-index: 900;
+        width: 64px;
+        height: 64px;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .contacts__add-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .contacts__add-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+        .contacts__detail {
+        display: none;
+    }
+
+    .contacts--detail-open .contacts__detail {
+        display: block;
+    }
+
+    .contacts--detail-open .contacts__sidebar {
+        display: none;
+    }
+
+    .contacts__heading {
+        position: relative;
+        padding-right: var(--touch-target);
+    }
+
+    .contacts__back {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--touch-target);
+        height: var(--touch-target);
+        border: unset;
+        border-radius: 8px;
+        background-color: unset;
+        cursor: pointer;
+    }
+
+    .contacts__divider {
+        display: none;
+    }
+
+    .contacts__title {
+        font-size: 47px;
+    }
+
+    .contacts__heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .detail__avatar {
+        flex-basis: 80px;
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .detail__name {
+        font-size: 32px;
+    }
+}
