@@ -70,7 +70,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 
 .signup-input {
@@ -161,6 +161,20 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.signup-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.back-link {
+  position: static;
+  text-decoration: none;
+  font-size: 32px;
+  line-height: 1;
+}
 .footer {
   margin-top: auto;
   display: flex;
@@ -177,6 +191,23 @@
   text-decoration: none;
 }
 
+
+.error-message {
+  color: #ff3d71;
+  font-size: 12px;
+  margin: 4px 0 0;
+  min-height: 1em;
+
+   margin: -12px 0 0;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.input-error {
+  border-color: #ff3d71;
+}
 
 @media (max-width: 600px) {
   .signup-card {

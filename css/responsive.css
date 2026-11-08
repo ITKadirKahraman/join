@@ -108,3 +108,26 @@
 
 @media (max-width: 360px) {
 }
+
+
+/* =========================
+   RESPONSIVE SIGNUP SITE
+========================= */
+
+@media (max-width: 600px) {
+  .signup-card {
+    width: 396px;
+    height: 595px;
+    padding: 32px 16px;
+    gap: 32px;
+    border-radius: 30px;
+  }
+
+  .title-underline {
+    width: 62px;
+    height: 2px;
+    background-color: #29abe2;
+    margin: 0;
+  }
+}
+
