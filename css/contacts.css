@@ -1,0 +1,371 @@
+/* Variablen dieser Seite (stehen hier, damit root.css nicht geändert werden muss) */
+:root {
+    --touch-target: 44px;
+    --contacts-list-width: 456px;
+    --contacts-gap: 48px;
+    --color-contacts-text: #2a3647;
+    --color-contacts-link: #0069c9;
+    --color-contacts-link-on-dark: #8fd0ff;
+    --color-contacts-hover: #e7eaee;
+    --color-contacts-action-hover: #0069c9;
+    --color-overlay-backdrop: rgba(0, 0, 0, 0.5);
+    --color-contacts-error: #c0172e;
+    --color-contacts-placeholder-avatar: #a3a3a3;
+    --color-contacts-divider: #d1d1d1;
+    --color-contacts-surface: #ffffff;
+    --color-avatar-orange: #c2410c;
+    --color-avatar-violet: #6d28d9;
+    --color-avatar-magenta: #a21caf;
+    --color-avatar-teal: #0e7490;
+    --color-avatar-green: #047857;
+    --color-avatar-amber: #b45309;
+    --color-avatar-rose: #be123c;
+    --color-avatar-indigo: #4338ca;
+}
+
+/* Reset nur für diese Seite und ihre Fenster: gilt auch, wenn ../style.css nicht geladen wird */
+body {
+    margin: 0;
+}
+
+.contacts,
+.contacts *,
+.overlay,
+.overlay * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.menuItems[aria-current="page"],
+.menuItems[href$="contacts.html"] {
+    background-color: var(--color-menuBoard-hover-background);
+}
+
+.contacts {
+    display: flex;
+    gap: var(--contacts-gap);
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 24px) 60px 40px 292px;
+    color: var(--color-contacts-text);
+}
+
+.contacts__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 0 0 var(--contacts-list-width);
+    max-width: var(--contacts-list-width);
+    max-height: calc(100vh - var(--header-height) - 64px);
+}
+
+.contacts__add-button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-target);
+    border: unset;
+    border-radius: var(--login-button-radius);
+    background-color: var(--login-button-background);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: var(--button-font-weight);
+    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contacts__add-button:hover {
+        background-color: var(--color-profile-button-background);
+    }
+}
+
+.contacts__list {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.contacts__group-letter {
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+}
+
+.contacts__group-line {
+    border: unset;
+    border-top: 1px solid var(--color-contacts-divider);
+    margin: 0 24px;
+}
+
+.contacts__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: var(--touch-target) minmax(0, 1fr);     align-items: center;
+    column-gap: 24px;
+    width: 100%;
+    min-height: 72px;
+    padding: 12px 24px;
+    border: unset;
+    border-radius: 10px;
+    background-color: unset;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.contact__avatar {
+    display: flex;
+    flex: 0 0 var(--touch-target);
+    align-items: center;
+    justify-content: center;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    border: 2px solid var(--color-contacts-surface);
+    border-radius: 50%;
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: var(--button-font-weight);
+}
+
+.contact__avatar--orange { background-color: var(--color-avatar-orange); }
+.contact__avatar--violet { background-color: var(--color-avatar-violet); }
+.contact__avatar--magenta { background-color: var(--color-avatar-magenta); }
+.contact__avatar--teal { background-color: var(--color-avatar-teal); }
+.contact__avatar--green { background-color: var(--color-avatar-green); }
+.contact__avatar--amber { background-color: var(--color-avatar-amber); }
+.contact__avatar--rose { background-color: var(--color-avatar-rose); }
+.contact__avatar--indigo { background-color: var(--color-avatar-indigo); }
+
+.contact__text {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.contact__name {
+    overflow: hidden;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact__email {
+    overflow: hidden;
+    color: var(--color-contacts-link);
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact:hover {
+        background-color: var(--color-contacts-hover);
+    }
+}
+
+.contact--selected {
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-text);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact--selected:hover {
+        background-color: var(--color-menuBoard-background);
+        color: var(--color-text);
+    }
+}
+
+.contact--selected .contact__email {
+    color: var(--color-contacts-link-on-dark);
+}
+
+.contacts__detail {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 960px;
+}
+
+.contacts__heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+
+.contacts__title {
+    font-size: var(--login-title-font-size);
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
+}
+
+.contacts__divider {
+    align-self: stretch;
+    width: 3px;
+    margin: 12px 0;
+    background-color: var(--login-underline-color);
+}
+
+.contacts__slogan {
+    font-size: 27px;
+}
+
+.detail__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin: 40px 0;
+}
+
+.detail__avatar {
+    display: flex;
+    flex: 0 0 120px;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--color-contacts-surface);
+    border-radius: 50%;
+    color: var(--color-text);
+    font-size: 47px;
+    font-weight: var(--button-font-weight);
+}
+
+.detail__headline {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.detail__name {
+    overflow-wrap: anywhere;
+    font-size: 47px;
+    font-weight: var(--button-font-weight);
+    line-height: var(--login-title-line-height);
+}
+
+.detail__actions {
+    display: flex;
+    gap: 16px;
+}
+
+.detail__action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: var(--touch-target);
+    min-height: var(--touch-target);
+    padding: 0 8px;
+    border: unset;
+    border-radius: 8px;
+    background-color: unset;
+    color: var(--color-contacts-text);
+    font-family: var(--font-family);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .detail__action:hover {
+        color: var(--color-contacts-action-hover);
+    }
+}
+
+.detail__subtitle {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+}
+
+.detail__info {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+}
+
+.detail__info dt {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: var(--button-font-weight);
+}
+
+.detail__info dd {
+    margin: 0;
+    font-size: 16px;
+}
+
+.detail__link {
+    color: var(--color-contacts-link);
+}
+
+@media (max-width: 1439px) {
+    .contacts__sidebar {
+        flex-basis: 360px;
+        max-width: 360px;
+    }
+
+    .contacts__title {
+        font-size: 47px;
+    }
+
+    .contacts__slogan {
+        font-size: 20px;
+    }
+}
+
+.contacts__add-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.contacts__back,
+.topHeader__logo {
+    display: none;
+}
+
+.contacts__add-button,
+.contact,
+.detail__action,
+.contacts__back {
+    transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+.contacts__status {
+    padding: 24px;
+    font-size: 16px;
+}
+
+.contacts__status-button {
+    min-height: var(--touch-target);
+    margin: 0 24px;
+    padding: 0 24px;
+    border: unset;
+    border-radius: var(--login-button-radius);
+    background-color: var(--login-button-background);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: var(--button-font-weight);
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contacts__status-button:hover {
+        background-color: var(--login-underline-color);
+    }
+}
+
+.contacts__add-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
