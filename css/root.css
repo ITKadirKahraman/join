@@ -2,17 +2,17 @@
   /* Colors */
   --color-background: #f6f7f8;
   --color-text: #ffffff;
-  --color-black: #000000;
-  --color-summerSky: #29abe2;
 
   /* Menu Board */
-  --color-menuBoard-background: #2F3E4E;
-  --color-menuBoard-hover-background: #081931;
-  --menuBoard-min-height: 1024px;
+  --color-menuBoard-background: #2a3647;
+  --color-menuBoard-hover-background: #091931;
+  --menuBoard-min-height: 710px;
+  --color-menuBoard-text: #e7e7e7;
+  --color-header-background: #ffffff;
+  --color-initials: #124658;
   --menuBoard-width: 232px;
   --color-profile-button-background: #29ABE2;
   --color-profile-hover-background: #000000;
-  --menuBoardText: rgb(205,205,205);
 
   /* Layout */
   --header-width: 1241px;
