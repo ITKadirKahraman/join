@@ -71,3 +71,75 @@
 p {
     margin: 0;
 }
+
+/* ========================================
+   BOARD COLUMNS & TO DO EMPTY STATE
+======================================== */
+.board-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
+    margin-top: 48px;
+    width: 100%;
+}
+.board-column {
+    display: flex;
+    flex-direction: column;
+    width: 246px;
+    min-width: 246px;
+}
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.column-header h2 {
+    margin: 0;
+    color: #42526e;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.column-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 2px solid #2a3647;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #2a3647;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.column-add-btn:hover {
+    border-color: #29abe2;
+    color: #29abe2;
+}
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.no-tasks-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 246px;
+    height: 48px;
+    box-sizing: border-box;
+    border: 1px dashed #a8a8a8;
+    border-radius: 10px;
+    background-color: #e7e7e7;
+    color: #a8a8a8;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
