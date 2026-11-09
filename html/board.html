@@ -1,81 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
-    <!-- LINK -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/standard.css">
+    <link rel="stylesheet" href="../css/board.css">
     <link rel="stylesheet" href="../css/help.css">
     <link rel="stylesheet" href="../css/menuBoard.css">
-    <link rel="stylesheet" href="../css/menuBoardMobile.css">
     <link rel="stylesheet" href="../css/topHeader.css">
-    <link rel="stylesheet" href="../css/topHeaderMobile.css">
     <link rel="stylesheet" href="../css/legal.css">
-    <link rel="stylesheet" href="../css/legalMobile.css">
-    <link rel="stylesheet" href="../css/legal.css">
-    <link rel="stylesheet" href="../css/legalResponsive.css">
-    <link rel="stylesheet" href="../css/legal.css">
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/board.css">
 
-    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
 </head>
+
 <body>
-    <!-- MENU BOARD -->
-        <header id="topHeader" class="topHeader">
-            <div id="topHeader-content" class="header">
-                <p class="title" id="title">Kanban Project Management Tool</p>
-                <div class="circle">
-                    <button id="helpButton" class="helpButton">
-                        <a href="help.html">
-                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
-                        </a>
-                    </button>
-                    <button id="profileButton" class="profileButton">
-                        <div id="nameKuerzel" class="nameKuerzel">G</div>
-                    </button>
-                </div>
+
+    <!-- DESKTOP HEADER -->
+    <header id="topHeader" class="topHeader">
+        <div id="topHeader-content" class="header">
+            <p class="title" id="title">Kanban Project Management Tool</p>
+
+            <div class="circle">
+                <button id="helpButton" class="helpButton">
+                    <a href="help.html">
+                        <img class="questionCircle"
+                            src="../assets/icons/questionsCircle.svg"
+                            alt="Questions Circle Icon"
+                            id="questionCircle">
+                    </a>
+                </button>
+
+                <button id="profileButton" class="profileButton">
+                    <div id="nameKuerzel" class="nameKuerzel">G</div>
+                </button>
             </div>
-        </header>
-        <header id="topHeaderResponsive" class="topHeaderResponsive">
-            <img class="logo" src="../assets/icons/logoResponsive.svg" alt="Join Logo">
-            <div id="topHeader-content" class="header">
-                <div class="circle">
-                    <button id="helpButton" class="helpButton">
-                        <a href="help.html">
-                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
-                        </a>
-                    </button>
-                    <button id="profileButton" class="profileButton">
-                        <div id="nameKuerzel" class="nameKuerzel">G</div>
-                    </button>
-                </div>
+        </div>
+    </header>
+
+    <!-- DESKTOP MENU -->
+    <section class="menuBoard" id="menuBoard">
+        <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
+
+        <nav class="menuContainer" id="menuContainer">
+            <a class="menuItems" href="../html/summary.html">
+                <img src="../assets/icons/summary.svg" alt="Summary Icon">
+                <p>Summary</p>
+            </a>
+
+            <a class="menuItems" href="../html/addTask.html">
+                <img src="../assets/icons/addTask.svg" alt="Add Task Icon">
+                <p>Add Task</p>
+            </a>
+
+            <a class="menuItems" href="../html/board.html">
+                <img src="../assets/icons/board.svg" alt="Board Icon">
+                <p>Board</p>
+            </a>
+
+            <a class="menuItems" href="../html/contacts.html">
+                <img src="../assets/icons/contacts.svg" alt="Contacts Icon">
+                <p>Contacts</p>
+            </a>
+        </nav>
+
+        <div class="menuContainer" id="policyContainer">
+            <a class="menuItems" href="../html/privacy.html">
+                <p>Privacy Policy</p>
+            </a>
+
+            <a class="menuItems" href="../html/legal.html">
+                <p>Legal notice</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- BOARD CONTENT -->
+    <main>
+        <section class="board">
+
+            <div class="board-header">
+                <h1>Board</h1>
+<div class="board-actions">
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="search-task"
+            placeholder="Find Task"
+        >
+
+        <span class="search-divider"></span>
+
+        <button type="button" class="search-button" aria-label="Search">
+            <span class="search-icon"></span>
+        </button>
+    </div>
+
+    <button type="button" class="add-task-btn">
+        Add task +
+    </button>
+
+</div>
             </div>
-        </header>
-        <section class="menuBoard" id="menuBoard">
-            <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
-            <nav class="menuContainer" id="menuContainer">
-                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></a>
-                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
-                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
-                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
-            </nav>
-            <div class="menuContainer" id="policyContainer">
-                <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
-                <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
-            </div>
-        </section>
-        <section class="menuBoardResponsive" id="menuBoardResponsive">
-            <nav class="menuContainer" id="menuContainer">
-                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon">Summary</a>
-                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
-                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
-                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
-            </nav>
+
         </section>
     </main>
+
 </body>
 </html>

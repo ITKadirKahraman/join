@@ -1,0 +1,122 @@
+
+/* BOARD CONTENT */
+main {
+    margin-left: var(--menuBoard-width);
+    margin-top: 80px;
+    padding: 64px 40px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.board {
+    width: 100%;
+}
+
+/* BOARD TITLE */
+.board h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2a3647;
+    margin: 0;
+}
+
+/* BOARD ACTIONS */
+.board-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* SEARCH CONTAINER */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 241px;
+    height: 38px;
+    border: 1px solid #a8a8a8;
+    border-radius: 8px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* SEARCH INPUT */
+#search-task {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    background: transparent;
+}
+
+#search-task::placeholder {
+    color: #a8a8a8;
+}
+
+/* SEARCH DIVIDER */
+.search-divider {
+    height: 24px;
+    border-left: 1px solid #a8a8a8;
+}
+
+/* SEARCH BUTTON */
+.search-button {
+    width: 48px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* SEARCH ICON */
+.search-icon {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border: 1.8px solid #2a3647;
+    border-radius: 50%;
+    position: relative;
+}
+
+.search-icon::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 1.8px;
+    background-color: #2a3647;
+    right: -5px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
+
+/* ADD TASK BUTTON */
+.add-task-btn {
+    width: 123px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #091931;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-task-btn:hover {
+    background-color: #2a3647;
+}
