@@ -37,11 +37,6 @@ body {
     padding: 0;
 }
 
-.menuItems[aria-current="page"],
-.menuItems[href$="contacts.html"] {
-    background-color: var(--color-menuBoard-hover-background);
-}
-
 .contacts {
     display: flex;
     gap: var(--contacts-gap);
