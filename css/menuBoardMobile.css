@@ -1,0 +1,42 @@
+/* RESPONSIVE DESIGN */
+/* Medium screens & small laptops */
+@media (max-width: 1200px) {
+    .menuBoard {
+        display: none;
+    }
+
+    .menuBoardResponsive {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 70px;
+        display: flex;
+        background-color: var(--color-menuBoard-background);
+        gap: 4px;
+        padding: 0;
+        flex: 1;
+    }
+
+    .menuContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .menuItems {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-radius: 20px;
+        font-size: 16px;
+        height: 100%;
+        color: var(--menuBoardText);
+    }
+
+    .menuItems:hover {
+        color: var(--color-text);
+    }
+}

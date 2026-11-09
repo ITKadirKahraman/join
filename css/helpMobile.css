@@ -1,0 +1,7 @@
+/* RESPONSIVE DESIGN */
+/* Medium screens & small laptops */
+@media (max-width: 1200px) {
+    .help_legal_police_text {
+        padding-left: 100px;
+    }
+}
