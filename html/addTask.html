@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,22 @@
     <!-- LINK -->
     <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/standard.css">
-    <link rel="stylesheet" href="../css/help.css">
     <link rel="stylesheet" href="../css/menuBoard.css">
-    <link rel="stylesheet" href="../css/menuBoardMobile.css">
     <link rel="stylesheet" href="../css/topHeader.css">
-    <link rel="stylesheet" href="../css/topHeaderMobile.css">
-    <link rel="stylesheet" href="../css/legal.css">
-    <link rel="stylesheet" href="../css/legalMobile.css">
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/avatar.css">
+    <link rel="stylesheet" href="../css/toast.css">
+    <link rel="stylesheet" href="../css/addTask.css">
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+    <script src="../script.js"></script>
+    <script src="../js/firebaseConfig.js" defer></script>
+    <script src="../js/contactsDb.js" defer></script>
+    <script src="../js/contactsApi.js" defer></script>
+    <script src="../js/templates.js" defer></script>
+    <script src="../js/tasksDb.js" defer></script>
+    <script src="../js/tasksApi.js" defer></script>
+    <script src="../js/tasksTemplates.js" defer></script>
+    <script src="../js/addTask.js" defer></script>
 
 
     
@@ -27,29 +33,17 @@
             <div id="topHeader-content" class="header">
                 <p class="title" id="title">Kanban Project Management Tool</p>
                 <div class="circle">
-                    <button id="helpButton" class="helpButton">
-                        <a href="help.html">
-                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
-                        </a>
-                    </button>
-                    <button id="profileButton" class="profileButton">
+                    <a href="help.html" id="helpButton" class="helpButton" aria-label="Help">
+                        <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="" id="questionCircle">
+                    </a>
+                    <button id="profileButton" class="profileButton" aria-haspopup="true" aria-controls="profileMenu" aria-expanded="false" aria-label="Profile menu">
                         <div id="nameKuerzel" class="nameKuerzel">G</div>
                     </button>
-                </div>
-            </div>
-        </header>
-        <header id="topHeaderResponsive" class="topHeaderResponsive">
-            <img class="logo" src="../assets/icons/logoResponsive.svg" alt="Join Logo">
-            <div id="topHeader-content" class="header">
-                <div class="circle">
-                    <button id="helpButton" class="helpButton">
-                        <a href="help.html">
-                            <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="Questions Circle Icon" id="questionCircle">
-                        </a>
-                    </button>
-                    <button id="profileButton" class="profileButton">
-                        <div id="nameKuerzel" class="nameKuerzel">G</div>
-                    </button>
+                    <nav id="profileMenu" class="profileMenu" aria-label="Profile menu" hidden>
+                        <a class="profileMenuItem" href="legal.html">Legal Notice</a>
+                        <a class="profileMenuItem" href="privacy.html">Privacy Policy</a>
+                        <button type="button" class="profileMenuItem" id="logoutButton">Log out</button>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -66,14 +60,76 @@
                 <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
             </div>
         </section>
-        <section class="menuBoardResponsive" id="menuBoardResponsive">
-            <nav class="menuContainer" id="menuContainer">
-                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon">Summary</a>
-                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
-                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
-                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
-            </nav>
-        </section>
-    </main>
+        <main class="addTask">
+            <h1 class="addTask__title">Add Task</h1>
+            <form class="addTask__form" id="addTaskForm" novalidate>
+                <div class="addTask__columns">
+                    <div class="addTask__column">
+                        <div class="field">
+                            <label class="field__label" for="taskTitle">Title<span class="field__required">*</span></label>
+                            <input class="field__input" type="text" id="taskTitle" placeholder="Enter a title" autocomplete="off" aria-describedby="taskTitle-error">
+                            <p class="field__error" id="taskTitle-error" aria-live="polite"></p>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="taskDescription">Description</label>
+                            <textarea class="field__input field__input--area" id="taskDescription" placeholder="Enter a Description"></textarea>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="taskDueDate">Due date<span class="field__required">*</span></label>
+                            <input class="field__input" type="date" id="taskDueDate" aria-describedby="taskDueDate-error">
+                            <p class="field__error" id="taskDueDate-error" aria-live="polite"></p>
+                        </div>
+                    </div>
+                    <div class="addTask__divider" aria-hidden="true"></div>
+                    <div class="addTask__column">
+                        <div class="field">
+                            <span class="field__label" id="priorityLabel">Priority</span>
+                            <div class="priority" role="group" aria-labelledby="priorityLabel">
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="urgent" aria-pressed="false">Urgent <span class="priority__icon" aria-hidden="true">▲▲</span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="medium" aria-pressed="true">Medium <span class="priority__icon" aria-hidden="true">=</span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="low" aria-pressed="false">Low <span class="priority__icon" aria-hidden="true">▼▼</span></button>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <span class="field__label" id="assignedLabel">Assigned to</span>
+                            <div class="assign" id="assignedTo">
+                                <button type="button" class="field__input assign__toggle" id="assignToggle" data-action="toggle-contact-menu" aria-haspopup="true" aria-expanded="false" aria-controls="contactOptions" aria-labelledby="assignedLabel assignToggle">Select contacts to assign</button>
+                                <ul class="assign__options" id="contactOptions" hidden></ul>
+                            </div>
+                            <div class="assign__selected" id="selectedContacts"></div>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="taskCategory">Category<span class="field__required">*</span></label>
+                            <select class="field__input field__input--select" id="taskCategory" aria-describedby="taskCategory-error">
+                                <option value="">Select task category</option>
+                                <option value="Technical Task">Technical Task</option>
+                                <option value="User Story">User Story</option>
+                            </select>
+                            <p class="field__error" id="taskCategory-error" aria-live="polite"></p>
+                        </div>
+                        <div class="field">
+                            <label class="field__label" for="subtaskInput">Subtasks</label>
+                            <div class="subtaskInput">
+                                <input class="field__input" type="text" id="subtaskInput" placeholder="Add new subtask" autocomplete="off">
+                                <button type="button" class="subtaskInput__plus" data-action="focus-subtask" aria-label="Add subtask">+</button>
+                                <span class="subtaskInput__actions">
+                                    <button type="button" data-action="clear-subtask-input" aria-label="Empty the subtask field"><img src="../assets/icons/close.svg" alt=""></button>
+                                    <button type="button" class="subtaskInput__confirm" data-action="add-subtask" aria-label="Add subtask"><img src="../assets/icons/check.svg" alt=""></button>
+                                </span>
+                            </div>
+                            <ul class="subtaskList" id="subtaskList"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="addTask__footer">
+                    <p class="addTask__note"><span class="field__required">*</span>This field is required</p>
+                    <p class="field__error" id="form-error" role="alert"></p>
+                    <div class="addTask__buttons">
+                        <button type="button" class="addTask__button addTask__button--secondary" id="clearButton">Clear <img src="../assets/icons/close.svg" alt=""></button>
+                        <button type="submit" class="addTask__button addTask__button--primary" id="createButton">Create Task <img src="../assets/icons/check.svg" alt=""></button>
+                    </div>
+                </div>
+            </form>
+        </main>
 </body>
 </html>
