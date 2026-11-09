@@ -270,3 +270,22 @@ input:focus-visible {
   color: var(--secondary-color);
 }
 
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.login-error {
+  min-height: 1em;
+  margin: 0;
+  color: #ff3d71;
+  text-align: center;
+}
+
+.login-error:empty {
+  display: none;
+}
+
+.input-error {
+  border-color: #ff3d71;
+}
