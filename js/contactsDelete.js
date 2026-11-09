@@ -1,4 +1,4 @@
- * Shows the question
+/* Shows the question
  * @param {number} contactId
  */
 function openDeleteConfirm(contactId) {
