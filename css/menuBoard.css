@@ -1,55 +1,71 @@
 .menuBoard {
     position: fixed;
     display: flex;
-    gap: 150px;
-    align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
     background-color: var(--color-menuBoard-background);
-    color: var(--color-text);
+    color: var(--color-menuBoard-text);
+    height: 100vh;
     min-height: var(--menuBoard-min-height);
     width: var(--menuBoard-width);
     left: 0;
     top: 0;
-    padding: 70px 0;
+    padding: 64px 0;
     z-index: 1000;
 }
 
-.menuBoardResponsive {
-    display: none;
+.logo {
+    height: 122px;
+    width: 100px;
 }
 
-.logo {
-    height: 120px;
-    width: 100px;
+.menuBoard .logo {
+    margin: 0 0 114px 66px;
 }
 
 .menuContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     width: 100%;
+}
+
+#policyContainer {
+    gap: 4px;
+    margin-top: auto;
 }
 
 .menuItems {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    box-sizing: border-box;
     width: 100%;
+    height: 45px;
+    padding-left: 58px;
     border: unset;
     background-color: unset;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
-    color: var(--color-text);
-    font-weight: solid;
+    transition: background-color 0.1s ease-in-out;
+    color: var(--color-menuBoard-text);
+    font-size: 16px;
     text-decoration: none;
 }
 
-.menuItems:hover {
+.menuItems img {
+    width: 26px;
+    height: 26px;
+}
+
+#policyContainer .menuItems {
+    height: 35px;
+    padding-left: 60px;
+}
+
+.menuItems:hover,
+.menuItems[aria-current="page"] {
     background-color: var(--color-menuBoard-hover-background);
-    max-width: 100%;
 }
 
 p {
