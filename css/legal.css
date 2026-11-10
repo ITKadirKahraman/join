@@ -5,9 +5,14 @@
     align-items: flex-start;
     max-width: 1440px;
     gap: 50px;
-    padding: 100px 100px;
-    padding-left: 300px;
-    height: auto;
+    padding: 0px 100px 50px 300px;
+    margin-top: 90px;
+    max-height: calc(100vh - 100px);
+    box-sizing: border-box; 
+    overflow-y: auto;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--color-menuBoard-background) var(--color-background);
 }
 
 .legal_notice_text h1, 
