@@ -115,3 +115,12 @@
 .profileMenuItem:hover {
     background-color: var(--color-menuBoard-hover-background);
 }
+
+/* Die Kopfzeile für kleine Bildschirme (Team) ist am Desktop aus; topHeaderMobile.css schaltet sie bis 1200 px ein */
+.topHeaderResponsive {
+    display: none;
+}
+
+.helpButton[hidden] {
+    display: none;
+}
