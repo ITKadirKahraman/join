@@ -78,9 +78,9 @@ function closeProfileMenus() {
  */
 function toggleProfileMenu(button) {
     const menu = button.parentElement.querySelector(".profileMenu");
-    const menuWasOpen = !menu.hidden;
+    const menuWasClosed = menu.hidden;
     closeProfileMenus();
-    if (!menuWasOpen) {
+    if (menuWasClosed) {
         menu.hidden = false;
         button.setAttribute("aria-expanded", "true");
     }
@@ -129,9 +129,25 @@ function markCurrentMenuItem() {
     });
 }
 
+/** Visitors without a login (legal notice, privacy policy, help) only get "Log in" and the two policy links in the menu, and no help link */
+function showLoggedOutMenu() {
+    document.querySelectorAll(".menuItems").forEach((item) => {
+        const isKept = item.closest("#policyContainer") || item.classList.contains("menuItems--login");
+        if (isKept) {
+            item.hidden = false;
+        } else {
+            item.hidden = true;
+        }
+    });
+    document.querySelectorAll(".helpButton").forEach((link) => { link.hidden = true; });
+}
+
 /** Starts the header of a page (only pages that have the profile button) */
 function initHeader() {
     markCurrentMenuItem();
+    if (getSession() === null && document.querySelector(".menuItems")) {
+        showLoggedOutMenu();
+    }
     if (document.querySelector(".profileButton")) {
         initProfile(getSession());
     }
