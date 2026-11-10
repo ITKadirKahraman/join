@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="../css/menuBoardMobile.css">
     <link rel="stylesheet" href="../css/topHeader.css">
     <link rel="stylesheet" href="../css/topHeaderMobile.css">
-    <link rel="stylesheet" href="../css/legal.css">
-    <link rel="stylesheet" href="../css/legalMobile.css">
+    <link rel="stylesheet" href="../css/summary.css">
+    <link rel="stylesheet" href="../css/summaryMobile.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../css/legal.css">
     
     <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
 </head>
@@ -72,34 +71,99 @@
                 <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
             </nav>
         </section>
+        <section class="menuBoard" id="menuBoard">
+            <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
+            <nav class="menuContainer" id="menuContainer">
+                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></a>
+                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
+                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
+                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
+            </nav>
+            <div class="menuContainer" id="policyContainer">
+                <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
+                <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
+            </div>
+        </section>
+        <section class="menuBoardResponsive" id="menuBoardResponsive">
+            <nav class="menuContainer" id="menuContainer">
+                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon">Summary</a>
+                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
+                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
+                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
+            </nav>
+        </section>
         <!-- Summary Page -->
         <section class="summary_page">
             <article class="summary_header_article">
-                <h2 class="summary_header">Join 360</h2>
+                <h1 class="summary_header">Join 360</h1>
                 <div class="summary_separator"></div>
                 <p class="summary_text">Key Metrics at a Glance</p>
             </article>
-            <section class="summary_content">
-                <div class="summary_btn">
-                    <article class="summary_btn_top">
-                        <button></button>
-                        <button></button>
-                    </article>
-                    <article class="summary_btn_middle">
-                        <button></button>
-                        <button></button>
-                    </article>
-                    <article class="summary_btn_bottom">
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                    </article>
+            <article class="summary_header_article_mobile">
+                <h1 class="summary_header">Join 360</h1>
+                <p class="summary_text">Key Metrics at a Glance</p>
+                <div class="summary_separator"></div>
+            </article>
+            <div class="summary_content">
+                <div class="summary_btn_grid">
+                    <div class="summary_btn_top_container">
+                        <div class="summary_btn">
+                            <div class="summary_icon penHover"><img src="../assets/icons/pen.svg" alt="Pen"></div>
+                            <div class="summary_counter">
+                                <div data-count="todo" class="summary_count">4</div>
+                                <a class="summaryLink" href="../html/board.html">To-do</a>
+                            </div>
+                        </div>
+                        <div class="summary_btn">
+                            <div class="summary_icon arrowHover"><img src="../assets/icons/summaryArrowRight.svg" alt="Arrow for Right"></div>
+                            <div class="summary_counter">
+                                <div data-count="done" class="summary_count">3</div>
+                                <a class="summaryLink" href="../html/board.html">Done</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary_btn_middle_container">
+                        <div class="summary_btn">
+                            <div class="summary_urgent">
+                                <img src="../assets/icons/summaryArrowTop.svg" alt="Arrow for Top">
+                                <div class="summary_counter">
+                                    <div data-count="urgent" class="summary_count">4</div>
+                                    <a class="summaryLink" href="../html/board.html">Urgent</a>
+                                </div>
+                                <div class="summary_urgent_separator"></div>
+                            </div>
+                            <div class="summary_dealine_container">
+                                <div class="summary_deadline">Dezember 16, 2026</div>
+                                <a class="summaryLink" href="../html/board.html">Upcoming Dealine</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary_btn_bottom_container">
+                        <div class="summary_btn">
+                            <div class="summary_counter">
+                                <div data-count="email" class="summary_count">17</div>
+                                <a class="summaryLink" href="../html/board.html">Task in Board</a>
+                            </div>
+                        </div>
+                        <div class="summary_btn">
+                            <div class="summary_counter">
+                                <div data-count="email" class="summary_count">3</div>
+                                <a class="summaryLink" href="../html/board.html">Task in Progress</a>
+                            </div>
+                        </div>
+                        <div class="summary_btn">
+                            <div class="summary_counter">
+                                <div data-count="email" class="summary_count">4</div>
+                                <a class="summaryLink" href="../html/board.html">Awaiting Feedback</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <article class="summary_hallo">
-                    <h3>Good morning,</h3>
-                    <h3>Guest</h3>
+                <article class="summary_greeting">
+                    <h3 class="summary_greeting_text">Good morning,</h3>
+                    <h3 class="summary_greeting_person">Guest</h3>
                 </article>
-            </section>
+            </div>
         </section>
     </main>
     <script src="script.js"></script>
