@@ -1,0 +1,47 @@
+@media (max-width: 1200px) {
+    .topHeaderResponsive {
+        display: flex;
+    } 
+
+    .menuBoardResponsive {
+        display: flex;
+    }
+
+    .summary_page {
+        padding: 40px 60px 180px 128px;
+        margin-top: 100px;
+        max-height: 400px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-color: var(--color-menuBoard-background) var(--color-background);
+    }
+
+    .summary_header_article {
+        display: none;
+    }
+
+    .summary_header_article_mobile {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 28px;
+        font-family: "InterBold";
+        gap: 30px;
+    }
+
+    .summary_separator {
+        width: 124px;
+        height: 4px;
+        background: linear-gradient(to bottom, #29a9e1, #1a8abf);
+        border-radius: 100px;
+    }
+
+    .summary_deadline {
+        font-size: 18px;
+    }
+
+    .summary_greeting {
+        display: none;
+    }
+}
