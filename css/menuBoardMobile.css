@@ -40,3 +40,21 @@
         color: var(--color-text);
     }
 }
+
+/* Ergänzt 09.11.2026: Die Punkte der unteren Leiste teilen sich die Breite (die Regeln der Seitenleiste mit festem Abstand links passen hier nicht, bei 375 px fiel "Contacts" heraus) */
+@media (max-width: 1200px) {
+    .menuBoardResponsive .menuContainer {
+        width: 100%;
+    }
+
+    .menuBoardResponsive .menuItems {
+        flex: 1 1 0;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        padding: 0;
+        min-width: 0;
+        font-size: 14px;
+        color: var(--color-menuBoard-text);
+    }
+}
