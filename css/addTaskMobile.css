@@ -1,9 +1,14 @@
 @media (max-width: 1200px) {
     .menuBoardResponsive {
         display: flex;
+        z-index: 100;
     } 
 
     .topHeaderResponsive {
         display: flex;
+    }
+
+    .addTask {
+        padding: 60px 16px 100px;
     }
 }
