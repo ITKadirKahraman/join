@@ -33,3 +33,21 @@
         transform: scale(1.55);
     }
 }
+
+/* Ergänzt 09.11.2026: Die Kopfzeile bleibt auch bei 375 px im Bild (Kreis mit Initialen war angeschnitten) */
+@media (max-width: 1200px) {
+    .topHeaderResponsive {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .topHeaderResponsive .header {
+        width: auto;
+        padding: 0;
+    }
+
+    .topHeaderResponsive .nameKuerzel {
+        height: 44px;
+        font-size: 16px;
+    }
+}
