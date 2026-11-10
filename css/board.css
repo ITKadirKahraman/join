@@ -256,3 +256,11 @@ main {
         min-height: 0;
     }
 }
+
+.menuBoardResponsive {
+    display: none;
+} 
+
+.topHeaderResponsive {
+    display: none;
+}

@@ -74,3 +74,11 @@ article span {
     font-family: "Inter", sans-serif;
     line-height: 1.2;
 }
+
+.menuBoardResponsive {
+    display: none;
+} 
+
+.topHeaderResponsive {
+    display: none;
+} 

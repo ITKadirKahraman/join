@@ -47,3 +47,11 @@
     box-sizing: border-box;
     overflow-wrap: break-word;
 }
+
+.menuBoardResponsive {
+    display: none;
+} 
+
+.topHeaderResponsive {
+    display: none;
+} 

@@ -364,3 +364,11 @@ body {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.menuBoardResponsive {
+    display: none;
+} 
+
+.topHeaderResponsive {
+    display: none;
+} 

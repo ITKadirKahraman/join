@@ -256,3 +256,11 @@
         gap: 6px;
     }
 }
+
+.menuBoardResponsive {
+    display: none;
+} 
+
+.topHeaderResponsive {
+    display: none;
+}

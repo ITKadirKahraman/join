@@ -2,4 +2,12 @@
     .legal_notice_text {
         padding-left: 100px;
     }
+
+    .menuBoardResponsive {
+        display: flex;
+    } 
+
+    .topHeaderResponsive {
+        display: flex;
+    } 
 }
