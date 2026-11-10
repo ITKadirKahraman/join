@@ -1,0 +1,37 @@
+:root {
+    --color-avatar-orange: #c2410c;
+    --color-avatar-violet: #6d28d9;
+    --color-avatar-magenta: #a21caf;
+    --color-avatar-teal: #0e7490;
+    --color-avatar-green: #047857;
+    --color-avatar-amber: #b45309;
+    --color-avatar-rose: #be123c;
+    --color-avatar-indigo: #4338ca;
+}
+
+/* Farben der runden Kürzel (Kontakte, Add Task, Board): der Kontakt speichert nur den Farbnamen */
+.contact__avatar--orange { background-color: var(--color-avatar-orange); }
+.contact__avatar--violet { background-color: var(--color-avatar-violet); }
+.contact__avatar--magenta { background-color: var(--color-avatar-magenta); }
+.contact__avatar--teal { background-color: var(--color-avatar-teal); }
+.contact__avatar--green { background-color: var(--color-avatar-green); }
+.contact__avatar--amber { background-color: var(--color-avatar-amber); }
+.contact__avatar--rose { background-color: var(--color-avatar-rose); }
+.contact__avatar--indigo { background-color: var(--color-avatar-indigo); }
+
+/* Runde Kürzel in Add Task und Board (die Farbe kommt aus der Klasse oben) */
+.taskAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    margin-right: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}

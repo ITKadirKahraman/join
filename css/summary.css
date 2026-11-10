@@ -1,0 +1,257 @@
+/* Summary ("Join 360"): Kacheln links, Begrüßung rechts */
+
+.summary {
+    display: block;
+    padding: 130px 60px 48px 328px;
+    color: var(--color-menuBoard-background);
+    font-family: var(--font-family);
+}
+
+.summary__head {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.summary__title {
+    margin: 0;
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.summary__divider {
+    width: 3px;
+    height: 59px;
+    background-color: var(--secondary-color);
+}
+
+.summary__subtitle {
+    margin: 0;
+    font-size: 27px;
+}
+
+.summary__message {
+    min-height: 1.5em;
+    margin: 0 0 16px;
+}
+
+.summary__body {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.summary__tiles {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    width: 562px;
+    max-width: 100%;
+}
+
+.summary__row {
+    display: flex;
+    gap: 30px;
+}
+
+.summary__row--three {
+    gap: 24px;
+}
+
+/* Kacheln */
+
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    box-sizing: border-box;
+    min-width: 0;
+    height: 168px;
+    padding: 0 24px;
+    border: 1px solid #dcdcdc;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+.tile:hover {
+    background-color: var(--color-menuBoard-background);
+    color: #ffffff;
+}
+
+.summary__row .tile {
+    flex: 1 1 0;
+}
+
+.tile--wide {
+    width: 100%;
+}
+
+.tile--small {
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 8px;
+    text-align: center;
+}
+
+.tile__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 69px;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    background-color: var(--color-menuBoard-background);
+    color: #ffffff;
+}
+
+.tile__circle img {
+    width: 30px;
+    height: 30px;
+}
+
+.tile__pen {
+    width: 26px;
+    height: 26px;
+    filter: invert(1);
+}
+
+.tile__circle--urgent {
+    background-color: #ff3d00;
+    font-size: 18px;
+    letter-spacing: -3px;
+}
+
+.tile:hover .tile__circle {
+    background-color: #ffffff;
+}
+
+.tile:hover .tile__circle img {
+    filter: invert(1);
+}
+
+.tile:hover .tile__pen {
+    filter: none;
+}
+
+.tile:hover .tile__circle--urgent {
+    background-color: #ff3d00;
+}
+
+.tile__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tile__number {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.tile__label {
+    font-size: 20px;
+}
+
+.tile__line {
+    width: 1px;
+    height: 102px;
+    background-color: #d1d1d1;
+}
+
+.tile__deadline {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tile__deadline strong {
+    font-size: 21px;
+}
+
+.tile__deadline span {
+    font-size: 16px;
+}
+
+/* Begrüßung */
+
+.summary__greeting {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary__hello {
+    margin: 0;
+    font-size: 47px;
+    line-height: 1.2;
+}
+
+.summary__name {
+    margin: 0;
+    color: #124658;
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+/* Bis 1200 px: untere Leiste statt Seitenleiste, alles untereinander */
+
+@media (max-width: 1200px) {
+    .summary {
+        padding: 120px 16px 100px;
+    }
+
+    .summary__head {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .summary__title {
+        font-size: 47px;
+    }
+
+    .summary__divider {
+        display: none;
+    }
+
+    .summary__body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+
+    .summary__tiles {
+        width: 100%;
+    }
+
+    .summary__greeting {
+        order: -1;
+    }
+
+    .summary__hello {
+        font-size: 32px;
+    }
+
+    .summary__name {
+        font-size: 40px;
+    }
+
+    .tile__number {
+        font-size: 48px;
+    }
+
+    .tile__label {
+        font-size: 16px;
+    }
+}

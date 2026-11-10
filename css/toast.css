@@ -1,0 +1,35 @@
+/* Kurze Rückmeldung unten (Toast): wird von Kontakten, Registrierung und später Add Task und Board genutzt. */
+.toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    z-index: 3000;
+    padding: 20px 28px;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 20px;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-text);
+    font-size: 20px;
+    animation: toastIn 0.3s ease-out backwards;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translate(-50%, 24px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .toast { animation: none; }
+}
+
+@media (max-width: 900px) {
+    .toast {
+        bottom: 104px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toast {
+        max-width: calc(100% - 32px);
+        font-size: 16px;
+    }
+}
