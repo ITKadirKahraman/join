@@ -1,133 +1,143 @@
-
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board</title>
-
-    <!-- CSS -->
+    <!-- LINK -->
     <link rel="stylesheet" href="../css/root.css">
     <link rel="stylesheet" href="../css/standard.css">
-    <link rel="stylesheet" href="../css/board.css">
-    <link rel="stylesheet" href="../css/help.css">
     <link rel="stylesheet" href="../css/menuBoard.css">
+    <link rel="stylesheet" href="../css/menuBoardMobile.css">
     <link rel="stylesheet" href="../css/topHeader.css">
-    <link rel="stylesheet" href="../css/legal.css">
+    <link rel="stylesheet" href="../css/topHeaderMobile.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/avatar.css">
+    <link rel="stylesheet" href="../css/toast.css">
     <link rel="stylesheet" href="../css/board.css">
-
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/boardCards.css">
+    <link rel="stylesheet" href="../css/boardDetail.css">
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+    <script src="../script.js"></script>
+    <script src="../js/firebaseConfig.js" defer></script>
+    <script src="../js/contactsDb.js" defer></script>
+    <script src="../js/contactsApi.js" defer></script>
+    <script src="../js/templates.js" defer></script>
+    <script src="../js/tasksDb.js" defer></script>
+    <script src="../js/tasksApi.js" defer></script>
+    <script src="../js/tasksTemplates.js" defer></script>
+    <script src="../js/board.js" defer></script>
 </head>
-
 <body>
-
-    <!-- DESKTOP HEADER -->
-    <header id="topHeader" class="topHeader">
-        <div id="topHeader-content" class="header">
-            <p class="title" id="title">Kanban Project Management Tool</p>
-
-            <div class="circle">
-                <button id="helpButton" class="helpButton">
-                    <a href="help.html">
-                        <img class="questionCircle"
-                            src="../assets/icons/questionsCircle.svg"
-                            alt="Questions Circle Icon"
-                            id="questionCircle">
+    <!-- MENU BOARD -->
+        <header id="topHeader" class="topHeader">
+            <div class="header">
+                <p class="title" id="title">Kanban Project Management Tool</p>
+                <div class="circle">
+                    <a href="help.html" class="helpButton" aria-label="Help">
+                        <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="">
                     </a>
-                </button>
-
-                <button id="profileButton" class="profileButton">
-                    <div id="nameKuerzel" class="nameKuerzel">G</div>
-                </button>
+                    <button type="button" class="profileButton" aria-haspopup="true" aria-expanded="false" aria-label="Profile menu">
+                        <div class="nameKuerzel">G</div>
+                    </button>
+                    <nav class="profileMenu" aria-label="Profile menu" hidden>
+                        <a class="profileMenuItem" href="legal.html">Legal Notice</a>
+                        <a class="profileMenuItem" href="privacy.html">Privacy Policy</a>
+                        <button type="button" class="profileMenuItem logoutButton">Log out</button>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <!-- DESKTOP MENU -->
-    <section class="menuBoard" id="menuBoard">
-        <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
-
-        <nav class="menuContainer" id="menuContainer">
-            <a class="menuItems" href="../html/summary.html">
-                <img src="../assets/icons/summary.svg" alt="Summary Icon">
-                <p>Summary</p>
-            </a>
-
-            <a class="menuItems" href="../html/addTask.html">
-                <img src="../assets/icons/addTask.svg" alt="Add Task Icon">
-                <p>Add Task</p>
-            </a>
-
-            <a class="menuItems" href="../html/board.html">
-                <img src="../assets/icons/board.svg" alt="Board Icon">
-                <p>Board</p>
-            </a>
-
-            <a class="menuItems" href="../html/contacts.html">
-                <img src="../assets/icons/contacts.svg" alt="Contacts Icon">
-                <p>Contacts</p>
-            </a>
-        </nav>
-
-        <div class="menuContainer" id="policyContainer">
-            <a class="menuItems" href="../html/privacy.html">
-                <p>Privacy Policy</p>
-            </a>
-
-            <a class="menuItems" href="../html/legal.html">
-                <p>Legal notice</p>
-            </a>
-        </div>
-    </section>
-
+        </header>
+        <header id="topHeaderResponsive" class="topHeaderResponsive">
+            <img class="logo" src="../assets/icons/logoResponsive.svg" alt="Join Logo">
+            <div class="header">
+                <div class="circle">
+                    <a href="help.html" class="helpButton" aria-label="Help">
+                        <img class="questionCircle" src="../assets/icons/questionsCircle.svg" alt="">
+                    </a>
+                    <button type="button" class="profileButton" aria-haspopup="true" aria-expanded="false" aria-label="Profile menu">
+                        <div class="nameKuerzel">G</div>
+                    </button>
+                    <nav class="profileMenu" aria-label="Profile menu" hidden>
+                        <a class="profileMenuItem" href="legal.html">Legal Notice</a>
+                        <a class="profileMenuItem" href="privacy.html">Privacy Policy</a>
+                        <button type="button" class="profileMenuItem logoutButton">Log out</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="menuBoard" id="menuBoard">
+            <img class="logo" src="../assets/icons/joinDesktop.svg" alt="Join Logo">
+            <nav class="menuContainer">
+                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon"><p>Summary</p></a>
+                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
+                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
+                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden><p>Log in</p></a>
+            </nav>
+            <div class="menuContainer" id="policyContainer">
+                <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
+                <a class="menuItems" href="../html/legal.html"> <p>Legal notice</p></a>
+            </div>
+        </section>
+        <section class="menuBoardResponsive" id="menuBoardResponsive">
+            <nav class="menuContainer">
+                <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon">Summary</a>
+                <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
+                <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
+                <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden>Log in</a>
+            </nav>
+        </section>
     <!-- BOARD CONTENT -->
     <main>
         <section class="board">
-
             <div class="board-header">
                 <h1>Board</h1>
-<div class="board-actions">
-
-    <div class="search-container">
-        <input
-            type="text"
-            id="search-task"
-            placeholder="Find Task"
-        >
-
-        <span class="search-divider"></span>
-
-        <button type="button" class="search-button" aria-label="Search">
-            <span class="search-icon"></span>
-        </button>
-    </div>
-
-    <button type="button" class="add-task-btn">
-        Add task +
-    </button>
-
-</div>
-            </div>
-             <!-- BOARD COLUMNS -->
-            <div class="board-columns">
-                <!-- COLUMN 1: TO DO -->
-                <div class="board-column">
-                    <div class="column-header">
-                        <h2>To do</h2>
-                        <button type="button" class="column-add-btn" aria-label="Add task">+</button>
+                <div class="board-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-task" placeholder="Find Task" autocomplete="off" aria-label="Find task">
+                        <span class="search-divider"></span>
+                        <span class="search-button" aria-hidden="true"><span class="search-icon"></span></span>
                     </div>
-                    <div class="task-list" id="todo-list">
-                        <div class="no-tasks-box">
-                            No tasks To do
-                        </div>
-                    </div>
+                    <a class="add-task-btn" href="addTask.html">Add task +</a>
                 </div>
             </div>
-
+            <p class="board-message" id="boardMessage" role="status"></p>
+            <div class="board-columns">
+                <section class="column" aria-labelledby="todoTitle">
+                    <div class="column__head">
+                        <h2 class="column__title" id="todoTitle">To do</h2>
+                        <a class="column__add" href="addTask.html?status=todo" aria-label="Add task to To do">+</a>
+                    </div>
+                    <ul class="column__list" data-status="todo"></ul>
+                </section>
+                <section class="column" aria-labelledby="inprogressTitle">
+                    <div class="column__head">
+                        <h2 class="column__title" id="inprogressTitle">In progress</h2>
+                        <a class="column__add" href="addTask.html?status=inprogress" aria-label="Add task to In progress">+</a>
+                    </div>
+                    <ul class="column__list" data-status="inprogress"></ul>
+                </section>
+                <section class="column" aria-labelledby="awaitfeedbackTitle">
+                    <div class="column__head">
+                        <h2 class="column__title" id="awaitfeedbackTitle">Await feedback</h2>
+                        <a class="column__add" href="addTask.html?status=awaitfeedback" aria-label="Add task to Await feedback">+</a>
+                    </div>
+                    <ul class="column__list" data-status="awaitfeedback"></ul>
+                </section>
+                <section class="column" aria-labelledby="doneTitle">
+                    <div class="column__head">
+                        <h2 class="column__title" id="doneTitle">Done</h2>
+                    </div>
+                    <ul class="column__list" data-status="done"></ul>
+                </section>
+            </div>
         </section>
     </main>
-
+    <!-- TASK DETAILS -->
+    <div class="taskOverlay" id="taskOverlay" hidden>
+        <div class="taskOverlay__card" id="taskDetail" role="dialog" aria-modal="true" aria-labelledby="taskDetailTitle"></div>
+    </div>
 </body>
 </html>
