@@ -90,10 +90,6 @@
     background-repeat: no-repeat;
 }
 
-.input-error {
-    border-color: #ff3d71;
-}
-
 .field__error {
     margin: 0;
     color: #ff3d71;
@@ -148,235 +144,6 @@
 .priority__button[data-priority="urgent"][aria-pressed="true"] { background-color: #ff3d00; }
 .priority__button[data-priority="medium"][aria-pressed="true"] { background-color: #ffa800; }
 .priority__button[data-priority="low"][aria-pressed="true"] { background-color: #7ae229; }
-
-/* Assigned to */
-
-.assign {
-    position: relative;
-}
-
-.assign__toggle {
-    position: relative;
-    text-align: left;
-    cursor: pointer;
-    background-image: linear-gradient(45deg, transparent 50%, #2a3647 50%), linear-gradient(135deg, #2a3647 50%, transparent 50%);
-    background-position: calc(100% - 26px) 50%, calc(100% - 20px) 50%;
-    background-size: 6px 6px;
-    background-repeat: no-repeat;
-}
-
-.assign__options {
-    position: absolute;
-    top: calc(100% + 4px);
-    z-index: 10;
-    box-sizing: border-box;
-    width: 100%;
-    max-height: 260px;
-    margin: 0;
-    padding: 8px;
-    overflow-y: auto;
-    list-style: none;
-    border: 1px solid #d1d1d1;
-    border-radius: 10px;
-    background-color: #ffffff;
-}
-
-.assign__option {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 8px 12px;
-    border: unset;
-    border-radius: 10px;
-    background-color: unset;
-    font-family: inherit;
-    font-size: 20px;
-    color: inherit;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 100ms ease-in-out;
-}
-
-.assign__option:hover {
-    background-color: #eef0f3;
-}
-
-.assign__option[aria-pressed="true"] {
-    background-color: var(--color-menuBoard-background);
-    color: #ffffff;
-}
-
-.assign__name {
-    flex: 1 1 auto;
-}
-
-.assign__box {
-    flex: 0 0 18px;
-    width: 18px;
-    height: 18px;
-    border: 2px solid currentColor;
-    border-radius: 4px;
-}
-
-.assign__option[aria-pressed="true"] .assign__box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    color: var(--color-menuBoard-background);
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.assign__option[aria-pressed="true"] .assign__box::after {
-    content: "✓";
-}
-
-.assign__message {
-    padding: 8px 12px;
-}
-
-.assign__selected {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.taskAvatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 42px;
-    width: 42px;
-    height: 42px;
-    margin-right: -8px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    box-sizing: border-box;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* Subtasks */
-
-.subtaskInput {
-    position: relative;
-}
-
-.subtaskInput__plus,
-.subtaskInput__actions {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-}
-
-.subtaskInput__plus,
-.subtaskInput__actions button,
-.subtaskList__actions button {
-    border: unset;
-    background-color: unset;
-    cursor: pointer;
-    transition: background-color 100ms ease-in-out;
-}
-
-.subtaskInput__plus {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 26px;
-    line-height: 1;
-    color: var(--color-menuBoard-background);
-}
-
-.subtaskInput__plus:hover,
-.subtaskInput__actions button:hover,
-.subtaskList__actions button:hover {
-    background-color: #eef0f3;
-}
-
-.subtaskInput:focus-within .subtaskInput__plus,
-.subtaskInput:not(:focus-within) .subtaskInput__actions {
-    display: none;
-}
-
-.subtaskInput__actions {
-    display: flex;
-    gap: 8px;
-}
-
-.subtaskInput__actions button,
-.subtaskList__actions button {
-    width: 32px;
-    height: 32px;
-    padding: 4px;
-    border-radius: 8px;
-    color: var(--color-menuBoard-background);
-}
-
-.subtaskInput__actions .subtaskInput__confirm,
-.subtaskList__actions .subtaskList__confirm {
-    background-color: var(--color-menuBoard-background);
-}
-
-.subtaskList {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.subtaskList__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 6px 12px;
-    border-radius: 8px;
-}
-
-.subtaskList__item::before {
-    content: "•";
-    margin-right: -4px;
-}
-
-.subtaskList__title {
-    flex: 1 1 auto;
-    overflow-wrap: anywhere;
-    font-size: 20px;
-}
-
-.subtaskList__actions {
-    display: none;
-    gap: 4px;
-}
-
-.subtaskList__item:hover .subtaskList__actions,
-.subtaskList__item:focus-within .subtaskList__actions,
-.subtaskList__actions--visible {
-    display: flex;
-}
-
-.subtaskList__item:hover {
-    background-color: #eef0f3;
-}
-
-.subtaskList__item--edit::before {
-    content: none;
-}
-
-.subtaskList__input {
-    flex: 1 1 auto;
-    min-width: 0;
-    padding: 6px 4px;
-    border: unset;
-    border-bottom: 1px solid var(--secondary-color);
-    background-color: unset;
-    font-family: inherit;
-    font-size: 20px;
-}
 
 /* Unten: Hinweis, Clear, Create Task */
 
@@ -441,4 +208,51 @@
 .addTask__button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+.addTask__button[hidden] {
+    display: none;
+}
+
+/* Bis 1200 px (wie die Menüs des Teams): untere Leiste, ein Spalte statt zwei, bis 320 px ohne waagerechten Scrollbalken */
+@media (max-width: 1200px) {
+    .addTask {
+        padding: 120px 16px 100px;
+    }
+
+    .addTask__title {
+        margin-bottom: 24px;
+        font-size: 47px;
+    }
+
+    .addTask__columns {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .addTask__divider {
+        display: none;
+    }
+
+    .addTask__footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .addTask__buttons {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 420px) {
+    .priority {
+        gap: 8px;
+    }
+
+    .priority__button {
+        padding: 0 4px;
+        font-size: 16px;
+        gap: 6px;
+    }
 }
