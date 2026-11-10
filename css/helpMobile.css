@@ -2,6 +2,16 @@
 /* Medium screens & small laptops */
 @media (max-width: 1200px) {
     .help_legal_police_text {
-        padding-left: 100px;
+        padding: 40px 60px 40px 128px;
+        margin-top: 100px;
+        max-height: 620px;
     }
+
+    .menuBoardResponsive {
+        display: flex;
+    } 
+
+    .topHeaderResponsive {
+        display: flex;
+    } 
 }
