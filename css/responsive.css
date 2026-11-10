@@ -100,10 +100,23 @@
     letter-spacing: 0%;
   }
 
-  .login-card h1 {
-    white-space: nowrap;
-    font-size: 47px;
+   .login-card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 396px;
+    margin-left: auto !important;
+  margin-right: auto !important;
   }
+
+  .login-card h1 {
+  font-family: var(--font-family);
+  font-size: 47px;
+  font-weight: var(--login-title-font-weight);
+  line-height: var(--login-title-line-height);
+  color: var(--login-title-color);
+  text-align: center;
+  margin-bottom: -8px;
+ white-space: nowrap;
 }
 
 @media (max-width: 360px) {
