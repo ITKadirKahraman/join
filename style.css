@@ -41,3 +41,22 @@ body {
   height: 122px;
   object-fit: contain;
 }
+
+/* Checkliste: Auf Handys ist das Querformat abgeschaltet (nur Touch-Geräte, ein Mausfenster am Desktop ist nicht betroffen) */
+@media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
+    body::before {
+        content: "Please turn your device";
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background-color: #2a3647;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        text-align: center;
+    }
+}
