@@ -23,6 +23,9 @@
         scrollbar-color: var(--color-menuBoard-background) var(--color-background);
         color: var(--color-menuBoard-background);
         font-family: var(--font-family);
+        padding: 24px 16px 104px;
+        min-height: 0;
+        max-height: calc(100vh - var(--page-padding));
     }
 
     .contacts__sidebar {
