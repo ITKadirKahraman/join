@@ -8,6 +8,13 @@ main {
     margin-left: var(--menuBoard-width);
     margin-top: 80px;
     padding: 64px 40px;
+    margin-top: 96px;
+    padding: 48px 40px;
+    max-height: calc(100vh - 96px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-color: var(--color-menuBoard-background) var(--color-background);
 }
 
 .board {
