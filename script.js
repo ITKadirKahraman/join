@@ -78,6 +78,9 @@ function closeProfileMenus() {
  */
 function toggleProfileMenu(button) {
     const menu = button.parentElement.querySelector(".profileMenu");
+    if (menu === null) {
+        return; // older page without the profile menu: nothing to open
+    }
     const menuWasClosed = menu.hidden;
     closeProfileMenus();
     if (menuWasClosed) {
