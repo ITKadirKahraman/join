@@ -1,5 +1,4 @@
 /* Add Task: Formular in zwei Spalten (links Titel, Beschreibung, Datum; rechts Priorität, Kontakte, Kategorie, Subtasks) */
-
 .addTask {
     display: block;
     padding: 130px 60px 48px 328px;
@@ -17,10 +16,10 @@
 
 .addTask__title {
     margin: 0 0 40px;
-    font-size: 61px;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #000000;
+    font-size: var(--login-title-font-size);
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
+    color: var(--login-title-color);
 }
 
 .addTask__form {
@@ -42,7 +41,7 @@
 
 .addTask__divider {
     width: 1px;
-    background-color: #d1d1d1;
+    background-color: var(--color-border-light);
 }
 
 /* Felder */
@@ -55,28 +54,28 @@
 }
 
 .field__label {
-    font-size: 20px;
+    font-size: var(--input-font-size);
 }
 
 .field__required {
-    color: #ff8190;
+    color: var(--color-required);
 }
 
 .field__input {
     box-sizing: border-box;
     width: 100%;
-    min-height: 48px;
-    padding: 12px 21px;
-    border: 1px solid #d1d1d1;
-    border-radius: 10px;
-    background-color: #ffffff;
+    min-height: var(--input-height);
+    padding: var(--input-padding-y) var(--input-padding-x);
+    border: var(--input-border-width) solid var(--color-border-light);
+    border-radius: var(--input-radius);
+    background-color: var(--input-background);
     font-family: inherit;
-    font-size: 20px;
+    font-size: var(--input-font-size);
     color: var(--color-menuBoard-background);
 }
 
 .field__input::placeholder {
-    color: #a8a8a8;
+    color: var(--color-placeholder);
 }
 
 .field__input:focus {
@@ -92,7 +91,7 @@
 .field__input--select {
     appearance: none;
     cursor: pointer;
-    background-image: linear-gradient(45deg, transparent 50%, #2a3647 50%), linear-gradient(135deg, #2a3647 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, var(--color-menuBoard-background) 50%), linear-gradient(135deg, var(--color-menuBoard-background) 50%, transparent 50%);
     background-position: calc(100% - 26px) 50%, calc(100% - 20px) 50%;
     background-size: 6px 6px;
     background-repeat: no-repeat;
@@ -100,7 +99,7 @@
 
 .field__error {
     margin: 0;
-    color: #ff3d71;
+    color: var(--color-error);
     font-size: 14px;
 }
 
@@ -120,15 +119,15 @@
     flex: 1 1 0;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: var(--input-gap);
     min-height: 56px;
     border: unset;
-    border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border-radius: var(--input-radius);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-prio-button);
     font-family: inherit;
-    font-size: 20px;
-    color: #000000;
+    font-size: var(--input-font-size);
+    color: var(--color-black);
     cursor: pointer;
     transition: background-color 100ms ease-in-out;
 }
@@ -138,20 +137,20 @@
     letter-spacing: -2px;
 }
 
-.priority__button[data-priority="urgent"] .priority__icon { color: #ff3d00; }
-.priority__button[data-priority="medium"] .priority__icon { color: #ffa800; }
-.priority__button[data-priority="low"] .priority__icon { color: #7ae229; }
+.priority__button[data-priority="urgent"] .priority__icon { color: var(--color-prio-urgent); }
+.priority__button[data-priority="medium"] .priority__icon { color: var(--color-prio-medium); }
+.priority__button[data-priority="low"] .priority__icon { color: var(--color-prio-low); }
 
 .priority__button[aria-pressed="true"] {
-    color: #ffffff;
-    font-weight: 700;
+    color: var(--color-white);
+    font-weight: var(--button-font-weight);
     box-shadow: none;
 }
 
-.priority__button[aria-pressed="true"] .priority__icon { color: #ffffff; }
-.priority__button[data-priority="urgent"][aria-pressed="true"] { background-color: #ff3d00; }
-.priority__button[data-priority="medium"][aria-pressed="true"] { background-color: #ffa800; }
-.priority__button[data-priority="low"][aria-pressed="true"] { background-color: #7ae229; }
+.priority__button[aria-pressed="true"] .priority__icon { color: var(--color-white); }
+.priority__button[data-priority="urgent"][aria-pressed="true"] { background-color: var(--color-prio-urgent); }
+.priority__button[data-priority="medium"][aria-pressed="true"] { background-color: var(--color-prio-medium); }
+.priority__button[data-priority="low"][aria-pressed="true"] { background-color: var(--color-prio-low); }
 
 /* Unten: Hinweis, Clear, Create Task */
 
@@ -165,7 +164,7 @@
 
 .addTask__note {
     margin: 0;
-    font-size: 16px;
+    font-size: var(--button-font-size);
 }
 
 .addTask__buttons {
@@ -178,12 +177,12 @@
     align-items: center;
     gap: 8px;
     min-height: 56px;
-    padding: 0 24px;
-    border: 1px solid var(--color-menuBoard-background);
-    border-radius: 10px;
+    padding: 0 var(--login-button-padding-x);
+    border: var(--guest-button-border-width) solid var(--color-menuBoard-background);
+    border-radius: var(--input-radius);
     font-family: inherit;
-    font-size: 21px;
-    font-weight: 700;
+    font-size: var(--guest-button-font-size);
+    font-weight: var(--button-font-weight);
     cursor: pointer;
     transition: background-color 100ms ease-in-out, border-color 100ms ease-in-out;
 }
@@ -194,9 +193,9 @@
 }
 
 .addTask__button--secondary {
-    background-color: #f6f7f8;
+    background-color: var(--color-background);
     color: var(--color-menuBoard-background);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
 }
 
 .addTask__button--secondary:hover {
@@ -205,7 +204,7 @@
 
 .addTask__button--primary {
     background-color: var(--color-menuBoard-background);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .addTask__button--primary:hover {
@@ -260,7 +259,7 @@
 
     .priority__button {
         padding: 0 4px;
-        font-size: 16px;
+        font-size: var(--button-font-size);
         gap: 6px;
     }
 }

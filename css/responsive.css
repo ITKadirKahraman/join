@@ -1,7 +1,6 @@
 /* =========================
    RESPONSIVE LOGIN SITE
 ========================= */
-
 @media (max-width: 600px) {
   .header-login .header-signup {
     display: none;
@@ -45,7 +44,7 @@
   .login-form {
     width: 100%;
     align-self: stretch;
-    border-radius: 30px;
+    border-radius: var(--login-card-radius);
   }
 
   .header-login {
@@ -81,66 +80,65 @@
     height: 49px;
     margin: 20px auto;
 
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
     font-style: normal;
-    font-size: 20px;
-    line-height: 120%;
+    font-size: var(--input-font-size);
+    line-height: var(--line-height-header);
     letter-spacing: 0%;
   }
 
   .btn-primary-sign-up-down {
     width: 104px;
     height: 49px;
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
+    font-family: var(--font-family);
+    font-weight: var(--button-font-weight);
     font-style: normal;
-    font-size: 16px;
-    line-height: 120%;
+    font-size: var(--button-font-size);
+    line-height: var(--button-line-height);
     letter-spacing: 0%;
   }
 
-   .login-card {
+  .login-card {
     box-sizing: border-box;
     width: 100%;
     max-width: 396px;
     margin-left: auto !important;
-  margin-right: auto !important;
+    margin-right: auto !important;
   }
 
   .login-card h1 {
-  font-family: var(--font-family);
-  font-size: 47px;
-  font-weight: var(--login-title-font-weight);
-  line-height: var(--login-title-line-height);
-  color: var(--login-title-color);
-  text-align: center;
-  margin-bottom: -8px;
- white-space: nowrap;
-}
-
-@media (max-width: 360px) {
-}
-
-
-/* =========================
-   RESPONSIVE SIGNUP SITE
-========================= */
-
-@media (max-width: 600px) {
-  .signup-card {
-    width: 396px;
-    height: 595px;
-    padding: 32px 16px;
-    gap: 32px;
-    border-radius: 30px;
+    font-family: var(--font-family);
+    font-size: 47px;
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
+    color: var(--login-title-color);
+    text-align: center;
+    margin-bottom: -8px;
+    white-space: nowrap;
   }
 
-  .title-underline {
-    width: 62px;
-    height: 2px;
-    background-color: #29abe2;
-    margin: 0;
+  @media (max-width: 360px) {
+  }
+
+  /* =========================
+     RESPONSIVE SIGNUP SITE
+  ========================= */
+
+  @media (max-width: 600px) {
+    .signup-card {
+      width: 396px;
+      height: 595px;
+      padding: var(--login-card-gap) 16px;
+      gap: var(--login-card-gap);
+      border-radius: var(--login-card-radius);
+    }
+
+    .title-underline {
+      width: 62px;
+      height: 2px;
+      background-color: var(--login-underline-color);
+      margin: 0;
+    }
   }
 }
-

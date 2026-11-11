@@ -15,8 +15,8 @@
 }
 
 .logo {
-    height: 122px;
-    width: 100px;
+    height: var(--header-height);
+    width: var(--page-padding);
 }
 
 .menuBoard .logo {
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--input-gap);
     box-sizing: border-box;
     width: 100%;
     height: 45px;
@@ -49,7 +49,7 @@
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
     color: var(--color-menuBoard-text);
-    font-size: 16px;
+    font-size: var(--button-font-size);
     text-decoration: none;
 }
 
@@ -79,7 +79,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 26px;
-    margin-top: 48px;
+    margin-top: var(--login-button-height);
     width: 100%;
 }
 .board-column {
@@ -96,10 +96,10 @@ p {
 }
 .column-header h2 {
     margin: 0;
-    color: #42526e;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    color: var(--color-column-title);
+    font-family: var(--font-family);
+    font-size: var(--input-font-size);
+    font-weight: var(--button-font-weight);
 }
 .column-add-btn {
     display: flex;
@@ -108,10 +108,10 @@ p {
     width: 24px;
     height: 24px;
     padding: 0;
-    border: 2px solid #2a3647;
-    border-radius: 8px;
+    border: 2px solid var(--color-menuBoard-background);
+    border-radius: var(--login-button-radius);
     background-color: transparent;
-    color: #2a3647;
+    color: var(--color-menuBoard-background);
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
@@ -119,8 +119,8 @@ p {
     transition: all 0.15s ease;
 }
 .column-add-btn:hover {
-    border-color: #29abe2;
-    color: #29abe2;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 .task-list {
     display: flex;
@@ -133,13 +133,13 @@ p {
     align-items: center;
     justify-content: center;
     width: 246px;
-    height: 48px;
+    height: var(--login-button-height);
     box-sizing: border-box;
-    border: 1px dashed #a8a8a8;
-    border-radius: 10px;
-    background-color: #e7e7e7;
-    color: #a8a8a8;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
+    border: 1px dashed var(--color-placeholder);
+    border-radius: var(--input-radius);
+    background-color: var(--color-menuBoard-text);
+    color: var(--color-placeholder);
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--font-weight-regular);
 }

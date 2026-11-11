@@ -15,22 +15,21 @@
 .summary_header_article {
     display: flex;
     align-items: center;
-    font-size: 60px;
     font-family: "InterBold";
     gap: 30px;
-    padding-left: 100px;
-    font-size: 27px;
+    padding-left: var(--page-padding);
+    font-size: var(--page-subtitle-size);
 }
 
 .summary_separator {
     width: 4px;
     height: 59px;
-    background: linear-gradient(to bottom, #29a9e1, #1a8abf);
-    border-radius: 100px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--color-initials));
+    border-radius: var(--page-padding);
 }
 
 .summary_header {
-    font-size: 60px;
+    font-size: var(--login-title-font-size);
     font-family: "InterBold";
     margin: 0;
 }
@@ -38,7 +37,7 @@
 .summary_text {
     text-decoration: none;
     font-family: "InterRegular";
-    color: black;
+    color: var(--color-black);
 }
 
 /* CONTENT structur */
@@ -58,26 +57,26 @@
     gap: 28px;
     width: 100%;
     max-width: 720px;
-    padding-left: 100px;
-    padding-top: 50px;
+    padding-left: var(--page-padding);
+    padding-top: var(--page-gap);
 }
 
 .summary_btn_top_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: var(--login-card-gap);
 }
 
 .summary_btn_middle_container {
     display: grid;
     grid-template-columns: 5fr;
-    gap: 32px;
+    gap: var(--login-card-gap);
 }
 
 .summary_btn_bottom_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
+    gap: var(--login-card-gap);
 }
 
 .summary_btn {
@@ -86,10 +85,10 @@
   justify-content: center;
   gap: 20px;
   min-width: 0;
-  padding: 16px 24px;
-  border-radius: 30px;
-  background-color: white;
-  color: #2f3e4e; 
+  padding: 16px var(--login-button-padding-x);
+  border-radius: var(--login-card-radius);
+  background-color: var(--color-white);
+  color: var(--color-menuBoard-background); 
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 
   & img {
@@ -98,13 +97,13 @@
   }
 
   &:hover {
-    background-color: #2f3e4e;
-    color: white;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-white);
     cursor: pointer;
     transform: scale(1.05); 
 
     & .summaryLink {
-      color: white;
+      color: var(--color-white);
     }
 
     & .penHover {
@@ -129,7 +128,7 @@
     align-items: center;
     justify-content: center;
     width: 140px;
-    font-size: 20px;
+    font-size: var(--input-font-size);
     text-align: center;
 }
 
@@ -138,7 +137,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: var(--input-font-size);
     text-align: center;
 }
 
@@ -147,13 +146,13 @@
     align-items: center;
     justify-content: center;
     font-size: 64px;
-    font-weight: bold;
+    font-weight: var(--button-font-weight);
 }
 
 .summaryLink {
     text-decoration: none;
     font-family: "InterRegular";
-    color: black;
+    color: var(--color-black);
 }
 
 .summary_urgent {
@@ -166,9 +165,9 @@
 
 .summary_urgent_separator {
     width: 2px;
-    height: 100px;
-    border-radius: 100px;
-    background: linear-gradient(to bottom, #d1d1d1, #d1d1d1);
+    height: var(--page-padding);
+    border-radius: var(--page-padding);
+    background: linear-gradient(to bottom, var(--color-border-light), var(--color-border-light));
 }
 
 .summary_deadline {
@@ -176,7 +175,7 @@
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: var(--button-font-weight);
 }
 
 .summary_greeting {
@@ -185,7 +184,7 @@
     align-items: center;
     justify-content: center;
     padding-left: 80px;
-    background: #f6f7f8;
+    background: var(--color-background);
 }
 
 .summary_greeting_text {
@@ -196,8 +195,8 @@
 
 .summary_greeting_person {
     font-size: 64px;
-    font-weight: bold;
-    color: #29abe2;
+    font-weight: var(--button-font-weight);
+    color: var(--secondary-color);
     text-align: center;
     margin: 0;
 }
@@ -208,4 +207,4 @@
 
 .topHeaderResponsive {
     display: none;
-} 
+}

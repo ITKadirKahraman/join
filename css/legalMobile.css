@@ -1,7 +1,7 @@
 @media (max-width: 1200px) {
     .legal_notice_text {
         padding: 40px 60px 40px 128px;
-        margin-top: 100px;
+        margin-top: var(--page-padding);
         max-height: 620px;
     }
 

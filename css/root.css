@@ -39,7 +39,6 @@
   --button-font-size: 16px;
   --button-font-weight: 700;
   --button-line-height: 120%;
-  --font-family: "Inter", sans-serif;
 
   /* Guest Login Button */
   --guest-button-width: 177px;
@@ -90,4 +89,37 @@
   --input-font-weight: 400;
   --input-line-height: 120%;
   --input-text-color: #686868;
+
+  /* Shared & Project Variables */
+  --secondary-color: #29abe2;
+  --color-summerSky: #29abe2;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-border-light: #d1d1d1;
+  --color-placeholder: #a8a8a8;
+  --color-required: #ff8190;
+  --color-error: #ff3d71;
+  --color-prio-urgent: #ff3d00;
+  --color-prio-medium: #ffa800;
+  --color-prio-low: #7ae229;
+  --shadow-prio-button: 0 0 4px rgba(0, 0, 0, 0.15);
+  --color-hover-light: #eef0f3;
+  --color-column-title: #42526e;
+  --shadow-card: 0 0 10px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 0 14px rgba(42, 54, 71, 0.25);
+  --color-tag-user-story: #0038ff;
+  --color-tag-technical: #1fd7c1;
+  --color-progress-bg: #f4f4f4;
+  --color-progress-fill: #4589ff;
+
+  /* Privacy & Legal Pages */
+  --page-max-width: 1440px;
+  --page-gap: 50px;
+  --page-padding: 100px;
+  --page-padding-left: 300px;
+  --page-subtitle-size: 27px;
+  --page-line-height: 1.2;
+  --page-title-margin-bottom: 16px;
+  --page-subtitle-margin-bottom: 8px;
+  --page-list-padding-left: 20px;
 }

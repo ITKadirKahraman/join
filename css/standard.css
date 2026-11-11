@@ -4,13 +4,13 @@ body {
   flex-direction: column;
   overflow: hidden;
   background-color: var(--color-background);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family);
 }
 
 main {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: var(--input-gap);
 }
 
 /* =========================

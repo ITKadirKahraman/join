@@ -14,8 +14,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100px;
-        background: #f4f4f4;
+        height: var(--page-padding);
+        background: var(--color-progress-bg);
         box-shadow: 0px 1px 5px rgb(138, 138, 138);
         padding: 20px 20px;
     }
@@ -25,8 +25,8 @@
     }
 
     .logo {
-        height: 50px;
-        width: 50px;
+        height: var(--page-gap);
+        width: var(--page-gap);
     }
 
     .questionCircle:hover {
@@ -48,6 +48,6 @@
 
     .topHeaderResponsive .nameKuerzel {
         height: 44px;
-        font-size: 16px;
+        font-size: var(--button-font-size);
     }
 }

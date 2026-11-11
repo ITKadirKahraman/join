@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 1440px;
-    gap: 50px;
-    padding: 0px 100px 50px 300px;
+    max-width: var(--page-max-width);
+    gap: var(--page-gap);
+    padding: 0px var(--page-padding) var(--page-gap) var(--page-padding-left);
     margin-top: 90px;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - var(--page-padding));
     box-sizing: border-box; 
     overflow-y: auto;
     scrollbar-width: thin;
@@ -26,22 +26,22 @@
 }
 
 .privacy-container h1 {
-    font-family: "Inter", sans-serif;
-    font-size: 61px;
-    font-weight: 700;
-    line-height: 120%;
+    font-family: var(--font-family);
+    font-size: var(--login-title-font-size);
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
     color: var(--color-black);
-    margin-bottom: 16px;
+    margin-bottom: var(--page-title-margin-bottom);
 }
 
 .privacy-container h2,
 .privacy-section h2 {
     margin: 0;
-    font-family: "Inter", sans-serif;
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    font-family: var(--font-family);
+    font-size: var(--page-subtitle-size);
+    font-weight: var(--button-font-weight);
+    line-height: var(--page-line-height);
+    margin-bottom: var(--page-subtitle-margin-bottom);
 }
 
 .privacy-section a,
@@ -52,7 +52,7 @@
 }
 
 .privacy-section ul {
-    padding-left: 20px;
+    padding-left: var(--page-list-padding-left);
     margin-left: 0;
     list-style-position: outside;
 }
@@ -64,21 +64,21 @@
 .privacy-section li,
 .privacy-section p,
 .privacy-container p {
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--page-line-height);
 }
 
 .privacy-section h3 {
-    font-family: "Inter", sans-serif;
-    line-height: 1.2;
+    font-family: var(--font-family);
+    line-height: var(--page-line-height);
 }
 
 @media (max-width: 1200px) {
-.privacy-container {
+    .privacy-container {
         padding: 40px 60px 40px 128px;
-        margin-top: 100px;
+        margin-top: var(--page-padding);
         max-height: 620px;
     }
 }

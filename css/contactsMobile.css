@@ -13,8 +13,8 @@
         flex-direction: column;
         gap: 0;
         padding: 60px 60px 188px 28px;
-        max-width: 1440px;
-        margin-top: 100px;
+        max-width: var(--page-max-width);
+        margin-top: var(--page-padding);
         max-height: calc(100vh - 50px);
         box-sizing: border-box; 
         overflow-y: auto;
@@ -35,7 +35,7 @@
         overflow-y: visible;
     }
 
-        .contacts__add-button {
+    .contacts__add-button {
         position: fixed;
         right: 16px;
         bottom: 96px;
@@ -60,7 +60,7 @@
         white-space: nowrap;
     }
 
-        .contacts__detail {
+    .contacts__detail {
         display: none;
     }
 
@@ -87,7 +87,7 @@
         width: var(--touch-target);
         height: var(--touch-target);
         border: unset;
-        border-radius: 8px;
+        border-radius: var(--login-button-radius);
         background-color: unset;
         cursor: pointer;
     }

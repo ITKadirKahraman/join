@@ -2,7 +2,6 @@
 /* ========================================
    BOARD CONTENT
 ======================================== */
-
 main {
     display: block;
     box-sizing: border-box;
@@ -28,9 +27,9 @@ main {
 /* Board Title */
 .board h1 {
     margin: 0;
-    color: #2a3647;
+    color: var(--color-menuBoard-background);
     font-size: 48px;
-    font-weight: 700;
+    font-weight: var(--button-font-weight);
 }
 
 /* ========================================
@@ -54,9 +53,9 @@ main {
     box-sizing: border-box;
     width: 241px;
     height: 38px;
-    border: 1px solid #a8a8a8;
-    border-radius: 8px;
-    background-color: white;
+    border: 1px solid var(--color-placeholder);
+    border-radius: var(--login-button-radius);
+    background-color: var(--color-white);
 }
 
 #search-task {
@@ -67,23 +66,23 @@ main {
     border: none;
     outline: none;
     background: transparent;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
 }
 
 #search-task::placeholder {
-    color: #a8a8a8;
+    color: var(--color-placeholder);
 }
 
 /* Search Divider */
 .search-divider {
     height: 24px;
-    border-left: 1px solid #a8a8a8;
+    border-left: 1px solid var(--color-placeholder);
 }
 
 /* Search Button */
 .search-button {
-    width: 48px;
+    width: var(--login-button-height);
     height: 100%;
     border: none;
     background: transparent;
@@ -96,7 +95,7 @@ main {
     display: inline-block;
     width: 11px;
     height: 11px;
-    border: 1.8px solid #2a3647;
+    border: 1.8px solid var(--color-menuBoard-background);
     border-radius: 50%;
 }
 
@@ -106,7 +105,7 @@ main {
     bottom: -3px;
     width: 6px;
     height: 1.8px;
-    background-color: #2a3647;
+    background-color: var(--color-menuBoard-background);
     content: "";
     transform: rotate(45deg);
 }
@@ -121,19 +120,19 @@ main {
     justify-content: center;
     gap: 8px;
     width: 123px;
-    height: 48px;
+    height: var(--login-button-height);
     border: none;
-    border-radius: 8px;
-    background-color: #091931;
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    border-radius: var(--login-button-radius);
+    background-color: var(--color-menuBoard-hover-background);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
     cursor: pointer;
 }
 
 .add-task-btn:hover {
-    background-color: #2a3647;
+    background-color: var(--color-menuBoard-background);
 }
 
 /* ========================================
@@ -147,8 +146,8 @@ main {
 .board-message {
     min-height: 1.5em;
     margin: 16px 0 0;
-    color: #2a3647;
-    font-size: 20px;
+    color: var(--color-menuBoard-background);
+    font-size: var(--input-font-size);
 }
 
 .board-columns {
@@ -171,9 +170,9 @@ main {
 
 .column__title {
     margin: 0;
-    color: #42526e;
-    font-size: 21px;
-    font-weight: 700;
+    color: var(--color-column-title);
+    font-size: var(--guest-button-font-size);
+    font-weight: var(--button-font-weight);
 }
 
 .column__add {
@@ -182,9 +181,9 @@ main {
     justify-content: center;
     width: 24px;
     height: 24px;
-    border: 2px solid #2a3647;
-    border-radius: 8px;
-    color: #2a3647;
+    border: 2px solid var(--color-menuBoard-background);
+    border-radius: var(--login-button-radius);
+    color: var(--color-menuBoard-background);
     font-size: 18px;
     line-height: 1;
     text-decoration: none;
@@ -192,8 +191,8 @@ main {
 }
 
 .column__add:hover {
-    background-color: #2a3647;
-    color: #ffffff;
+    background-color: var(--color-menuBoard-background);
+    color: var(--color-white);
 }
 
 .column__list {
@@ -207,17 +206,17 @@ main {
 }
 
 .column__list--over {
-    outline: 2px dashed #a8a8a8;
+    outline: 2px dashed var(--color-placeholder);
     outline-offset: 4px;
     border-radius: 24px;
 }
 
 .column__empty {
     padding: 14px 0;
-    border: 1px dashed #a8a8a8;
-    border-radius: 10px;
-    background-color: #e7e7e7;
-    color: #a8a8a8;
+    border: 1px dashed var(--color-placeholder);
+    border-radius: var(--input-radius);
+    background-color: var(--color-menuBoard-text);
+    color: var(--color-placeholder);
     text-align: center;
 }
 

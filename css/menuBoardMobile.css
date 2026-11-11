@@ -33,9 +33,9 @@
         flex-direction: column;
         gap: 0;
         border-radius: 20px;
-        font-size: 16px;
+        font-size: var(--button-font-size);
         height: 100%;
-        color: var(--menuBoardText);
+        color: var(--color-menuBoard-text);
     }
 
     .menuItems:hover {

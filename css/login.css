@@ -1,7 +1,6 @@
 /* =========================
    IMPORTS
 ========================= */
-
 @import url("./root.css");
 @import url("./standard.css");
 @import url("./responsive.css");
@@ -9,9 +8,6 @@
 /* =========================
    HEADER
 ========================= */
-
-
-
 
 .header-login {
   position: relative;
@@ -31,7 +27,7 @@
 }
 
 .logo img {
-  width: 100px;
+  width: var(--page-padding);
   height: auto;
   display: block;
 }
@@ -67,8 +63,7 @@
    LOGIN CARD
 ========================= */
 .login-card {
-
-  margin-top: 100px;
+  margin-top: var(--page-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,125 +162,5 @@
 .login-buttons {
   display: flex;
   justify-content: center;
-  gap: 35px;
-
-  margin-top: 14px;
-}
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible {
-  outline: 3px solid var(--secondary-color);
-  outline-offset: 3px;
-}
-
-/* =========================
-   PRIMARY BUTTON
-========================= */
-
-.btn-primary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-sizing: border-box;
-  min-width: 110px;
-  min-height: 48px;
-  white-space: nowrap;
-  background-color: #2a3647;
-
- 
-  border-radius: var(--login-button-radius);
-  padding: var(--button-padding-y) var(--button-padding-x);
-
-  font-family: var(--font-family);
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  line-height: var(--button-line-height);
-
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-
-  text-decoration: none;
-}
-
-.btn-secondary {
-  width: var(--guest-button-width);
-  height: var(--guest-button-height);
-
-  padding: var(--guest-button-padding-y) var(--guest-button-padding-x);
-
-  background-color: #ffffff;
-  border-radius: var(--login-button-radius);
-  padding: var(--login-button-padding-y) var(--login-button-padding-x);
-
-  font-family: var(--login-button-font-family);
-  font-size: var(--login-button-font-size);
-  font-weight: var(--login-button-font-weight);
-  line-height: var(--login-button-line-height);
-
-  color: var(--guest-button-color);
-  cursor: pointer;
-}
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    margin-top: auto;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-
-  padding: 16px;
-}
-.footer a {
-  color: #686868;
-  font-family: var(--font-family);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 120%;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: var(--secondary-color);
-}
-
-
-/* =========================
-   ERROR MESSAGE
-========================= */
-
-.login-error {
-  min-height: 1em;
-  margin: 0;
-  color: #ff3d71;
-  text-align: center;
-}
-
-.login-error:empty {
-  display: none;
-}
-
-.input-error {
-  border-color: #ff3d71;
+  gap: var(--header-signup-gap);
 }

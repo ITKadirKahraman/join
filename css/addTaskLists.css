@@ -10,7 +10,7 @@
     position: relative;
     text-align: left;
     cursor: pointer;
-    background-image: linear-gradient(45deg, transparent 50%, #2a3647 50%), linear-gradient(135deg, #2a3647 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, var(--color-menuBoard-background) 50%), linear-gradient(135deg, var(--color-menuBoard-background) 50%, transparent 50%);
     background-position: calc(100% - 26px) 50%, calc(100% - 20px) 50%;
     background-size: 6px 6px;
     background-repeat: no-repeat;
@@ -27,9 +27,9 @@
     padding: 8px;
     overflow-y: auto;
     list-style: none;
-    border: 1px solid #d1d1d1;
-    border-radius: 10px;
-    background-color: #ffffff;
+    border: var(--input-border-width) solid var(--color-border-light);
+    border-radius: var(--input-radius);
+    background-color: var(--color-white);
 }
 
 .assign__option {
@@ -40,10 +40,10 @@
     width: 100%;
     padding: 8px 12px;
     border: unset;
-    border-radius: 10px;
+    border-radius: var(--input-radius);
     background-color: unset;
     font-family: inherit;
-    font-size: 20px;
+    font-size: var(--input-font-size);
     color: inherit;
     text-align: left;
     cursor: pointer;
@@ -51,12 +51,12 @@
 }
 
 .assign__option:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .assign__option[aria-pressed="true"] {
     background-color: var(--color-menuBoard-background);
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 .assign__name {
@@ -75,10 +75,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     color: var(--color-menuBoard-background);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: var(--button-font-weight);
     line-height: 1;
 }
 
@@ -130,7 +130,7 @@
 .subtaskInput__plus:hover,
 .subtaskInput__actions button:hover,
 .subtaskList__actions button:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .subtaskInput:focus-within .subtaskInput__plus,
@@ -148,7 +148,7 @@
     width: 32px;
     height: 32px;
     padding: 4px;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
     color: var(--color-menuBoard-background);
 }
 
@@ -169,7 +169,7 @@
     justify-content: space-between;
     gap: 12px;
     padding: 6px 12px;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
 }
 
 .subtaskList__item::before {
@@ -180,7 +180,7 @@
 .subtaskList__title {
     flex: 1 1 auto;
     overflow-wrap: anywhere;
-    font-size: 20px;
+    font-size: var(--input-font-size);
 }
 
 .subtaskList__actions {
@@ -195,7 +195,7 @@
 }
 
 .subtaskList__item:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .subtaskList__item--edit::before {
@@ -210,5 +210,5 @@
     border-bottom: 1px solid var(--secondary-color);
     background-color: unset;
     font-family: inherit;
-    font-size: 20px;
+    font-size: var(--input-font-size);
 }

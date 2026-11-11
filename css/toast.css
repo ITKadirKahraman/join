@@ -9,7 +9,7 @@
     border-radius: 20px 20px 0 20px;
     background-color: var(--color-menuBoard-background);
     color: var(--color-text);
-    font-size: 20px;
+    font-size: var(--input-font-size);
     animation: toastIn 0.3s ease-out backwards;
 }
 
@@ -29,7 +29,7 @@
 
 @media (max-width: 480px) {
     .toast {
-        max-width: calc(100% - 32px);
-        font-size: 16px;
+        max-width: calc(100% - var(--login-card-gap));
+        font-size: var(--button-font-size);
     }
 }

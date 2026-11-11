@@ -24,9 +24,9 @@
     max-height: 90vh;
     padding: 40px;
     overflow-y: auto;
-    border-radius: 30px;
-    background-color: #ffffff;
-    color: #2a3647;
+    border-radius: var(--login-card-radius);
+    background-color: var(--color-white);
+    color: var(--color-menuBoard-background);
 }
 
 .detail__top {
@@ -39,27 +39,27 @@
     width: 32px;
     height: 32px;
     border: unset;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
     background-color: unset;
     cursor: pointer;
     transition: background-color 100ms ease-in-out;
 }
 
 .detail__close:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .detail__title {
     margin: 24px 0 16px;
     font-size: 47px;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: var(--button-font-weight);
+    line-height: var(--page-line-height);
     overflow-wrap: anywhere;
 }
 
 .detail__text {
     margin: 0 0 24px;
-    font-size: 20px;
+    font-size: var(--input-font-size);
     overflow-wrap: anywhere;
 }
 
@@ -68,11 +68,11 @@
     grid-template-columns: auto 1fr;
     gap: 16px 24px;
     margin: 0 0 24px;
-    font-size: 20px;
+    font-size: var(--input-font-size);
 }
 
 .detail__facts dt {
-    color: #42526e;
+    color: var(--color-column-title);
 }
 
 .detail__facts dd {
@@ -82,9 +82,9 @@
 
 .detail__heading {
     margin: 0 0 12px;
-    color: #42526e;
-    font-size: 20px;
-    font-weight: 400;
+    color: var(--color-column-title);
+    font-size: var(--input-font-size);
+    font-weight: var(--font-weight-regular);
 }
 
 .detail__list {
@@ -108,31 +108,31 @@
     width: 100%;
     padding: 6px 8px;
     border: unset;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
     background-color: unset;
     color: inherit;
     font-family: inherit;
-    font-size: 16px;
+    font-size: var(--button-font-size);
     text-align: left;
     cursor: pointer;
     transition: background-color 100ms ease-in-out;
 }
 
 .detail__subtask:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .detail__box {
     flex: 0 0 16px;
     width: 16px;
     height: 16px;
-    border: 2px solid #2a3647;
+    border: 2px solid var(--color-menuBoard-background);
     border-radius: 3px;
     box-sizing: border-box;
 }
 
 .detail__subtask[aria-pressed="true"] .detail__box {
-    background-color: #2a3647;
+    background-color: var(--color-menuBoard-background);
     background-image: url("../assets/icons/check.svg");
     background-size: 12px;
     background-position: center;
@@ -152,17 +152,17 @@
     gap: 8px;
     padding: 8px 12px;
     border: unset;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
     background-color: unset;
-    color: #2a3647;
+    color: var(--color-menuBoard-background);
     font-family: inherit;
-    font-size: 16px;
+    font-size: var(--button-font-size);
     cursor: pointer;
     transition: background-color 100ms ease-in-out;
 }
 
 .detail__button:hover {
-    background-color: #eef0f3;
+    background-color: var(--color-hover-light);
 }
 
 .detail__button img {

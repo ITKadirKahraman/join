@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 1440px;
-    gap: 50px;
-    padding: 0px 100px 50px 300px;
+    max-width: var(--page-max-width);
+    gap: var(--page-gap);
+    padding: 0px var(--page-padding) var(--page-gap) var(--page-padding-left);
     margin-top: 90px;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - var(--page-padding));
     box-sizing: border-box; 
     overflow-y: auto;
     scrollbar-width: thin;
@@ -21,25 +21,25 @@
 }
 
 .help_legal_police_text h1 {
-    font-family: "Inter", sans-serif;
-    font-size: 61px;
-    font-weight: 700;
-    line-height: 120%;
+    font-family: var(--font-family);
+    font-size: var(--login-title-font-size);
+    font-weight: var(--login-title-font-weight);
+    line-height: var(--login-title-line-height);
     color: var(--color-black);
-    margin-bottom: 16px;
+    margin-bottom: var(--page-title-margin-bottom);
 }
 
 .help_legal_police_text h2 {
-    font-family: "Inter", sans-serif;
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 8px;
+    font-family: var(--font-family);
+    font-size: var(--page-subtitle-size);
+    font-weight: var(--button-font-weight);
+    line-height: var(--page-line-height);
+    margin-bottom: var(--page-subtitle-margin-bottom);
 }
 
 .help_legal_police_text h3 {
-    font-family: "Inter", sans-serif;
-    line-height: 1.2;
+    font-family: var(--font-family);
+    line-height: var(--page-line-height);
     margin-bottom: 0;
 }
 
@@ -59,4 +59,4 @@
 
 .topHeaderResponsive {
     display: none;
-} 
+}

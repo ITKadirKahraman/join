@@ -1,6 +1,6 @@
 .signup-page {
   min-height: 100vh;
-  background-color: #f6f7f8;
+  background-color: var(--color-background);
 }
 
 .signup-header {
@@ -9,8 +9,8 @@
   left: 38px;
 }
 .signup-header img {
-  width: 100px;
-  height: 122px;
+  width: var(--page-padding);
+  height: var(--header-height);
   object-fit: contain;
 }
 
@@ -27,31 +27,31 @@
   position: relative;
   width: 598px;
   height: 630px;
-  padding: 48px 88px;
+  padding: var(--login-card-padding-y) 88px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.16);
+  gap: var(--login-card-gap);
+  background-color: var(--login-card-background);
+  border-radius: var(--login-card-radius);
+  box-shadow: var(--login-card-shadow);
 }
 
 .signup-card h1 {
   width: 315px;
   height: 73px;
   margin: 0;
-  font-family: "Inter", sans-serif;
-  font-size: 61px;
-  font-weight: 700;
-  line-height: 120%;
+  font-family: var(--font-family);
+  font-size: var(--login-title-font-size);
+  font-weight: var(--login-title-font-weight);
+  line-height: var(--login-title-line-height);
   letter-spacing: 0;
   text-align: center;
 }
 .title-underline {
   width: 150px;
-  height: 3px;
+  height: var(--login-underline-height);
   object-fit: contain;
   margin-top: -20px;
 }
@@ -60,8 +60,8 @@
   position: absolute;
   top: 25px;
   left: 22px;
-  color: #1e526b;
-  font-size: 20px;
+  color: var(--color-initials);
+  font-size: var(--input-font-size);
   text-decoration: none;
 }
 
@@ -80,22 +80,21 @@
 
 .signup-input input {
   width: 100%;
-  height: 48px;
+  height: var(--input-height);
   padding: 0 40px 0 16px;
   box-sizing: border-box;
-  border: 1px solid #bcbcbc;
-  border-radius: 8px;
-  font-size: 16px;
+  border: var(--input-border-width) solid var(--color-border-light);
+  border-radius: var(--login-button-radius);
   outline: none;
 
-  font-family: "Inter", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 120%;
+  font-family: var(--font-family);
+  font-size: var(--input-font-size);
+  font-weight: var(--input-font-weight);
+  line-height: var(--input-line-height);
 }
 
 .signup-input input:focus {
-  border-color: #29abe2;
+  border-color: var(--login-underline-color);
 }
 
 .signup-input span {
@@ -103,7 +102,7 @@
   top: 4px;
   right: 8px;
   font-size: 11px;
-  color: #444;
+  color: var(--input-text-color);
 }
 
 .input-icon {
@@ -131,28 +130,28 @@
   width: 16px;
   height: 16px;
   margin: 0;
-  border: 2px solid #2a3647;
+  border: 2px solid var(--color-menuBoard-background);
   border-radius: 3px;
-  accent-color: #2a3647;
+  accent-color: var(--color-menuBoard-background);
 }
 
 .privacy-checkbox a {
-  color: #124658;
+  color: var(--color-initials);
   text-decoration: none;
 }
 
 #signup-button {
   width: 126px;
   height: 55px;
-  padding: 15px 24px;
+  padding: var(--login-button-padding-y) var(--login-button-padding-x);
   border: none;
-  border-radius: 8px;
-  background-color: #2a3647;
-  color: #ffffff;
-  font-family: "Inter", sans-serif;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 120%;
+  border-radius: var(--login-button-radius);
+  background-color: var(--login-button-background);
+  color: var(--login-button-color);
+  font-family: var(--font-family);
+  font-size: var(--guest-button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
   letter-spacing: 0;
   cursor: pointer;
 }
@@ -184,21 +183,18 @@
 }
 
 .footer a {
-  color: #2a3647;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  color: var(--color-menuBoard-background);
+  font-family: var(--font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--font-weight-regular);
   text-decoration: none;
 }
 
-
 .error-message {
-  color: #ff3d71;
+  color: var(--color-error);
   font-size: 12px;
-  margin: 4px 0 0;
+  margin: -12px 0 0;
   min-height: 1em;
-
-   margin: -12px 0 0;
 }
 
 .error-message:empty {
@@ -206,22 +202,22 @@
 }
 
 .input-error {
-  border-color: #ff3d71;
+  border-color: var(--color-error);
 }
 
 @media (max-width: 600px) {
   .signup-card {
     width: 396px;
     height: 595px;
-    padding: 32px 16px;
-    gap: 32px;
-    border-radius: 30px;
+    padding: var(--login-card-gap) 16px;
+    gap: var(--login-card-gap);
+    border-radius: var(--login-card-radius);
   }
 
   .title-underline {
     width: 62px;
     height: 2px;
-    background-color: #29abe2;
+    background-color: var(--login-underline-color);
     margin: 0;
   }
 }

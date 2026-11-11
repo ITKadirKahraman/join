@@ -3,13 +3,13 @@
 .topHeader {
     position: fixed;
     top: 0;
-    left: 232px;
+    left: var(--menuBoard-width);
     right: 0;
     height: 96px;
     background: var(--color-header-background);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    font-size: 20px;
+    font-size: var(--font-size-header);
     z-index: 1000;
 }
 
@@ -63,10 +63,10 @@
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.1s ease-in, color 0.1s ease-in;
-    border: 3px solid var(--color-menuBoard-background);
+    border: var(--login-underline-height) solid var(--color-menuBoard-background);
     background-color: var(--color-header-background);
-    font-size: 20px;
-    font-weight: bold;
+    font-size: var(--font-size-header);
+    font-weight: var(--button-font-weight);
 }
 
 .nameKuerzel:hover {
@@ -98,13 +98,13 @@
 
 .profileMenuItem {
     display: block;
-    padding: 10px 16px;
+    padding: var(--input-gap) 16px;
     border: unset;
-    border-radius: 8px;
+    border-radius: var(--login-button-radius);
     background-color: unset;
     color: var(--color-text);
     font-family: inherit;
-    font-size: 16px;
+    font-size: var(--button-font-size);
     text-align: left;
     text-decoration: none;
     white-space: nowrap;
