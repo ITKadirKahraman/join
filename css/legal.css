@@ -13,6 +13,7 @@
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
     scrollbar-color: var(--color-menuBoard-background) var(--color-background);
+    padding: 34px var(--page-padding) var(--page-gap) 328px;
 }
 
 .legal_notice_text h1, 
