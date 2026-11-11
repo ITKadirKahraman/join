@@ -12,6 +12,9 @@
     scrollbar-color: var(--color-menuBoard-background) var(--color-background);
     color: var(--color-menuBoard-background);
     font-family: var(--font-family);
+    padding: 34px 60px 48px 328px;
+    margin-top: 96px;
+    max-height: calc(100vh - 96px);
 }
 
 .addTask__title {
@@ -20,6 +23,7 @@
     font-weight: var(--login-title-font-weight);
     line-height: var(--login-title-line-height);
     color: var(--login-title-color);
+    line-height: 1.2;
 }
 
 .addTask__form {
@@ -271,3 +275,7 @@
 .topHeaderResponsive {
     display: none;
 }
+
+.input-error {
+    border-color: #ff3d71;
+    }
