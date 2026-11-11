@@ -76,6 +76,7 @@
                 <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
                 <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
                 <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden><p>Log in</p></a>
             </nav>
             <div class="menuContainer" id="policyContainer">
                 <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
@@ -88,10 +89,11 @@
                 <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
                 <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
                 <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden>Log in</a>
             </nav>
         </section>
         <main class="addTask">
-            <h1 class="addTask__title">Add Task</h1>
+            <h1 class="addTask__title" id="pageTitle">Add Task</h1>
             <form class="addTask__form" id="addTaskForm" novalidate>
                 <div class="addTask__columns">
                     <div class="addTask__column">
@@ -156,7 +158,7 @@
                     <p class="field__error" id="form-error" role="alert"></p>
                     <div class="addTask__buttons">
                         <button type="button" class="addTask__button addTask__button--secondary" id="clearButton">Clear <img src="../assets/icons/close.svg" alt=""></button>
-                        <button type="submit" class="addTask__button addTask__button--primary" id="createButton">Create Task <img src="../assets/icons/check.svg" alt=""></button>
+                        <button type="submit" class="addTask__button addTask__button--primary" id="createButton"><span id="createLabel">Create Task</span> <img src="../assets/icons/check.svg" alt=""></button>
                     </div>
                 </div>
             </form>
