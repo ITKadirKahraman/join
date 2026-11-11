@@ -13,7 +13,6 @@
   position: relative;
   width: 100%;
   padding: 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,6 +30,7 @@
   height: auto;
   display: block;
 }
+
 .header-signup {
   display: flex;
   align-items: center;
@@ -49,13 +49,10 @@
   width: 100%;
   box-sizing: border-box;
   flex: 1;
-
   transform: translateY(-80px);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 30px 20px;
 }
 
@@ -67,15 +64,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: var(--login-card-width);
   box-sizing: border-box;
-
   background-color: var(--login-card-background);
   border-radius: var(--login-card-radius);
   padding: var(--login-card-padding-y) var(--login-card-padding-x);
   gap: var(--login-card-gap);
-
   box-shadow: var(--login-card-shadow);
 }
 
@@ -102,7 +96,6 @@
 
 .login-form {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -116,14 +109,10 @@
 .input-container input {
   width: 100%;
   height: var(--input-height);
-
-  padding: var(--input-padding-y) 35px var(--input-padding-y)
-    var(--input-padding-x);
-
+  padding: var(--input-padding-y) 35px var(--input-padding-y) var(--input-padding-x);
   border: var(--input-border-width) solid var(--input-border-color);
   border-radius: var(--input-radius);
   background-color: var(--input-background);
-
   font-family: var(--font-family);
   font-size: var(--input-font-size);
   font-weight: var(--input-font-weight);
@@ -147,11 +136,9 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-
   width: 16px;
   height: 16px;
   object-fit: contain;
-
   pointer-events: none;
 }
 
@@ -163,4 +150,116 @@
   display: flex;
   justify-content: center;
   gap: var(--header-signup-gap);
+  margin-top: 14px;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 3px;
+}
+
+/* =========================
+   PRIMARY & SECONDARY BUTTONS
+========================= */
+
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 110px;
+  min-height: var(--login-button-height);
+  white-space: nowrap;
+  background-color: var(--login-button-background);
+  border-radius: var(--login-button-radius);
+  padding: var(--login-button-padding-y) var(--login-button-padding-x);
+  font-family: var(--font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  color: var(--login-button-color);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: var(--guest-button-width);
+  height: var(--guest-button-height);
+  padding: var(--guest-button-padding-y) var(--guest-button-padding-x);
+  background-color: var(--color-white);
+  border: var(--guest-button-border-width) solid var(--guest-button-color);
+  border-radius: var(--guest-button-radius);
+  font-family: var(--guest-button-font-family);
+  font-size: var(--guest-button-font-size);
+  font-weight: var(--guest-button-font-weight);
+  line-height: var(--guest-button-line-height);
+  color: var(--guest-button-color);
+  cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.footer a {
+  color: var(--input-text-color);
+  font-family: var(--font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-header);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--secondary-color);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.login-error {
+  min-height: 1em;
+  margin: 0;
+  color: var(--color-error);
+  text-align: center;
+}
+
+.login-error:empty {
+  display: none;
+}
+
+.input-error {
+  border-color: var(--color-error);
 }

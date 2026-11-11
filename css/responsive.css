@@ -5,6 +5,7 @@
   .header-login .header-signup {
     display: none;
   }
+
   .input-container {
     width: 100%;
   }
@@ -38,7 +39,10 @@
 
   .login-card {
     box-sizing: border-box;
-    margin-right: 0px;
+    width: 100%;
+    max-width: 396px;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .login-form {
@@ -56,10 +60,8 @@
     min-width: 0;
     width: 100%;
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     padding: 60px 16px 30px;
     margin: 0;
     transform: none;
@@ -79,7 +81,6 @@
     width: 100%;
     height: 49px;
     margin: 20px auto;
-
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
     font-style: normal;
@@ -99,14 +100,6 @@
     letter-spacing: 0%;
   }
 
-  .login-card {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 396px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
   .login-card h1 {
     font-family: var(--font-family);
     font-size: 47px;
@@ -118,27 +111,18 @@
     white-space: nowrap;
   }
 
-  @media (max-width: 360px) {
+  .signup-card {
+    width: 396px;
+    height: 595px;
+    padding: var(--login-card-gap) 16px;
+    gap: var(--login-card-gap);
+    border-radius: var(--login-card-radius);
   }
 
-  /* =========================
-     RESPONSIVE SIGNUP SITE
-  ========================= */
-
-  @media (max-width: 600px) {
-    .signup-card {
-      width: 396px;
-      height: 595px;
-      padding: var(--login-card-gap) 16px;
-      gap: var(--login-card-gap);
-      border-radius: var(--login-card-radius);
-    }
-
-    .title-underline {
-      width: 62px;
-      height: 2px;
-      background-color: var(--login-underline-color);
-      margin: 0;
-    }
+  .title-underline {
+    width: 62px;
+    height: 2px;
+    background-color: var(--login-underline-color);
+    margin: 0;
   }
 }
