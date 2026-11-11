@@ -263,3 +263,17 @@ input:focus-visible {
 .input-error {
   border-color: var(--color-error);
 }
+
+@media (max-width: 420px) {
+  .login-card {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .login-buttons {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
