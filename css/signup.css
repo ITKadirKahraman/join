@@ -221,3 +221,16 @@
     margin: 0;
   }
 }
+
+@media (max-width: 420px) {
+  .signup-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .signup-card h1 {
+    width: auto;
+    height: auto;
+    font-size: 48px;
+  }
+}
