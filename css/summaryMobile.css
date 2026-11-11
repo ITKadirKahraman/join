@@ -15,6 +15,8 @@
         scrollbar-width: thin;
         -webkit-overflow-scrolling: touch;
         scrollbar-color: var(--color-menuBoard-background) var(--color-background);
+        padding: 24px 16px 100px;
+        max-height: calc(100vh - var(--page-padding));
     }
 
     .summary_header_article {
@@ -43,5 +45,53 @@
 
     .summary_greeting {
         display: none;
+    }
+
+    .summary_content {
+        flex-direction: column;
+    }
+
+    .summary_btn_grid {
+        max-width: none;
+        padding-left: 0;
+        padding-top: 24px;
+        gap: 16px;
+    }
+
+    .summary_btn_top_container,
+    .summary_btn_middle_container,
+    .summary_btn_bottom_container {
+        gap: 16px;
+    }
+
+    .summary_btn {
+        gap: 12px;
+        padding: 16px 12px;
+    }
+
+    .summary_btn img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .summary_counter {
+        width: auto;
+        font-size: 16px;
+    }
+
+    .summary_count {
+        font-size: 40px;
+    }
+
+    .summary_urgent {
+        gap: 8px;
+    }
+
+    .summary_urgent_separator {
+        height: 60px;
+    }
+
+    .summary_dealine_container {
+        font-size: 16px;
     }
 }
