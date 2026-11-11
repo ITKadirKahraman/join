@@ -10,5 +10,40 @@
 
     .addTask {
         padding: 60px 16px 100px;
+        padding: 24px 16px 100px;
+        margin-top: 100px;
+        max-height: calc(100vh - 100px);
+    }
+
+    .addTask__title {
+            margin-bottom: 24px;
+            font-size: 47px;
+        }
+    .addTask__columns {
+            flex-direction: column;
+            gap: 24px;
+        }
+    .addTask__divider {
+            display: none;
+        }
+    .addTask__footer {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    .addTask__buttons {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+}
+
+@media (max-width: 420px) {
+    .priority {
+        gap: 8px;
+    }
+
+    .priority__button {
+        padding: 0 4px;
+        font-size: 16px;
+        gap: 6px;
     }
 }
