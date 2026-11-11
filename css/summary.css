@@ -15,7 +15,7 @@
 .summary_header_article {
     display: flex;
     align-items: center;
-    font-family: "InterBold";
+    font-family: var(--font-family);
     gap: 30px;
     padding-left: var(--page-padding);
     font-size: var(--page-subtitle-size);
@@ -30,13 +30,14 @@
 
 .summary_header {
     font-size: var(--login-title-font-size);
-    font-family: "InterBold";
+    font-family: var(--font-family);
+    font-weight: var(--button-font-weight);
     margin: 0;
 }
 
 .summary_text {
     text-decoration: none;
-    font-family: "InterRegular";
+    font-family: var(--font-family);
     color: var(--color-black);
 }
 
@@ -151,7 +152,7 @@
 
 .summaryLink {
     text-decoration: none;
-    font-family: "InterRegular";
+    font-family: var(--font-family);
     color: var(--color-black);
 }
 
