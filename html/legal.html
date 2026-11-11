@@ -14,12 +14,11 @@
     <link rel="stylesheet" href="../css/topHeaderMobile.css">
     <link rel="stylesheet" href="../css/legal.css">
     <link rel="stylesheet" href="../css/legalMobile.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
  
     
-    <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
-
-   
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <main>
@@ -36,6 +35,11 @@
                     <button id="profileButton" class="profileButton">
                         <div id="nameKuerzel" class="nameKuerzel">G</div>
                     </button>
+                    <nav class="profileMenu" aria-label="Profile menu" hidden>
+                        <a class="profileMenuItem" href="legal.html">Legal Notice</a>
+                        <a class="profileMenuItem" href="privacy.html">Privacy Policy</a>
+                        <button type="button" class="profileMenuItem logoutButton">Log out</button>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -51,6 +55,11 @@
                     <button id="profileButton" class="profileButton">
                         <div id="nameKuerzel" class="nameKuerzel">G</div>
                     </button>
+                    <nav class="profileMenu" aria-label="Profile menu" hidden>
+                        <a class="profileMenuItem" href="legal.html">Legal Notice</a>
+                        <a class="profileMenuItem" href="privacy.html">Privacy Policy</a>
+                        <button type="button" class="profileMenuItem logoutButton">Log out</button>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -61,6 +70,7 @@
                 <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon"><p>Add Task</p></a>
                 <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
                 <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden><p>Log in</p></a>
             </nav>
             <div class="menuContainer" id="policyContainer">
                 <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
@@ -73,6 +83,7 @@
                 <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
                 <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
                 <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
+                <a class="menuItems menuItems--login" href="../html/login.html" hidden>Log in</a>
             </nav>
         </section>
         <!-- LEGAL NOTICE -->
@@ -82,7 +93,7 @@
                     <h1>Legal Notice</h1>
                 </header>
                 <section aria-labelledby="imprit" class="imprit">
-                    <h2 class="impritHeadline">Imprit</h2>
+                    <h2 class="impritHeadline">Imprint</h2>
                     <ol>
                         <li>Kadir Kahraman</li>
                         <li>Hammerstraße 282</li>
@@ -140,6 +151,5 @@
         </section>
     </main>
     <!-- JS -->
-    <script src="script.js"></script>
 </body>
 </html>
