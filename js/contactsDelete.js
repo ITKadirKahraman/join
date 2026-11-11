@@ -1,4 +1,5 @@
-/* Shows the question
+/**
+ * Shows the question
  * @param {number} contactId
  */
 function openDeleteConfirm(contactId) {
@@ -53,6 +54,18 @@ function finishDelete(contactId) {
 }
 
 /**
+ * Takes the contact out of all tasks. If this fails the contact is still deleted: the board ignores unknown contacts.
+ * @param {number} contactId
+ */
+async function removeContactFromTasks(contactId) {
+    try {
+        await TasksApi.removeContactFromTasks(contactId);
+    } catch {
+        // nothing to do: the board ignores unknown contacts
+    }
+}
+
+/**
  * Deletes in the database first
  * @param {number} contactId
  */
@@ -60,6 +73,7 @@ async function deleteContact(contactId) {
     setDeleteButtonBusy(true);
     try {
         await ContactsApi.removeContact(contactId);
+        await removeContactFromTasks(contactId);
         finishDelete(contactId);
     } catch {
         setDeleteButtonBusy(false);
