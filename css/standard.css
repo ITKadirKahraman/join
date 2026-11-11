@@ -37,3 +37,22 @@ main {
   font-weight: 700;
   font-style: normal;
 }
+
+button,
+a,
+select,
+summary {
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button,
+input,
+textarea,
+select {
+  border: unset;
+}
