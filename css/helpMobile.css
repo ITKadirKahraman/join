@@ -5,6 +5,8 @@
         padding: 40px 60px 40px 128px;
         margin-top: var(--page-padding);
         max-height: 620px;
+        padding: 24px 16px 100px;
+        max-height: calc(100vh - var(--page-padding));
     }
 
     .menuBoardResponsive {
