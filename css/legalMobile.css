@@ -1,10 +1,11 @@
 @media (max-width: 1200px) {
     .legal_notice_text {
-        padding: 40px 60px 40px 128px;
+        padding: var(--size-forty) var(--size-sixty) var(--size-forty) var(--size-oneHundredTwentyEight);
         margin-top: var(--page-padding);
-        max-height: 620px;
-        padding: 24px 16px 100px;
+        max-height: var(--size-sixHundredTwenty);
+        padding: var(--size-twentyFour) var(--size-sixteen) var(--size-oneHundred);
         max-height: calc(100vh - var(--page-padding));
+        gap: var(--size-twenty);
     }
 
     .menuBoardResponsive {
@@ -14,4 +15,11 @@
     .topHeaderResponsive {
         display: flex;
     } 
+}
+
+@media (max-width: 400px) {
+    .legalText h1 {
+        font-size: var(--size-thirtyFour);
+    }
+
 }
