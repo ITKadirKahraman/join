@@ -83,5 +83,13 @@
         max-height: 620px;
         padding: 24px 16px 100px;
         max-height: calc(100vh - var(--page-padding));
+        gap: var(--size-ten);
+    }
+}
+
+@media (max-width: 460px) {
+    .privacy-container h1 {
+        font-size: var(--size-thirtyEight);
+        margin: var(--size-zero);
     }
 }
