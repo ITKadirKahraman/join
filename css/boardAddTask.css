@@ -1,0 +1,51 @@
+/* Board: the "Add Task" window on top of the board. It shows addTask.html?fenster=1 in a frame. */
+.addTaskOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.addTaskOverlay[hidden] {
+    display: none;
+}
+
+.addTaskOverlay__panel {
+    box-sizing: border-box;
+    width: min(1050px, 100%);
+    height: min(var(--fenster-hoehe, 700px), 100%);
+    overflow: hidden;
+    border-radius: var(--login-card-radius);
+    background-color: var(--color-white);
+    animation: addTaskWindowIn 0.25s ease-out backwards;
+}
+
+.addTaskOverlay__frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@keyframes addTaskWindowIn {
+    from { opacity: 0; transform: translateX(48px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .addTaskOverlay__panel { animation: none; }
+}
+
+@media (max-width: 700px) {
+    .addTaskOverlay {
+        padding: 0;
+    }
+
+    .addTaskOverlay__panel {
+        height: 100%;
+        border-radius: 0;
+    }
+}
