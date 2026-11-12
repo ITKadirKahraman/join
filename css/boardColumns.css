@@ -1,0 +1,107 @@
+/* Board: columns with a fixed height and arrow bars for scrolling, the move icon and the priority icons on the cards. */
+
+/* The move icon on the card. It also shows on desktop and opens "Move to". All icons are normal pictures from assets/icons. */
+.card__move {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.card__move img {
+    width: 18px;
+    height: 18px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .card__move:hover {
+        background-color: var(--color-border-light);
+    }
+}
+
+/* Priority on the card and in the detail window. */
+.card__priority img,
+[class^="card__priority--"] img {
+    display: block;
+    width: 18px;
+    height: 14px;
+}
+
+/* The arrow bars above and below the list of a column. */
+.column__body {
+    position: relative;
+}
+
+.column__scroll {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--color-border-light);
+    border-radius: 16px;
+    background-color: var(--color-white);
+    color: var(--color-menuBoard-background);
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+.column__scroll[hidden] {
+    display: none;
+}
+
+.column__scroll img {
+    width: 16px;
+    height: 10px;
+}
+
+.column__scroll--up {
+    top: 0;
+}
+
+.column__scroll--up img {
+    transform: rotate(180deg);
+}
+
+.column__scroll--down {
+    bottom: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .column__scroll:hover {
+        background-color: var(--color-border-light);
+    }
+}
+
+/* Desktop only: the columns are as tall as the window and the rest is scrolled, without a visible scrollbar. */
+@media (min-width: 1201px) {
+    .column__list {
+        max-height: calc(100vh - 340px);
+        overflow-y: auto;
+        scrollbar-width: none;
+        overscroll-behavior: contain;
+        padding: 4px 4px 4px 0;
+    }
+
+    .column__list::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Phone and tablet: the columns stack up and there is no scrolling. */
+@media (max-width: 1200px) {
+    .column__scroll {
+        display: none;
+    }
+}
+
+/* Detail window: the priority icon sits next to the word ("Priority: Medium ="), not below it. */
+dd [class^="card__priority--"] img {
+    display: inline-block;
+    vertical-align: middle;
+}
