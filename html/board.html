@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="../css/boardCards.css">
     <link rel="stylesheet" href="../css/boardDetail.css">
     <link rel="stylesheet" href="../css/boardMobile.css">
+    <link rel="stylesheet" href="../css/boardAddTask.css">
+    <link rel="stylesheet" href="../css/boardColumns.css">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
     <script src="../script.js"></script>
     <script src="../js/firebaseConfig.js" defer></script>
@@ -28,6 +30,8 @@
     <script src="../js/tasksApi.js" defer></script>
     <script src="../js/tasksTemplates.js" defer></script>
     <script src="../js/board.js" defer></script>
+    <script src="../js/boardAddTask.js" defer></script>
+    <script src="../js/boardScroll.js" defer></script>
 </head>
 <body>
     <!-- MENU BOARD -->
@@ -103,41 +107,74 @@
                         <span class="search-divider"></span>
                         <span class="search-button" aria-hidden="true"><span class="search-icon"></span></span>
                     </div>
-                    <a class="add-task-btn" href="addTask.html">Add task +</a>
+                    <a class="add-task-btn" href="addTask.html" data-action="add-task" data-status="todo">Add task +</a>
                 </div>
             </div>
             <p class="board-message" id="boardMessage" role="status"></p>
             <div class="board-columns">
+                <section class="column" aria-labelledby="pausedTitle">
+                    <div class="column__head">
+                        <h2 class="column__title" id="pausedTitle">Paused</h2>
+                        <a class="column__add" href="addTask.html?status=paused" data-action="add-task" data-status="paused" aria-label="Add task to Paused">+</a>
+                    </div>
+                    <div class="column__body">
+                        <button type="button" class="column__scroll column__scroll--up" data-scroll="-1" aria-label="Scroll up" hidden></button>
+                        <ul class="column__list" data-status="paused"></ul>
+                        <button type="button" class="column__scroll column__scroll--down" data-scroll="1" aria-label="Scroll down" hidden></button>
+                    </div>
+                </section>
                 <section class="column" aria-labelledby="todoTitle">
                     <div class="column__head">
                         <h2 class="column__title" id="todoTitle">To do</h2>
-                        <a class="column__add" href="addTask.html?status=todo" aria-label="Add task to To do">+</a>
+                        <a class="column__add" href="addTask.html?status=todo" data-action="add-task" data-status="todo" aria-label="Add task to To do">+</a>
                     </div>
-                    <ul class="column__list" data-status="todo"></ul>
+                    <div class="column__body">
+                        <button type="button" class="column__scroll column__scroll--up" data-scroll="-1" aria-label="Scroll up" hidden></button>
+                        <ul class="column__list" data-status="todo"></ul>
+                        <button type="button" class="column__scroll column__scroll--down" data-scroll="1" aria-label="Scroll down" hidden></button>
+                    </div>
                 </section>
                 <section class="column" aria-labelledby="inprogressTitle">
                     <div class="column__head">
                         <h2 class="column__title" id="inprogressTitle">In progress</h2>
-                        <a class="column__add" href="addTask.html?status=inprogress" aria-label="Add task to In progress">+</a>
+                        <a class="column__add" href="addTask.html?status=inprogress" data-action="add-task" data-status="inprogress" aria-label="Add task to In progress">+</a>
                     </div>
-                    <ul class="column__list" data-status="inprogress"></ul>
+                    <div class="column__body">
+                        <button type="button" class="column__scroll column__scroll--up" data-scroll="-1" aria-label="Scroll up" hidden></button>
+                        <ul class="column__list" data-status="inprogress"></ul>
+                        <button type="button" class="column__scroll column__scroll--down" data-scroll="1" aria-label="Scroll down" hidden></button>
+                    </div>
                 </section>
                 <section class="column" aria-labelledby="awaitfeedbackTitle">
                     <div class="column__head">
                         <h2 class="column__title" id="awaitfeedbackTitle">Await feedback</h2>
-                        <a class="column__add" href="addTask.html?status=awaitfeedback" aria-label="Add task to Await feedback">+</a>
+                        <a class="column__add" href="addTask.html?status=awaitfeedback" data-action="add-task" data-status="awaitfeedback" aria-label="Add task to Await feedback">+</a>
                     </div>
-                    <ul class="column__list" data-status="awaitfeedback"></ul>
+                    <div class="column__body">
+                        <button type="button" class="column__scroll column__scroll--up" data-scroll="-1" aria-label="Scroll up" hidden></button>
+                        <ul class="column__list" data-status="awaitfeedback"></ul>
+                        <button type="button" class="column__scroll column__scroll--down" data-scroll="1" aria-label="Scroll down" hidden></button>
+                    </div>
                 </section>
                 <section class="column" aria-labelledby="doneTitle">
                     <div class="column__head">
                         <h2 class="column__title" id="doneTitle">Done</h2>
                     </div>
-                    <ul class="column__list" data-status="done"></ul>
+                    <div class="column__body">
+                        <button type="button" class="column__scroll column__scroll--up" data-scroll="-1" aria-label="Scroll up" hidden></button>
+                        <ul class="column__list" data-status="done"></ul>
+                        <button type="button" class="column__scroll column__scroll--down" data-scroll="1" aria-label="Scroll down" hidden></button>
+                    </div>
                 </section>
             </div>
         </section>
     </main>
+    <!-- ADD TASK (Fenster über dem Board) -->
+    <div class="addTaskOverlay" id="addTaskOverlay" hidden>
+        <div class="addTaskOverlay__panel" role="dialog" aria-modal="true" aria-label="Add Task">
+            <iframe class="addTaskOverlay__frame" id="addTaskFrame" title="Add Task"></iframe>
+        </div>
+    </div>
     <!-- TASK DETAILS -->
     <div class="taskOverlay" id="taskOverlay" hidden>
         <div class="taskOverlay__card" id="taskDetail" role="dialog" aria-modal="true" aria-labelledby="taskDetailTitle"></div>
