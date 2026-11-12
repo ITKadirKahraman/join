@@ -6,9 +6,20 @@
     .topHeaderResponsive {
         display: flex;
     }
+
+    /* The side menu is gone (the bar is at the bottom now), so the 292px of space on the left that was meant for the menu is not needed anymore, just like on the other pages. */
+    .contacts {
+        margin-top: var(--page-padding);
+        min-height: 0;
+        padding: 24px 32px 100px;
+    }
+
+    .contacts__sidebar {
+        max-height: calc(100vh - var(--page-padding) - 124px);
+    }
 }
 
-@media (max-width: 900px) { 
+@media (max-width: 900px) {
     .contacts {
         flex-direction: column;
         gap: 0;
