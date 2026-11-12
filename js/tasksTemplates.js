@@ -1,6 +1,6 @@
 const TasksTemplate = {
     /**
-     * One contact in the "Assigned to" menu.
+     * Builds one contact for the "Assigned to" menu.
      * @param {Contact} contact
      * @param {boolean} isSelected
      * @returns {string}
@@ -18,7 +18,7 @@ const TasksTemplate = {
     },
 
     /**
-     * Round initials of a selected contact (below the menu).
+     * Builds the round initials of a contact you picked (shown below the menu).
      * @param {Contact} contact
      * @returns {string}
      */
@@ -28,7 +28,7 @@ const TasksTemplate = {
     },
 
     /**
-     * One subtask in the list.
+     * Builds one subtask in the list.
      * @param {number} index
      * @param {string} title
      * @returns {string}
@@ -45,7 +45,7 @@ const TasksTemplate = {
     },
 
     /**
-     * One subtask while it is being changed.
+     * Builds one subtask while you are editing it.
      * @param {number} index
      * @param {string} title
      * @returns {string}
@@ -62,7 +62,7 @@ const TasksTemplate = {
     },
 
     /**
-     * Class for the colour of a category label.
+     * Picks the CSS class that gives a category label its color.
      * @param {string} category
      * @returns {string}
      */
@@ -74,17 +74,17 @@ const TasksTemplate = {
     },
 
     /**
-     * Symbol of a priority (placeholder until the icons are in assets/icons).
+     * Builds the picture for a priority, taken from assets/icons.
      * @param {string} priority
      * @returns {string}
      */
     prioritySymbol(priority) {
-        const symbols = { urgent: "▲▲", medium: "=", low: "▼▼" };
-        return symbols[priority];
+        const names = { urgent: "Urgent", medium: "Medium", low: "Low" };
+        return `<img src="../assets/icons/prio${names[priority]}.svg" alt="">`;
     },
 
     /**
-     * Date as day/month/year.
+     * Turns a date into day/month/year.
      * @param {string} date - "yyyy-mm-dd"
      * @returns {string}
      */
@@ -93,7 +93,7 @@ const TasksTemplate = {
     },
 
     /**
-     * Progress of the subtasks ("1/2 Subtasks"), nothing if there are none.
+     * Builds the progress of the subtasks, like "1/2 Subtasks". Gives back nothing if there are no subtasks.
      * @param {Task} task
      * @returns {string}
      */
@@ -110,7 +110,7 @@ const TasksTemplate = {
     },
 
     /**
-     * Menu to move a task to the neighbour columns (for phones, where there is no drag and drop).
+     * Builds the menu that moves a task to the columns next to it. It is the way to move a card without dragging, for example on a phone.
      * @param {Task} task
      * @returns {string}
      */
@@ -122,7 +122,7 @@ const TasksTemplate = {
     },
 
     /**
-     * One card on the board.
+     * Builds one card for the board.
      * @param {Task} task
      * @param {string} avatarsHtml
      * @returns {string}
@@ -135,7 +135,7 @@ const TasksTemplate = {
                 <article class="card" draggable="true" data-action="open-task" data-id="${task.id}" tabindex="0">
                     <div class="card__top">
                         <span class="card__tag card__tag--${t.categoryClass(task.category)}">${task.category}</span>
-                        <button type="button" class="card__move" data-action="toggle-move-menu" data-id="${task.id}" aria-label="Move task">⇅</button>
+                        <button type="button" class="card__move" data-action="toggle-move-menu" data-id="${task.id}" aria-label="Move task"><img src="../assets/icons/swap.svg" alt=""></button>
                     </div>
                     <h3 class="card__title">${safe(task.title)}</h3>
                     <p class="card__text">${safe(task.description)}</p>
@@ -150,8 +150,8 @@ const TasksTemplate = {
     },
 
     /**
-     * Grey box for an empty column.
-     * @param {string} title - name of the column
+     * Builds the grey box that shows an empty column.
+     * @param {string} title - the name of the column
      * @returns {string}
      */
     emptyColumn(title) {
@@ -159,7 +159,7 @@ const TasksTemplate = {
     },
 
     /**
-     * "+3" after the first round initials.
+     * Builds the "+3" that comes after the first round initials.
      * @param {number} count
      * @returns {string}
      */
@@ -168,7 +168,7 @@ const TasksTemplate = {
     },
 
     /**
-     * One assigned contact in the detail window.
+     * Builds one assigned contact for the detail window.
      * @param {Contact} contact
      * @returns {string}
      */
@@ -182,7 +182,7 @@ const TasksTemplate = {
     },
 
     /**
-     * One subtask in the detail window (a click ticks it or takes the tick away).
+     * Builds one subtask for the detail window. A click ticks it or unticks it.
      * @param {number} taskId
      * @param {number} index
      * @param {{title: string, done: boolean}} subtask
@@ -199,7 +199,7 @@ const TasksTemplate = {
     },
 
     /**
-     * The window with all details of a task.
+     * Builds the window with all the details of a task.
      * @param {Task} task
      * @param {string} assignedHtml
      * @param {string} subtasksHtml
