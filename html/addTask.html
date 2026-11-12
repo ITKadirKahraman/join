@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="../css/addTask.css">
     <link rel="stylesheet" href="../css/addTaskLists.css">
     <link rel="stylesheet" href="../css/addTaskMobile.css">
+    <link rel="stylesheet" href="../css/addTaskWindow.css">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+    <script>if (new URLSearchParams(location.search).get("fenster") === "1") document.documentElement.classList.add("fenster");</script>
     <script src="../script.js"></script>
     <script src="../js/firebaseConfig.js" defer></script>
     <script src="../js/contactsDb.js" defer></script>
@@ -26,6 +28,7 @@
     <script src="../js/tasksDb.js" defer></script>
     <script src="../js/tasksApi.js" defer></script>
     <script src="../js/tasksTemplates.js" defer></script>
+    <script src="../js/addTaskWindow.js" defer></script>
     <script src="../js/addTask.js" defer></script>
 
 
@@ -93,6 +96,7 @@
             </nav>
         </section>
         <main class="addTask">
+            <button type="button" class="addTask__close" id="closeWindow" aria-label="Close"><img src="../assets/icons/close.svg" alt=""></button>
             <h1 class="addTask__title" id="pageTitle">Add Task</h1>
             <form class="addTask__form" id="addTaskForm" novalidate>
                 <div class="addTask__columns">
@@ -117,9 +121,9 @@
                         <div class="field">
                             <span class="field__label" id="priorityLabel">Priority</span>
                             <div class="priority" role="group" aria-labelledby="priorityLabel">
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="urgent" aria-pressed="false">Urgent <span class="priority__icon" aria-hidden="true">▲▲</span></button>
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="medium" aria-pressed="true">Medium <span class="priority__icon" aria-hidden="true">=</span></button>
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="low" aria-pressed="false">Low <span class="priority__icon" aria-hidden="true">▼▼</span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="urgent" aria-pressed="false">Urgent <span class="priority__icon" aria-hidden="true"></span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="medium" aria-pressed="true">Medium <span class="priority__icon" aria-hidden="true"></span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="low" aria-pressed="false">Low <span class="priority__icon" aria-hidden="true"></span></button>
                             </div>
                         </div>
                         <div class="field">
