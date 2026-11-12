@@ -1,0 +1,119 @@
+/* Add Task as a window on top of the board (the page with ?fenster=1, shown in a frame): no header and no menu, two columns and a close button. */
+/* Priority icons (page and window): each button has a colored picture and a white one, and the white one shows when the button is chosen. They are normal pictures, so they also show up when you open the file with a double click (file://). */
+.priority__icon {
+    display: inline-block;
+    width: 16px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.priority__icon--white,
+.priority__button[aria-pressed="true"] .priority__icon--color {
+    display: none;
+}
+
+.priority__button[aria-pressed="true"] .priority__icon--white {
+    display: inline-block;
+}
+
+.addTask__close {
+    display: none;
+}
+
+/* In the window all the text of the form is 16px and the heading is big, like in the design. */
+html.fenster {
+    --input-font-size: 16px;
+    --guest-button-font-size: 16px;
+}
+
+html.fenster body {
+    background-color: var(--color-white);
+}
+
+html.fenster .topHeader,
+html.fenster .topHeaderResponsive,
+html.fenster .menuBoard,
+html.fenster .menuBoardResponsive {
+    display: none;
+}
+
+html.fenster main.addTask {
+    position: relative;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 32px 40px 24px;
+    overflow: visible;
+}
+
+html.fenster .addTask__title {
+    margin-bottom: 48px;
+    font-size: var(--login-title-font-size);
+}
+
+html.fenster .addTask__note .field__required {
+    margin-right: 4px;
+}
+
+html.fenster .addTask__columns {
+    flex-direction: row;
+    gap: 32px;
+}
+
+html.fenster .addTask__divider {
+    display: block;
+}
+
+html.fenster .addTask__footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+html.fenster .addTask__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: unset;
+    border-radius: var(--login-button-radius);
+    background-color: unset;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    html.fenster .addTask__close:hover {
+        background-color: var(--color-border-light);
+    }
+}
+
+/* Narrow window (phone): one column. */
+@media (max-width: 700px) {
+    html.fenster main.addTask {
+        padding: 24px 16px;
+    }
+
+    html.fenster .addTask__title {
+        margin-bottom: 24px;
+        font-size: 32px;
+    }
+
+    html.fenster .addTask__columns {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    html.fenster .addTask__divider {
+        display: none;
+    }
+
+    html.fenster .addTask__footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
