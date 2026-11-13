@@ -1,19 +1,19 @@
-/** @type {Contact[]} All contacts (loaded once) */
+/** @type {Contact[]} All the contacts, loaded once */
 let contacts = [];
-/** @type {number[]} Ids of the selected contacts */
+/** @type {number[]} The ids of the contacts you picked */
 let selectedContactIds = [];
 /** @type {{title: string, done: boolean}[]} The subtasks */
 let subtasks = [];
 /** @type {string} "urgent", "medium" or "low" */
 let priority = "medium";
-/** @type {Task|null} The task that is being changed (page opened with ?edit=…), null when a new task is made */
+/** @type {Task|null} The task you are editing (the page was opened with ?edit=...), or null when you are making a new one */
 let editedTask = null;
 
-/** @type {string[]} Fields that must be filled (their error line has the id <field>-error) */
+/** @type {string[]} The fields you have to fill in. Each one has an error line with the id <field>-error. */
 const REQUIRED_FIELDS = ["taskTitle", "taskDueDate", "taskCategory"];
 
 /**
- * The column the new task starts in: "todo", or the one from the address (?status=inprogress)
+ * Finds out which column the new task starts in: "todo", or the one from the address (for example ?status=inprogress).
  * @returns {string}
  */
 function getStartStatus() {
@@ -24,7 +24,7 @@ function getStartStatus() {
 /* ---------- Priority ---------- */
 
 /**
- * Marks one of the three priority buttons
+ * Marks one of the three priority buttons as the chosen one.
  * @param {string} newPriority
  */
 function setPriority(newPriority) {
@@ -36,21 +36,21 @@ function setPriority(newPriority) {
 
 /* ---------- Assigned to ---------- */
 
-/** Draws the menu with all contacts (A to Z), the selected ones are marked */
+/** Draws the menu with all the contacts from A to Z. The ones you picked are marked. */
 function renderContactOptions() {
-    const sorted = [...contacts].sort((a, b) => a.name.localeCompare(b.name)); // spread: copy, the original order stays
+    const sorted = [...contacts].sort((a, b) => a.name.localeCompare(b.name)); // the spread makes a copy, so the original order stays as it is
     const options = sorted.map((contact) => TasksTemplate.contactOption(contact, selectedContactIds.includes(contact.id)));
     document.getElementById("contactOptions").innerHTML = options.join("");
 }
 
-/** Draws the round initials of the selected contacts below the menu */
+/** Draws the round initials of the picked contacts below the menu. */
 function renderSelectedContacts() {
     const selected = contacts.filter((contact) => selectedContactIds.includes(contact.id));
     document.getElementById("selectedContacts").innerHTML = selected.map(TasksTemplate.selectedAvatar).join("");
 }
 
 /**
- * Selects a contact, or takes the selection away
+ * Picks a contact, or takes the pick away again.
  * @param {number} contactId
  */
 function toggleContact(contactId) {
@@ -63,19 +63,19 @@ function toggleContact(contactId) {
     renderSelectedContacts();
 }
 
-/** Opens the contact menu */
+/** Opens the contact menu. */
 function openContactMenu() {
     document.getElementById("contactOptions").hidden = false;
     document.getElementById("assignToggle").setAttribute("aria-expanded", "true");
 }
 
-/** Closes the contact menu */
+/** Closes the contact menu. */
 function closeContactMenu() {
     document.getElementById("contactOptions").hidden = true;
     document.getElementById("assignToggle").setAttribute("aria-expanded", "false");
 }
 
-/** Opens the contact menu if it is closed and the other way round */
+/** Opens the contact menu if it is closed, and closes it if it is open. */
 function toggleContactMenu() {
     const menuIsClosed = document.getElementById("contactOptions").hidden;
     if (menuIsClosed) {
@@ -86,7 +86,7 @@ function toggleContactMenu() {
 }
 
 /**
- * A click beside the menu closes it
+ * A click next to the menu closes it.
  * @param {MouseEvent} event
  */
 function closeMenuOnOutsideClick(event) {
@@ -95,73 +95,10 @@ function closeMenuOnOutsideClick(event) {
     }
 }
 
-/* ---------- Subtasks ---------- */
-
 /**
- * Draws the subtask list (one entry can be in edit mode)
- * @param {number} [editIndex] - index of the subtask that is being changed
- */
-function renderSubtasks(editIndex) {
-    document.getElementById("subtaskList").innerHTML = subtasks.map((subtask, index) => {
-        return index === editIndex ? TasksTemplate.subtaskEdit(index, subtask.title) : TasksTemplate.subtask(index, subtask.title);
-    }).join("");
-}
-
-/** Adds the text of the input as a new subtask (an empty input adds nothing) */
-function addSubtask() {
-    const input = document.getElementById("subtaskInput");
-    if (input.value.trim() === "") {
-        return;
-    }
-    subtasks.push({ title: input.value.trim(), done: false });
-    input.value = "";
-    renderSubtasks();
-}
-
-/** Empties the subtask input */
-function clearSubtaskInput() {
-    document.getElementById("subtaskInput").value = "";
-    document.getElementById("subtaskInput").focus();
-}
-
-/**
- * Puts one subtask into edit mode
- * @param {number} index
- */
-function editSubtask(index) {
-    renderSubtasks(index);
-    document.getElementById("subtaskEditInput").focus();
-}
-
-/**
- * Saves the changed title (an empty title removes the subtask)
- * @param {number} index
- */
-function saveSubtask(index) {
-    const title = document.getElementById("subtaskEditInput").value.trim();
-    if (title === "") {
-        subtasks.splice(index, 1);
-    } else {
-        subtasks[index].title = title;
-    }
-    renderSubtasks();
-}
-
-/**
- * Removes one subtask
- * @param {number} index
- */
-function deleteSubtask(index) {
-    subtasks.splice(index, 1);
-    renderSubtasks();
-}
-
-/* ---------- Checking the form ---------- */
-
-/**
- * Checks one required field and shows or clears its error
+ * Checks one required field and shows its error, or clears it.
  * @param {string} fieldId
- * @returns {boolean} true if the field is filled
+ * @returns {boolean} true if the field is filled in
  */
 function checkRequired(fieldId) {
     const field = document.getElementById(fieldId);
@@ -172,14 +109,14 @@ function checkRequired(fieldId) {
 }
 
 /**
- * Checks all required fields (every error is shown at once)
+ * Checks all required fields and shows every error at once.
  * @returns {boolean}
  */
 function checkForm() {
     return REQUIRED_FIELDS.map(checkRequired).every((isFilled) => isFilled);
 }
 
-/** Checks the fields that show an error again, so the error goes away as soon as it is fixed */
+/** Checks the fields that show an error once more, so the error disappears as soon as you fix it. */
 function refreshShownErrors() {
     REQUIRED_FIELDS.forEach((fieldId) => {
         if (document.getElementById(fieldId).classList.contains("input-error")) {
@@ -191,7 +128,7 @@ function refreshShownErrors() {
 /* ---------- Saving ---------- */
 
 /**
- * The new task from the form
+ * Builds the new task from what is in the form.
  * @returns {Task}
  */
 function buildTask() {
@@ -209,7 +146,7 @@ function buildTask() {
 }
 
 /**
- * Create Task: check, save, tell the user, go to the board
+ * Create Task: check the form, save, tell the user and go to the board.
  * @param {SubmitEvent} event
  */
 async function handleSubmit(event) {
@@ -221,7 +158,12 @@ async function handleSubmit(event) {
     createButton.disabled = true;
     try {
         await TasksApi.saveTask(buildTask());
-        showToast(editedTask ? "Task saved" : "Task added to board");
+        const message = editedTask ? "Task saved" : "Task added to board";
+        if (isWindowMode()) {
+            closeWindow(true, message);
+            return;
+        }
+        showToast(message);
         setTimeout(() => { window.location.href = "./board.html"; }, 1500);
     } catch {
         document.getElementById("form-error").textContent = "The task could not be saved. Please try again.";
@@ -229,7 +171,7 @@ async function handleSubmit(event) {
     }
 }
 
-/** Clear: back to the empty form */
+/** Clear: back to an empty form. */
 function clearForm() {
     document.getElementById("addTaskForm").reset();
     REQUIRED_FIELDS.forEach((fieldId) => {
@@ -248,7 +190,7 @@ function clearForm() {
 /* ---------- Events ---------- */
 
 /**
- * Clicks on priority and contacts
+ * Handles the clicks on priority and contacts.
  * @param {string} action
  * @param {DOMStringMap} data
  */
@@ -263,7 +205,7 @@ function handleContactActions(action, data) {
 }
 
 /**
- * Clicks on the subtasks
+ * Handles the clicks on the subtasks.
  * @param {string} action
  * @param {DOMStringMap} data
  */
@@ -284,7 +226,7 @@ function handleSubtaskActions(action, data) {
 }
 
 /**
- * One click listener for the whole page
+ * One click listener for the whole page.
  * @param {MouseEvent} event
  */
 function handlePageClick(event) {
@@ -298,10 +240,13 @@ function handlePageClick(event) {
 }
 
 /**
- * Enter in a subtask field saves the subtask, never the whole task
+ * Enter in a subtask field saves the subtask and never the whole task.
  * @param {KeyboardEvent} event
  */
 function handleKeydown(event) {
+    if (event.key === "Escape" && isWindowMode()) {
+        cancelWindow();
+    }
     if (event.key !== "Enter") {
         return;
     }
@@ -316,7 +261,7 @@ function handleKeydown(event) {
 
 /* ---------- Changing a task ---------- */
 
-/** Edit mode: the page says "Edit Task", the button says "Save", there is no Clear */
+/** Edit mode: the page says "Edit Task", the button says "Save" and there is no Clear. */
 function showEditMode() {
     document.getElementById("pageTitle").textContent = "Edit Task";
     document.getElementById("createLabel").textContent = "Save";
@@ -324,7 +269,7 @@ function showEditMode() {
 }
 
 /**
- * Puts the values of a task into the form
+ * Puts the values of a task into the form.
  * @param {Task} task
  */
 function fillForm(task) {
@@ -333,7 +278,7 @@ function fillForm(task) {
     document.getElementById("taskDueDate").value = task.dueDate;
     document.getElementById("taskCategory").value = task.category;
     setPriority(task.priority);
-    selectedContactIds = [...task.assignedTo]; // spread: copy
+    selectedContactIds = [...task.assignedTo]; // the spread makes a copy
     subtasks = task.subtasks.map((subtask) => ({ title: subtask.title, done: subtask.done }));
     renderContactOptions();
     renderSelectedContacts();
@@ -341,7 +286,7 @@ function fillForm(task) {
 }
 
 /**
- * Loads the task that is changed and fills the form with it
+ * Loads the task you are editing and fills the form with it.
  * @param {number} taskId
  */
 async function loadTaskToEdit(taskId) {
@@ -359,7 +304,7 @@ async function loadTaskToEdit(taskId) {
     fillForm(editedTask);
 }
 
-/** Loads the contacts, then the task if the page was opened to change one (the contacts are needed to fill the form) */
+/** Loads the contacts first, then the task if the page was opened to edit one. The contacts are needed to fill in the form. */
 async function loadPage() {
     await loadContacts();
     const editId = new URLSearchParams(window.location.search).get("edit");
@@ -368,7 +313,7 @@ async function loadPage() {
     }
 }
 
-/** Loads the contacts for the "Assigned to" menu */
+/** Loads the contacts for the "Assigned to" menu. */
 async function loadContacts() {
     try {
         contacts = await ContactsApi.loadContacts();
@@ -379,7 +324,7 @@ async function loadContacts() {
     renderContactOptions();
 }
 
-/** Connects the page (the only place for the listeners) */
+/** Hooks the page up. This is the only place with listeners. */
 function init() {
     document.addEventListener("click", handlePageClick);
     document.addEventListener("keydown", handleKeydown);
@@ -388,7 +333,10 @@ function init() {
     });
     document.getElementById("addTaskForm").addEventListener("input", refreshShownErrors);
     document.getElementById("addTaskForm").addEventListener("submit", handleSubmit);
-    document.getElementById("clearButton").addEventListener("click", clearForm);
+    if (isWindowMode()) {
+        prepareWindowMode();
+    }
+    document.getElementById("clearButton").addEventListener("click", isWindowMode() ? cancelWindow : clearForm);
     loadPage();
 }
 
