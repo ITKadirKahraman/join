@@ -58,17 +58,6 @@ function getMenuBoard() {
     `;
 }
 
-function getMenuBoardResponsive() {
-    return `
-    <nav class="menuContainer" id="menuContainer">
-        <a class="menuItems" href="../html/summary.html"> <img src="../assets/icons/summary.svg" alt="Summary Icon">Summary</a>
-        <a class="menuItems" href="../html/addTask.html"> <img src="../assets/icons/addTask.svg" alt="Add Task Icon">Add Task</a>
-        <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon">Board</a>
-        <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon">Contacts</a>
-    </nav>
-    `;
-}
-
 function getMenuBoardResponsiveBoard() {
     return `
     <nav class="menuContainer">
@@ -89,17 +78,12 @@ function desktop() {
 
 function mobile() {
     document.getElementById('topHeaderResponsive').innerHTML = getHeaderResponsive();
-    document.getElementById('menuBoardResponsive').innerHTML = getMenuBoardResponsive();
-}
-
-function mobileBoard() {
     document.getElementById('menuBoardResponsiveBoard').innerHTML = getMenuBoardResponsiveBoard();
 }
 
 function init() {
     desktop();
-    mobile();
-    mobileBoard();
+    mobile();  
 }
 
 init();
