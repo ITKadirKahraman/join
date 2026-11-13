@@ -38,15 +38,8 @@
     margin-bottom: var(--page-subtitle-margin-bottom);
 }
 
-.help_legal_police_text h3 {
-    font-family: var(--font-family);
-    line-height: var(--page-line-height);
-    margin-bottom: 0;
-}
-
 .help_legal_police_text h1, 
-.help_legal_police_text h2, 
-.help_legal_police_text h3, 
+.help_legal_police_text h2,
 .help_legal_police_text ul,
 .help_legal_police_text p {
     max-width: 100%;
