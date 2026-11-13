@@ -122,4 +122,19 @@
   --page-title-margin-bottom: 16px;
   --page-subtitle-margin-bottom: 8px;
   --page-list-padding-left: 20px;
+
+  /* sizes */ 
+  --size-zero: 0px;
+  --size-ten: 10px;
+  --size-sixteen: 16px;
+  --size-twenty: 20px;
+  --size-twentyFour: 24px;
+  --size-thirtyFour: 34px;
+  --size-thirtyEight: 38px;
+  --size-forty: 40px;
+  --size-fortyfour: 44px;
+  --size-sixty: 60px;
+  --size-oneHundred: 100px;
+  --size-oneHundredTwentyEight: 128px;
+  --size-sixHundredTwenty: 620px;
 }
