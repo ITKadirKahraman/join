@@ -2,10 +2,10 @@
 /* Medium screens & small laptops */
 @media (max-width: 1200px) {
     .help_legal_police_text {
-        padding: 40px 60px 40px 128px;
+        padding: var(--size-forty) var(--size-sixty) var(--size-forty) var(--size-oneHundredTwentyEight);
         margin-top: var(--page-padding);
-        max-height: 620px;
-        padding: 24px 16px 100px;
+        max-height: var(--size-sixHundredTwenty);
+        padding: var(--size-twentyFour) var(--size-sixteen) var(--size-oneHundred);
         max-height: calc(100vh - var(--page-padding));
     }
 
@@ -15,5 +15,30 @@
 
     .topHeaderResponsive {
         display: flex;
-    } 
+    }
+
+    article ol {
+        padding-left: var(--size-sixteen);
+        margin-top: var(--size-ten);
+    }
+
+    article li {
+        margin-top: var(--size-ten);
+    }
+}
+
+@media (max-width: 768px) {
+    .help_legal_police_text {
+        gap: var(--size-sixteen);
+    }
+
+    .help_legal_police_text h1 {
+        font-size: var(--size-fortyfour);
+    }
+}
+
+@media (max-width: 480px) {
+    .help_legal_police_text h1 {
+        font-size: var(--size-thirtyEight);
+    }
 }
