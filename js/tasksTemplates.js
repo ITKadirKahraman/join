@@ -103,7 +103,7 @@ const TasksTemplate = {
         }
         const done = task.subtasks.filter((subtask) => subtask.done).length;
         return `
-            <div class="card__progress">
+            <div class="card__progress" title="${done} of ${task.subtasks.length} subtasks done">
                 <progress class="card__bar" value="${done}" max="${task.subtasks.length}"></progress>
                 <span>${done}/${task.subtasks.length} Subtasks</span>
             </div>`;
