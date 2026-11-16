@@ -165,10 +165,23 @@ async function handleSubmit(event) {
         }
         showToast(message);
         setTimeout(() => { window.location.href = "./board.html"; }, 1500);
-    } catch {
-        document.getElementById("form-error").textContent = "The task could not be saved. Please try again.";
+    } catch (error) {
+        showSaveError(error);
         createButton.disabled = false;
     }
+}
+
+/**
+ * Tells the user why saving failed. A refused request (401 or 403) means the database rules said no.
+ * The real error also goes to the console, so a developer can see it.
+ * @param {Error} error
+ */
+function showSaveError(error) {
+    console.error("Saving the task failed:", error);
+    const refused = /status: (401|403)/.test(error.message);
+    document.getElementById("form-error").textContent = refused
+        ? "The database refused this task (permission denied). Please check the database rules."
+        : "The task could not be saved. Please try again.";
 }
 
 /** Clear: back to an empty form. */
