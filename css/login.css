@@ -90,6 +90,7 @@
   flex-direction: column;
   align-items: center;
   width: var(--login-card-width);
+  min-height: 449px;
   box-sizing: border-box;
   background-color: var(--login-card-background);
   border-radius: var(--login-card-radius);
@@ -99,13 +100,15 @@
 }
 
 .login-card h1 {
+  width: 315px;
+  height: 73px;
+  margin: 0;
   font-family: var(--font-family);
   font-size: var(--login-title-font-size);
   font-weight: var(--login-title-font-weight);
   line-height: var(--login-title-line-height);
   color: var(--login-title-color);
   text-align: center;
-  margin-bottom: -8px;
 }
 
 .title-underline {
@@ -113,6 +116,7 @@
   height: var(--login-underline-height);
   background-color: var(--login-underline-color);
   margin-bottom: 0;
+  margin-top: -16px;
 }
 
 /* =========================
@@ -123,12 +127,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--login-card-gap);
 }
 
 .input-container {
   position: relative;
-  width: 100%;
+  width: 422px;
+  max-width: 100%;
+  height: var(--input-height);
 }
 
 .input-container input {
@@ -158,11 +164,11 @@
 
 .input-icon {
   position: absolute;
-  right: 12px;
+  right: var(--input-padding-x);
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   pointer-events: none;
 }
@@ -174,8 +180,12 @@
 .login-buttons {
   display: flex;
   justify-content: center;
-  gap: var(--header-signup-gap);
   margin-top: 14px;
+  align-items: center;
+  width: 322px;
+  gap: 35px;
+  height: var(--login-button-height);
+  margin: 0 auto;
 }
 
 /* =========================
@@ -226,6 +236,13 @@ input:focus-visible {
   text-decoration: none;
 }
 
+.btn-primary-login {
+  width: 110px;
+  min-width: 110px;
+  height: var(--login-button-height);
+  font-size: var(--guest-button-font-size);
+}
+
 .btn-secondary {
   display: flex;
   justify-content: center;
@@ -252,12 +269,16 @@ input:focus-visible {
 .footer {
   margin-top: auto;
   display: flex;
+  transform: translateY(-38.3px);
   justify-content: center;
+  align-items: center;
+  height: 35px;
   gap: 16px;
-  padding: 16px;
+  padding: 0;
 }
 
 .footer a {
+  padding: 8px;
   color: var(--input-text-color);
   font-family: var(--font-family);
   font-size: var(--button-font-size);
