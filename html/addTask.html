@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="../css/addTaskLists.css">
     <link rel="stylesheet" href="../css/addTaskMobile.css">
     <link rel="stylesheet" href="../css/addTaskWindow.css">
-    <!-- JS -->
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
     <script>if (new URLSearchParams(location.search).get("fenster") === "1") document.documentElement.classList.add("fenster");</script>
     <script src="../script.js"></script>
@@ -31,7 +30,11 @@
     <script src="../js/tasksApi.js" defer></script>
     <script src="../js/tasksTemplates.js" defer></script>
     <script src="../js/addTaskWindow.js" defer></script>
+    <script src="../js/addTaskSubtasks.js" defer></script>
     <script src="../js/addTask.js" defer></script>
+
+
+    
 </head>
 <body>
         <!-- MENU BOARD -->
@@ -39,7 +42,6 @@
         <header id="topHeaderResponsiveAddTask" class="topHeaderResponsive"></header>
         <section id="menuBoardAddTask" class="menuBoard"></section>
         <section id="menuBoardResponsiveAddTask" class="menuBoardResponsive"></section>
-        <!-- ADD TASK -->
         <main class="addTask">
             <button type="button" class="addTask__close" id="closeWindow" aria-label="Close"><img src="../assets/icons/close.svg" alt=""></button>
             <h1 class="addTask__title" id="pageTitle">Add Task</h1>
@@ -48,12 +50,12 @@
                     <div class="addTask__column">
                         <div class="field">
                             <label class="field__label" for="taskTitle">Title<span class="field__required">*</span></label>
-                            <input class="field__input" type="text" id="taskTitle" placeholder="Enter a title" autocomplete="off" aria-describedby="taskTitle-error">
+                            <input class="field__input" type="text" id="taskTitle" maxlength="100" placeholder="Enter a title" autocomplete="off" aria-describedby="taskTitle-error">
                             <p class="field__error" id="taskTitle-error" aria-live="polite"></p>
                         </div>
                         <div class="field">
                             <label class="field__label" for="taskDescription">Description</label>
-                            <textarea class="field__input field__input--area" id="taskDescription" placeholder="Enter a Description"></textarea>
+                            <textarea class="field__input field__input--area" id="taskDescription" maxlength="1000" placeholder="Enter a Description"></textarea>
                         </div>
                         <div class="field">
                             <label class="field__label" for="taskDueDate">Due date<span class="field__required">*</span></label>
@@ -66,9 +68,9 @@
                         <div class="field">
                             <span class="field__label" id="priorityLabel">Priority</span>
                             <div class="priority" role="group" aria-labelledby="priorityLabel">
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="urgent" aria-pressed="false">Urgent <span class="priority__icon" aria-hidden="true"></span></button>
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="medium" aria-pressed="true">Medium <span class="priority__icon" aria-hidden="true"></span></button>
-                                <button type="button" class="priority__button" data-action="set-priority" data-priority="low" aria-pressed="false">Low <span class="priority__icon" aria-hidden="true"></span></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="urgent" aria-pressed="false">Urgent <img class="priority__icon priority__icon--color" src="../assets/icons/prioUrgent.svg" alt=""><img class="priority__icon priority__icon--white" src="../assets/icons/prioUrgentWhite.svg" alt=""></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="medium" aria-pressed="true">Medium <img class="priority__icon priority__icon--color" src="../assets/icons/prioMedium.svg" alt=""><img class="priority__icon priority__icon--white" src="../assets/icons/prioMediumWhite.svg" alt=""></button>
+                                <button type="button" class="priority__button" data-action="set-priority" data-priority="low" aria-pressed="false">Low <img class="priority__icon priority__icon--color" src="../assets/icons/prioLow.svg" alt=""><img class="priority__icon priority__icon--white" src="../assets/icons/prioLowWhite.svg" alt=""></button>
                             </div>
                         </div>
                         <div class="field">
