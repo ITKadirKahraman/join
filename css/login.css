@@ -12,29 +12,54 @@
 .header-login {
   position: relative;
   width: 100%;
-  padding: 40px;
+  max-width: 1440px;
+  min-height: var(--header-height);
+  margin: 0 auto;
+  padding: 67px 122px 0 77px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  box-sizing: border-box;
 }
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 0;
 }
 
 .logo img {
   width: var(--page-padding);
-  height: auto;
+  height: var(--header-height);
   display: block;
+  object-fit: contain;
 }
 
 .header-signup {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 279px;
+  height: 49px;
   gap: var(--header-signup-gap);
+}
+
+.header-signup span {
+  font-family: var(--font-family);
+  font-size: var(--font-size-header);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-header);
+  color: var(--login-title-color);
+  white-space: nowrap;
+}
+
+.header-signup .btn-primary {
+  width: 91px;
+  min-width: 91px;
+  height: 49px;
+  min-height: 49px;
+  padding: 15px 16px;
 }
 
 .mobile-signup {
