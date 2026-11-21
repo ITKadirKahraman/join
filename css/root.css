@@ -58,6 +58,7 @@
   /* Login Card */
   --login-card-width: 652px;
   --login-card-background: #ffffff;
+  --login-card-padding: 25px;
   --login-card-radius: 30px;
   --login-card-padding-y: 48px;
   --login-card-padding-x: 115px;
