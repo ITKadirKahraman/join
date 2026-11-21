@@ -36,3 +36,14 @@ body {
     object-fit: contain;
     display: block;
 }
+
+@media (max-width: 600px) {
+    .start-page {
+        background-color: var(--color-menuBoard-background);
+    }
+    .start-content img {
+        width: 100px;
+        height: 120px;
+        content: url(./assets/icons/joinMobile.svg);
+    }
+}
