@@ -317,9 +317,4 @@ input:focus-visible {
     padding-left: 16px;
     padding-right: 16px;
   }
-
-  .login-buttons {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
 }
