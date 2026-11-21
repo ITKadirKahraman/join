@@ -205,13 +205,14 @@
   border-color: var(--color-error);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .signup-card {
     width: 396px;
     height: 595px;
     padding: var(--login-card-gap) 16px;
     gap: var(--login-card-gap);
     border-radius: var(--login-card-radius);
+    margin-top: 150px;
   }
 
   .title-underline {
