@@ -158,6 +158,7 @@ async function handleSubmit(event) {
     createButton.disabled = true;
     try {
         await TasksApi.saveTask(buildTask());
+        localStorage.setItem("tasks-updated", Date.now().toString());
         const message = editedTask ? "Task saved" : "Task added to board";
         if (isWindowMode()) {
             closeWindow(true, message);

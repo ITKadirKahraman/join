@@ -19,6 +19,10 @@
     <!-- JS -->
     <script src="../script.js"></script>
     <script src="../js/headerMenuSummary.js" defer></script>
+    <script src="../js/firebaseConfig.js" defer></script>
+    <script src="../js/tasksDb.js" defer></script>
+    <script src="../js/tasksApi.js" defer></script>
+    <script src="../js/summary.js" defer></script>
     
     <link rel="shortcut icon" href="../assets/icons/joinFavicon.svg" type="image/x-icon">
 </head>
@@ -46,14 +50,14 @@
                         <div class="summary_btn">
                             <div class="summary_icon penHover"><img src="../assets/icons/pen.svg" alt="Pen"></div>
                             <div class="summary_counter">
-                                <div data-count="todo" class="summary_count">4</div>
+                                <div id="countTodo" class="summary_count">0</div>
                                 <a class="summaryLink" href="../html/board.html">To-do</a>
                             </div>
                         </div>
                         <div class="summary_btn">
                             <div class="summary_icon arrowHover"><img src="../assets/icons/summaryArrowRight.svg" alt="Arrow for Right"></div>
                             <div class="summary_counter">
-                                <div data-count="done" class="summary_count">3</div>
+                                <div id="countDone" class="summary_count">0</div>
                                 <a class="summaryLink" href="../html/board.html">Done</a>
                             </div>
                         </div>
@@ -63,13 +67,13 @@
                             <div class="summary_urgent">
                                 <img src="../assets/icons/summaryArrowTop.svg" alt="Arrow for Top">
                                 <div class="summary_counter">
-                                    <div data-count="urgent" class="summary_count">4</div>
+                                    <div id="countUrgent" class="summary_count">0</div>
                                     <a class="summaryLink" href="../html/board.html">Urgent</a>
                                 </div>
                                 <div class="summary_urgent_separator"></div>
                             </div>
                             <div class="summary_dealine_container">
-                                <div class="summary_deadline">Dezember 16, 2026</div>
+                                <div id="deadline" class="summary_deadline">–</div>
                                 <a class="summaryLink" href="../html/board.html">Upcoming Dealine</a>
                             </div>
                         </div>
@@ -77,19 +81,19 @@
                     <div class="summary_btn_bottom_container">
                         <div class="summary_btn">
                             <div class="summary_counter">
-                                <div data-count="email" class="summary_count">17</div>
+                                <div id="countBoard" class="summary_count">0</div>
                                 <a class="summaryLink" href="../html/board.html">Task in Board</a>
                             </div>
                         </div>
                         <div class="summary_btn">
                             <div class="summary_counter">
-                                <div data-count="email" class="summary_count">3</div>
+                                <div id="countInProgress" class="summary_count">0</div>
                                 <a class="summaryLink" href="../html/board.html">Task in Progress</a>
                             </div>
                         </div>
                         <div class="summary_btn">
                             <div class="summary_counter">
-                                <div data-count="email" class="summary_count">4</div>
+                                <div id="countAwaiting" class="summary_count">0</div>
                                 <a class="summaryLink" href="../html/board.html">Awaiting Feedback</a>
                             </div>
                         </div>

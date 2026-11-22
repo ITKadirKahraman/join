@@ -95,3 +95,14 @@
         font-size: 16px;
     }
 }
+
+@media (max-width: 350px) {
+    .summary_header {
+        font-size: 28px;
+    }
+    .summary_header_article_mobile {
+        font-size: 18px;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

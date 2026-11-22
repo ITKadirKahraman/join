@@ -118,6 +118,7 @@ async function toggleSubtask(taskId, index) {
 async function deleteTask(taskId) {
     try {
         await TasksApi.removeTask(taskId);
+        localStorage.setItem("tasks-updated", Date.now().toString());
     } catch {
         showToast("Could not delete. Please try again.");
         return;

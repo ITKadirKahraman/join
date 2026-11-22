@@ -86,3 +86,11 @@ function init() {
 }
 
 init();
+
+window.addEventListener("storage", (event) => {
+    if (event.key === "tasks-updated") {
+        loadSummary();
+    }
+});
+
+window.addEventListener("pageshow", loadSummary);
