@@ -1,4 +1,29 @@
+.summary_page {
+    position: relative;
+}
+
+.greeting-screen {
+    display: none;
+}
+
 @media (max-width: 1200px) {
+    body.show-greeting .greeting-screen {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #f5f6f7;
+        color: #2a3647;
+        font-size: 28px;
+    }
+
+    body.show-greeting .summary_page > :not(.greeting-screen) {
+        visibility: hidden;
+    }
+
     .topHeaderResponsive {
         display: flex;
     } 

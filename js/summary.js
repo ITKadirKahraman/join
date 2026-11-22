@@ -50,9 +50,10 @@ function getGreeting(hour) {
 function showGreeting() {
     const session = getSession();
     const greeting = getGreeting(new Date().getHours());
-    const knowsName = session !== null && session.type !== "guest";
-    document.getElementById("greeting").textContent = knowsName ? greeting + "," : greeting + "!";
-    document.getElementById("greetingName").textContent = knowsName ? session.name : "";
+    const hasUser = session !== null && session.type !== "guest";
+
+    document.getElementById("greeting").textContent = greeting + ",";
+    document.getElementById("greetingName").textContent = hasUser ? session.name : "Guest!";
 }
 
 /**
@@ -79,13 +80,43 @@ async function loadSummary() {
     }
 }
 
+let greetingTimer;
+
+function updateGreetingForScreenSize() {
+    const greetingScreen = document.getElementById("greetingScreen");
+    if (!greetingScreen) return;
+
+    clearTimeout(greetingTimer);
+
+    if (window.matchMedia("(max-width: 1200px)").matches) {
+        showGreeting();
+        document.body.classList.add("show-greeting");
+
+        greetingScreen.onclick = () => {
+            clearTimeout(greetingTimer);
+            document.body.classList.remove("show-greeting");
+        };
+
+        greetingTimer = setTimeout(() => {
+            document.body.classList.remove("show-greeting");
+        }, 3500);
+    } else {
+        document.body.classList.remove("show-greeting");
+    }
+}
+
 /** Called once on load */
 function init() {
-    showGreeting();
     loadSummary();
+    updateGreetingForScreenSize();
 }
 
 init();
+
+window.matchMedia("(max-width: 1200px)")
+    .addEventListener("change", updateGreetingForScreenSize);
+
+window.addEventListener("pageshow", updateGreetingForScreenSize);
 
 window.addEventListener("storage", (event) => {
     if (event.key === "tasks-updated") {
