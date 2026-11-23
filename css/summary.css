@@ -1,6 +1,7 @@
 /* SUMMARY PAGE */
 .summary_page {
     display: block;
+    max-width: 1440px;
     padding: 130px 60px 48px 328px;
     color: var(--color-menuBoard-background);
     font-family: var(--font-family);
