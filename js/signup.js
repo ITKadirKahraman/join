@@ -169,21 +169,40 @@ function markTouched(field) {
 }
 
 /**
- * Handles form submission: marks all fields as touched, validates, and aborts on errors.
- * @param {SubmitEvent} event - The submit event
- * @returns {void}
+ * Creates the account in the database; the button stays off while it works
+ * @returns {Promise<boolean>} true if the account was created
  */
-function handleSubmit(event) {
+async function createAccount() {
+  signupButton.disabled = true;
+  try {
+    await AuthApi.createUser(nameInput.value, emailInput.value, passwordInput.value);
+    return true;
+  } catch {
+    return false;
+  } finally {
+    signupButton.disabled = false;
+  }
+}
+
+/**
+ * Handles form submission: marks all fields as touched, validates, creates the account
+ * and logs the new user in.
+ * @param {SubmitEvent} event - The submit event
+ * @returns {Promise<void>}
+ */
+async function handleSubmit(event) {
   event.preventDefault();
   fields.forEach((field) => touched.add(field));
   refresh();
   if (signupButton.disabled) return;
 
-  // TODO: Perform signup (backend/database)
-  console.log("Signup valid:", {
-    name: nameInput.value.trim(),
-    email: emailInput.value.trim(),
-  });
+  const created = await createAccount();
+  if (!created) {
+    setError(emailInput, "Diese E-Mail ist schon registriert, oder die Datenbank ist nicht erreichbar.");
+    return;
+  }
+  setSession({ type: "user", name: nameInput.value.trim(), email: emailInput.value.trim() });
+  window.location.href = "./summary.html";
 }
 
 /**
