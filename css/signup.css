@@ -1,204 +1,240 @@
-/** @type {HTMLInputElement} */
-const nameInput = document.getElementById("name");
-/** @type {HTMLInputElement} */
-const emailInput = document.getElementById("email");
-/** @type {HTMLInputElement} */
-const passwordInput = document.getElementById("password");
-/** @type {HTMLInputElement} */
-const confirmInput = document.getElementById("confirm-password");
-/** @type {HTMLInputElement} */
-const privacyCheckbox = document.getElementById("privacy");
-/** @type {HTMLButtonElement} */
-const signupButton = document.getElementById("signup-button");
-/** @type {HTMLFormElement} */
-const signupForm = document.getElementById("signup-form");
-
-/** @type {RegExp} Basic email format check */
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-/** @type {number} Minimum password length */
-const MIN_PASSWORD_LENGTH = 8;
-
-/** @type {HTMLInputElement[]} All validated input fields */
-const fields = [nameInput, emailInput, passwordInput, confirmInput];
-/** @type {Set<HTMLInputElement>} Fields the user has already interacted with */
-const touched = new Set();
-
-/* ---------- Validation messages ---------- */
-
-/**
- * Validates the name field.
- * @returns {string} Error message, or an empty string if valid
- */
-function nameMessage() {
-  return nameInput.value.trim() ? "" : "Bitte einen Namen eingeben.";
+.signup-page {
+  height: 100vh;
+  background-color: var(--color-background);
 }
 
-/**
- * Validates the email field.
- * @returns {string} Error message, or an empty string if valid
- */
-function emailMessage() {
-  const email = emailInput.value.trim();
-  if (!email) return "Bitte eine E-Mail-Adresse eingeben.";
-  if (!EMAIL_REGEX.test(email)) {
-    return "Bitte eine gültige E-Mail-Adresse eingeben.";
+.signup-header {
+  position: absolute;
+  top: 28px;
+  left: 38px;
+}
+.signup-header img {
+  width: var(--page-padding);
+  height: var(--header-height);
+  object-fit: contain;
+}
+
+.signup-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: safe center;
+  padding: 30px 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.signup-card {
+  position: relative;
+  width: 598px;
+  height: 630px;
+  padding: var(--login-card-padding-y) 88px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--login-card-gap);
+  background-color: var(--login-card-background);
+  border-radius: var(--login-card-radius);
+  box-shadow: var(--login-card-shadow);
+}
+
+.signup-card h1 {
+  width: 315px;
+  height: 73px;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--login-title-font-size);
+  font-weight: var(--login-title-font-weight);
+  line-height: var(--login-title-line-height);
+  letter-spacing: 0;
+  text-align: center;
+}
+.title-underline {
+  width: 150px;
+  height: var(--login-underline-height);
+  object-fit: contain;
+  margin-top: -20px;
+}
+
+.back-link {
+  position: absolute;
+  top: 25px;
+  left: 22px;
+  color: var(--color-initials);
+  font-size: var(--input-font-size);
+  text-decoration: none;
+}
+
+.signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.signup-input {
+  position: relative;
+  width: 100%;
+}
+
+.signup-input input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: var(--input-border-width) solid var(--color-border-light);
+  border-radius: var(--login-button-radius);
+  outline: none;
+
+  font-family: var(--font-family);
+  font-size: var(--input-font-size);
+  font-weight: var(--input-font-weight);
+  line-height: var(--input-line-height);
+}
+
+.signup-input input:focus {
+  border-color: var(--login-underline-color);
+}
+
+.signup-input span {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 11px;
+  color: var(--input-text-color);
+}
+
+.input-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.privacy-checkbox {
+  width: 231px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.privacy-checkbox input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 2px solid var(--color-menuBoard-background);
+  border-radius: 3px;
+  accent-color: var(--color-menuBoard-background);
+}
+
+.privacy-checkbox a {
+  color: var(--color-initials);
+  text-decoration: none;
+}
+
+#signup-button {
+  width: 126px;
+  height: 55px;
+  padding: var(--login-button-padding-y) var(--login-button-padding-x);
+  border: none;
+  border-radius: var(--login-button-radius);
+  background-color: var(--login-button-background);
+  color: var(--login-button-color);
+  font-family: var(--font-family);
+  font-size: var(--guest-button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+#signup-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.signup-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.back-link {
+  position: static;
+  text-decoration: none;
+  font-size: 32px;
+  line-height: 1;
+}
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.footer a {
+  color: var(--color-menuBoard-background);
+  font-family: var(--font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 12px;
+  margin: -12px 0 0;
+  min-height: 1em;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.input-error {
+  border-color: var(--color-error);
+}
+
+@media (max-width: 900px) {
+  .signup-card {
+    width: 396px;
+    height: 595px;
+    padding: var(--login-card-gap) 16px;
+    gap: var(--login-card-gap);
+    border-radius: var(--login-card-radius);
+    margin-top: 150px;
   }
-  return "";
-}
 
-/**
- * Validates the password field.
- * @returns {string} Error message, or an empty string if valid
- */
-function passwordMessage() {
-  const password = passwordInput.value;
-  if (!password) return "Bitte ein Passwort eingeben.";
-  if (password.length < MIN_PASSWORD_LENGTH) {
-    return `Das Passwort muss mindestens ${MIN_PASSWORD_LENGTH} Zeichen haben.`;
+  .title-underline {
+    width: 62px;
+    height: 2px;
+    background-color: var(--login-underline-color);
+    margin: 0;
   }
-  return "";
 }
 
-/**
- * Validates the password confirmation field.
- * @returns {string} Error message, or an empty string if valid
- */
-function confirmMessage() {
-  if (!confirmInput.value) return "Bitte das Passwort bestätigen.";
-  if (confirmInput.value !== passwordInput.value) {
-    return "Die Passwörter stimmen nicht überein.";
+@media (max-width: 420px) {
+  .signup-card {
+    width: 100%;
+    height: auto;
   }
-  return "";
+
+  .signup-card h1 {
+    width: auto;
+    height: auto;
+    font-size: 48px;
+  }
 }
-
-/**
- * Sets the custom validity of all fields based on their message functions.
- * @returns {void}
- */
-function validateFields() {
-  nameInput.setCustomValidity(nameMessage());
-  emailInput.setCustomValidity(emailMessage());
-  passwordInput.setCustomValidity(passwordMessage());
-  confirmInput.setCustomValidity(confirmMessage());
-}
-
-/* ---------- Error display ---------- */
-
-/**
- * Creates the error element after the wrapper and links it via aria-describedby.
- * @param {HTMLInputElement} input - The associated input field
- * @param {Element} wrapper - Container of the input field (.signup-input)
- * @returns {HTMLParagraphElement} The newly created error element
- */
-function createErrorElement(input, wrapper) {
-  const error = document.createElement("p");
-  error.className = "error-message";
-  error.id = `${input.id}-error`;
-  error.setAttribute("aria-live", "polite");
-  wrapper.after(error);
-  input.setAttribute("aria-describedby", error.id);
-  return error;
-}
-
-/**
- * Returns the error element of a field, creating it if necessary.
- * @param {HTMLInputElement} input - The input field
- * @returns {Element} The error element
- */
-function getErrorElement(input) {
-  const wrapper = input.closest(".signup-input");
-  const next = wrapper.nextElementSibling;
-  if (next && next.classList.contains("error-message")) return next;
-  return createErrorElement(input, wrapper);
-}
-
-/**
- * Shows or clears a field's error message and updates its ARIA/CSS state.
- * @param {HTMLInputElement} input - The input field
- * @param {string} message - Error message; an empty string clears the error
- * @returns {void}
- */
-function setError(input, message) {
-  getErrorElement(input).textContent = message;
-  input.classList.toggle("input-error", Boolean(message));
-  input.setAttribute("aria-invalid", message ? "true" : "false");
-}
-
-/**
- * Renders errors for all fields; only touched fields show a message.
- * @returns {void}
- */
-function renderErrors() {
-  fields.forEach((field) => {
-    setError(field, touched.has(field) ? field.validationMessage : "");
-  });
-}
-
-/* ---------- Button & refresh ---------- */
-
-/**
- * Enables the signup button only if the form is valid and the privacy checkbox is checked.
- * @returns {void}
- */
-function updateButton() {
-  signupButton.disabled = !(
-    privacyCheckbox.checked && signupForm.checkValidity()
-  );
-}
-
-/**
- * Validates all fields, renders errors and updates the button state.
- * @returns {void}
- */
-function refresh() {
-  validateFields();
-  renderErrors();
-  updateButton();
-}
-
-/* ---------- Events ---------- */
-
-/**
- * Marks a field as touched and refreshes the UI.
- * @param {HTMLInputElement} field - The field that was touched
- * @returns {void}
- */
-function markTouched(field) {
-  touched.add(field);
-  refresh();
-}
-
-/**
- * Handles form submission: marks all fields as touched, validates, and aborts on errors.
- * @param {SubmitEvent} event - The submit event
- * @returns {void}
- */
-function handleSubmit(event) {
-  event.preventDefault();
-  fields.forEach((field) => touched.add(field));
-  refresh();
-  if (signupButton.disabled) return;
-
-  // TODO: Perform signup (backend/database)
-  console.log("Signup valid:", {
-    name: nameInput.value.trim(),
-    email: emailInput.value.trim(),
-  });
-}
-
-/**
- * Registers all event listeners and sets the initial state.
- * @returns {void}
- */
-function init() {
-  fields.forEach((field) => {
-    field.addEventListener("blur", () => markTouched(field));
-  });
-  signupForm.addEventListener("input", refresh);
-  privacyCheckbox.addEventListener("change", updateButton);
-  signupForm.addEventListener("submit", handleSubmit);
-  validateFields();
-  updateButton();
-}
-
-init();
