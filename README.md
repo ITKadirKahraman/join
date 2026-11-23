@@ -103,28 +103,6 @@ JOIN uses the **Firebase Realtime Database**. The API modules communicate with i
 
 > **Warning:** The privacy policy currently refers to Supabase, while the code uses Firebase Realtime Database. This must be corrected before the project is presented as production-ready.
 
-## Project Status
-
-- [x] Login and guest login
-- [x] Session handling
-- [x] Kanban board with four workflow stages
-- [x] Drag-and-drop task movement
-- [x] Alternative task movement for mobile layouts
-- [x] Task creation, editing, and deletion
-- [x] Task search
-- [x] Priorities, categories, and due dates
-- [x] Subtask management
-- [x] Contact assignment
-- [x] Contact creation, editing, and deletion
-- [x] Summary dashboard
-- [x] Responsive layouts
-- [ ] Complete signup and backend account creation
-- [ ] Align the privacy policy with the actual database implementation
-
 ## Project Context
 
 JOIN is an educational group project. It demonstrates frontend development, REST-based database communication, authentication flows, task management, and responsive user interfaces. It is not intended to replace a full business CRM or enterprise project management platform.
-
-## Acknowledgements
-
-Developed as part of a group project at **Developer Akademie**.
