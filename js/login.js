@@ -81,8 +81,4 @@ function initLogin() {
     document.getElementById("guestLoginButton").addEventListener("click", guestLogin);
 }
 
-document.getElementById("guestLoginButton").addEventListener("click", () => {
-  window.location.href = "./summary.html";
-});
-
 initLogin();
