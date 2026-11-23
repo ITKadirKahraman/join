@@ -5,6 +5,13 @@
 @import url("./standard.css");
 @import url("./responsive.css");
 
+/* body only has min-height:100vh from standard.css, so it could grow taller than the screen.
+   With overflow:hidden on body too, the extra part was hidden instead of scrollable on short
+   screens. height:100vh keeps body screen-sized; .main-content scrolls on its own instead. */
+body {
+  height: 100vh;
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -74,18 +81,19 @@
   width: 100%;
   box-sizing: border-box;
   flex: 1;
-  transform: translateY(-80px);
+  min-height: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: safe center;
   padding: 30px 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 /* =========================
    LOGIN CARD
 ========================= */
 .login-card {
-  margin-top: var(--page-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,6 +251,10 @@ input:focus-visible {
   font-size: var(--guest-button-font-size);
 }
 
+.btn-primary:hover {
+  background-color: var(--color-menuBoard-hover-background);
+}
+
 .btn-secondary {
   display: flex;
   justify-content: center;
@@ -262,6 +274,10 @@ input:focus-visible {
   cursor: pointer;
 }
 
+.btn-secondary:hover {
+  background-color: var(--color-hover-light);
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -269,7 +285,6 @@ input:focus-visible {
 .footer {
   margin-top: auto;
   display: flex;
-  transform: translateY(-38.3px);
   justify-content: center;
   align-items: center;
   height: 35px;
@@ -300,10 +315,6 @@ input:focus-visible {
   margin: 0;
   color: var(--color-error);
   text-align: center;
-}
-
-.login-error:empty {
-  display: none;
 }
 
 .input-error {
