@@ -5,8 +5,8 @@
 
 .signup-header {
   position: absolute;
-  top: 28px;
-  left: 38px;
+  top: 65px;
+  left: 77px;
 }
 .signup-header img {
   width: var(--page-padding);
@@ -61,10 +61,16 @@
 
 .back-link {
   position: absolute;
-  top: 25px;
-  left: 22px;
+  top: 64px;
+  left: var(--login-card-padding-y);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--login-card-gap);
+  height: var(--login-card-gap);
   color: var(--color-initials);
   font-size: var(--input-font-size);
+  line-height: 1;
   text-decoration: none;
 }
 
