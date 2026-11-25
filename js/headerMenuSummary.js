@@ -49,7 +49,6 @@ function getMenuBoard() {
         <a class="menuItems" href="../html/board.html"> <img src="../assets/icons/board.svg" alt="Board Icon"><p>Board</p></a>
         <a class="menuItems" href="../html/contacts.html"> <img src="../assets/icons/contacts.svg" alt="Contacts Icon"><p>Contacts</p></a>
         <a class="menuItems menuItems--login" href="../html/login.html" hidden><p>Log in</p></a>
-        <a class="menuItems menuItems--login" href="../html/login.html" hidden><p>Log in</p></a>
     </nav>
     <div class="menuContainer" id="policyContainer">
         <a class="menuItems" href="../html/privacy.html"> <p>Privacy Policy</p></a>
